@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['csnu_ue'] } },
 	},
 	{
-			displayName: 'KERESES (Pesquisa)',
+			displayName: 'Kereses (Pesquisa)',
 			name: 'kereses',
 			type: 'string',
 			default: '',

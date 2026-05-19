@@ -54,9 +54,9 @@ const operations: INodeProperties[] = [
 				action: 'Ancord',
 			},
 			{
-				name: 'Cadastro De Expulsoes Da Administracao Federal (Ceaf)',
+				name: 'Cadastro de Expulsoes da Administracao Federal (Ceaf)',
 				value: 'ceaf',
-				action: 'Cadastro de expulsoes da administracao federal ceaf',
+				action: 'Cadastro de expulsoes da administracao federal (ceaf)',
 			},
 			{
 				name: 'CEPIM',
@@ -109,9 +109,9 @@ const operations: INodeProperties[] = [
 				action: 'Ieptb nacional',
 			},
 			{
-				name: 'Ieptb-Br - Instituto De Estudos De Protesto De Titulos Do Brasil',
+				name: 'Ieptb-Br - Instituto de Estudos de Protesto de Titulos do Brasil',
 				value: 'ieptb',
-				action: 'Ieptb br instituto de estudos de protesto de titulos do brasil',
+				action: 'Ieptb-br - instituto de estudos de protesto de titulos do brasil',
 			},
 			{
 				name: 'Portal Transparencia',

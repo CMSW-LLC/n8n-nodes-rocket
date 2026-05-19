@@ -27,9 +27,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Prefeitura BH (Certidao/fic)',
+				name: 'Prefeitura BH (Certidao/FIC)',
 				value: 'prefeitura_bh',
-				action: 'Prefeitura bh certidao fic',
+				action: 'Prefeitura bh (certidao/fic)',
 			},
 			{
 				name: 'Prefeitura Cuiaba',

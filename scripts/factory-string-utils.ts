@@ -13,25 +13,99 @@ export function escapeString(s: string): string {
 	return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '\\r');
 }
 
+/** Palavras que ficam em minúsculas no meio do título (regra UX n8n). */
+const TITLE_CASE_MINOR_WORDS = new Set([
+	'de',
+	'da',
+	'do',
+	'das',
+	'dos',
+	'e',
+	'em',
+	'na',
+	'no',
+	'para',
+	'com',
+	'a',
+	'o',
+]);
+
+/** Siglas curtas mantidas em maiúsculas nos displayNames. */
+const TITLE_CASE_ACRONYMS = new Set([
+	'id',
+	'cpf',
+	'cnpj',
+	'rf',
+	'ue',
+	'cm',
+	'ddd',
+	'numero',
+	'num',
+	'serpro',
+	'ibama',
+	'ibge',
+	'ieptb',
+	'ancord',
+	'cnep',
+	'cepim',
+	'ibama',
+	'allcheck',
+	'csnu',
+	'pep',
+	'qsa',
+	'irpf',
+	'dau',
+	'n8n',
+	'api',
+	'cmc7',
+	'cmc71',
+	'cmc72',
+	'cmc73',
+]);
+
+function titleCaseWord(word: string, isFirst: boolean): string {
+	const lower = word.toLowerCase();
+	if (!isFirst && TITLE_CASE_MINOR_WORDS.has(lower)) {
+		return lower;
+	}
+	if (lower === 'id') return 'ID';
+	if (TITLE_CASE_ACRONYMS.has(lower)) {
+		return lower.toUpperCase();
+	}
+	// Sigla curta já em maiúsculas (ex.: SERPRO, IBAMA)
+	if (/^[A-Z]{2,5}$/.test(word)) {
+		return word;
+	}
+	// Palavra longa em CAPS (ex.: KERESES) → capitaliza só a primeira letra
+	if (/^[A-Z]{2,}$/.test(word)) {
+		return word.charAt(0) + word.slice(1).toLowerCase();
+	}
+	return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
 /**
- * Converte qualquer string (UPPER_SNAKE_CASE, snake_case, camelCase, espaços) em Title Case.
- * Sequências de 2+ letras maiúsculas são tratadas como siglas e mantidas em caixa alta.
- * Ex: "LAST_NAME" → "Last Name" | "CPF_DO_CLIENTE" → "CPF do Cliente" | "dataVencimento" → "Data Vencimento"
+ * Converte qualquer string (UPPER_SNAKE_CASE, kebab-case, camelCase, espaços) em Title Case
+ * compatível com `node-param-display-name-miscased` do n8n.
  */
 export function toTitleCase(s: string): string {
-	return s
+	const normalized = s
 		.replace(/_/g, ' ')
+		.replace(/-/g, ' ')
+		.replace(/\//g, '/')
 		.replace(/([a-z])([A-Z])/g, '$1 $2')
-		.split(/\s+/)
-		.filter((w) => w.length > 0)
-		.map((word) => {
-			if (/^[A-Z]{2,}$/.test(word)) return word;
-			// Regra n8n: "id" deve sempre ser "ID" em displayNames
-			if (word.toLowerCase() === 'id') return 'ID';
-			return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-		})
-		.join(' ')
+		.replace(/\s+/g, ' ')
 		.trim();
+
+	// Preserva segmentos separados por "/" (ex.: CNPJ/CPF)
+	return normalized
+		.split('/')
+		.map((segment) => {
+			const words = segment.split(/\s+/).filter((w) => w.length > 0);
+			return words
+				.map((word, i) => titleCaseWord(word, i === 0))
+				.join(' ');
+		})
+		.join('/');
 }
 
 /**
@@ -85,8 +159,8 @@ export function toSentenceCase(s: string): string {
  */
 export function isPasswordLikeFieldName(nomeParam: string): boolean {
 	if (!nomeParam) return false;
-	const lower = nomeParam.toLowerCase();
-	return /\b(senha|password|token|secret|chave)\b/.test(lower);
+	const normalized = nomeParam.toLowerCase().replace(/[-_\s]/g, '');
+	return /(senha|password|passwd|secret|chave|token)/.test(normalized);
 }
 
 /**

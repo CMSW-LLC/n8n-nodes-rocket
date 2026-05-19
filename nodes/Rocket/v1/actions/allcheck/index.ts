@@ -27,9 +27,9 @@ const operations: INodeProperties[] = [
 				action: 'Allcheck - localizador',
 			},
 			{
-				name: 'ALLCHECK Consulta Cnpj/cpf',
+				name: 'ALLCHECK Consulta CNPJ/CPF',
 				value: 'allchkcad',
-				action: 'Allcheck consulta cnpj cpf',
+				action: 'Allcheck consulta cnpj/cpf',
 			},
 			{
 				name: 'ALLCHECK Consulta Telefone',
