@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['tse_dados_eleitorais'] } },
 	},
 	{
-			displayName: 'NM PARTIDO',
+			displayName: 'NM Partido',
 			name: 'nmPartido',
 			type: 'string',
 			default: '',

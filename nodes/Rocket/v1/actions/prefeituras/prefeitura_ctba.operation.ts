@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_ctba'] } },
 	},
 	{
-			displayName: 'INSC MUNICIPAL',
+			displayName: 'INSC Municipal',
 			name: 'inscMunicipal',
 			type: 'number',
 			default: 0,

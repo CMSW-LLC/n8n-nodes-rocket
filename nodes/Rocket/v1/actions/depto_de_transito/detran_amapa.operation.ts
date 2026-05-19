@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['depto_de_transito'], operation: ['detran_amapa'] } },
 	},
 	{
-			displayName: 'DATA NASCIMENTO',
+			displayName: 'DATA Nascimento',
 			name: 'dataNascimento',
 			type: 'string',
 			default: '',

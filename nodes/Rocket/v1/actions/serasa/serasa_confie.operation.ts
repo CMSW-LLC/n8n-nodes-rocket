@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
@@ -36,14 +36,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TIMEOUT',
+			displayName: 'Timeout',
 			name: 'timeout',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 		},
 	{
-			displayName: 'TIPORELATORIO',
+			displayName: 'Tiporelatorio',
 			name: 'tiporelatorio',
 			type: 'string',
 			default: '',
@@ -51,7 +51,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',
@@ -67,28 +67,28 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'PERIODOMONIT',
+			displayName: 'Periodomonit',
 			name: 'periodomonit',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 		},
 	{
-			displayName: 'EMAILMONIT',
+			displayName: 'Emailmonit',
 			name: 'emailmonit',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 		},
 	{
-			displayName: 'REFERENCIAMONIT',
+			displayName: 'Referenciamonit',
 			name: 'referenciamonit',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 		},
 	{
-			displayName: 'TIPOCONSULTA',
+			displayName: 'Tipoconsulta',
 			name: 'tipoconsulta',
 			type: 'string',
 			default: '',
@@ -103,7 +103,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_confie'] } },
 		},
 	{
-			displayName: 'TIPODOCUMENTO',
+			displayName: 'Tipodocumento',
 			name: 'tipodocumento',
 			type: 'string',
 			default: '',
@@ -111,7 +111,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TIPORETORNO',
+			displayName: 'Tiporetorno',
 			name: 'tiporetorno',
 			type: 'string',
 			default: '',

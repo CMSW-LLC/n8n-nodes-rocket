@@ -26,7 +26,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'RAZAO SOCIAL',
+			displayName: 'RAZAO Social',
 			name: 'razaoSocial',
 			type: 'string',
 			default: '',
@@ -34,7 +34,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'LOGRADOURO',
+			displayName: 'Logradouro',
 			name: 'logradouro',
 			type: 'string',
 			default: '',
@@ -42,7 +42,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUMERO LOGRADOURO',
+			displayName: 'NUMERO Logradouro',
 			name: 'numeroLogradouro',
 			type: 'string',
 			default: '',
@@ -50,7 +50,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'BAIRRO',
+			displayName: 'Bairro',
 			name: 'bairro',
 			type: 'string',
 			default: '',
@@ -58,7 +58,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CIDADE',
+			displayName: 'Cidade',
 			name: 'cidade',
 			type: 'string',
 			default: '',
@@ -66,7 +66,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'MODELO CERTIDAO',
+			displayName: 'Modelo Certidao',
 			name: 'modeloCertidao',
 			type: 'string',
 			default: '',

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -43,7 +43,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'LOGRADOURO',
+			displayName: 'Logradouro',
 			name: 'logradouro',
 			type: 'string',
 			default: '',
@@ -51,21 +51,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TELEFONE',
+			displayName: 'Telefone',
 			name: 'telefone',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
 		},
 	{
-			displayName: 'COMPLEMENTO',
+			displayName: 'Complemento',
 			name: 'complemento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
 		},
 	{
-			displayName: 'BAIRRO',
+			displayName: 'Bairro',
 			name: 'bairro',
 			type: 'string',
 			default: '',
@@ -80,7 +80,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
 		},
 	{
-			displayName: 'CIDADE',
+			displayName: 'Cidade',
 			name: 'cidade',
 			type: 'string',
 			default: '',

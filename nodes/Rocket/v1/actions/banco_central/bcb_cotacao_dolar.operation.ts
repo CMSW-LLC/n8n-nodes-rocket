@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
 	},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
 		},
 	{
-			displayName: 'DATA FECHAMENTO',
+			displayName: 'DATA Fechamento',
 			name: 'dataFechamento',
 			type: 'string',
 			default: '',

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
 	},
 	{
-			displayName: 'DATA NASCIMENTO',
+			displayName: 'DATA Nascimento',
 			name: 'dataNascimento',
 			type: 'string',
 			default: '',

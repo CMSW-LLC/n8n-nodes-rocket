@@ -19,7 +19,7 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'CHECKBEM',
+				name: 'Checkbem',
 				value: 'checkbem',
 				action: 'Checkbem',
 			}

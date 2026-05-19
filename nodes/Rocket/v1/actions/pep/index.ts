@@ -34,9 +34,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Coaf - Pep',
+				name: 'Coaf PEP',
 				value: 'coaf_pep',
-				action: 'Coaf - pep',
+				action: 'Coaf pep',
 			},
 			{
 				name: 'CRSFN',
@@ -44,24 +44,24 @@ const operations: INodeProperties[] = [
 				action: 'Crsfn',
 			},
 			{
-				name: 'CSNU - Lista De Sancoes Da ONU',
+				name: 'CSNU Lista de Sancoes da ONU',
 				value: 'csnu',
-				action: 'Csnu - lista de sancoes da onu',
+				action: 'Csnu lista de sancoes da onu',
 			},
 			{
-				name: 'CSNU - Lista De Sancoes Da UE',
+				name: 'CSNU Lista de Sancoes da UE',
 				value: 'csnu_ue',
-				action: 'Csnu - lista de sancoes da ue',
+				action: 'Csnu lista de sancoes da ue',
 			},
 			{
-				name: 'Doadores E Fornecedores Politicas',
+				name: 'Doadores e Fornecedores Politicas',
 				value: 'doadores_fornecedores_politicas',
 				action: 'Doadores e fornecedores politicas',
 			},
 			{
-				name: 'Dow Jones API - Risk And Compliance',
+				name: 'Dow Jones API Risk And Compliance',
 				value: 'dowjones',
-				action: 'Dow jones api - risk and compliance',
+				action: 'Dow jones api risk and compliance',
 			},
 			{
 				name: 'Dowjones Resposta',
@@ -79,24 +79,24 @@ const operations: INodeProperties[] = [
 				action: 'Indicio fraude clearsale',
 			},
 			{
-				name: 'OFAC - Consolidated List',
+				name: 'OFAC Consolidated List',
 				value: 'ofac_consolidated_list',
-				action: 'Ofac - consolidated list',
+				action: 'Ofac consolidated list',
 			},
 			{
-				name: 'OFAC - Sanctions List Search',
+				name: 'OFAC Sanctions List Search',
 				value: 'ofac_sanctions_list',
-				action: 'Ofac - sanctions list search',
+				action: 'Ofac sanctions list search',
 			},
 			{
-				name: 'Poder 360 Politicos - Detalhe',
+				name: 'Poder 360 Politicos Detalhe',
 				value: 'poder360_detalhe',
-				action: 'Poder 360 politicos - detalhe',
+				action: 'Poder 360 politicos detalhe',
 			},
 			{
-				name: 'Poder 360 Politicos - Lista',
+				name: 'Poder 360 Politicos Lista',
 				value: 'poder360_lista',
-				action: 'Poder 360 politicos - lista',
+				action: 'Poder 360 politicos lista',
 			},
 			{
 				name: 'Sancoes Banco Mundial',
@@ -104,12 +104,12 @@ const operations: INodeProperties[] = [
 				action: 'Sancoes banco mundial',
 			},
 			{
-				name: 'TSE Repositorio De Dados Eleitorais Candidatos',
+				name: 'TSE Repositorio de Dados Eleitorais Candidatos',
 				value: 'tse_dados_eleitorais',
 				action: 'Tse repositorio de dados eleitorais candidatos',
 			},
 			{
-				name: 'WEBSERVICE ACCUITY',
+				name: 'Webservice Accuity',
 				value: 'accuity',
 				action: 'Webservice accuity',
 			}

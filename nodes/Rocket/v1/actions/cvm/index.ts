@@ -29,27 +29,27 @@ const operations: INodeProperties[] = [
 				action: 'Afastamentos por determinacao judicial',
 			},
 			{
-				name: 'CVM - Consulta Suspensao Das Atividades De Intermediacao Irregular',
+				name: 'CVM Consulta Suspensao das Atividades de Intermediacao Irregular',
 				value: 'suspensao_cvm',
-				action: 'Cvm - consulta suspensao das atividades de intermediacao irregular',
+				action: 'Cvm consulta suspensao das atividades de intermediacao irregular',
 			},
 			{
-				name: 'CVM - Dados Cadastrais',
+				name: 'CVM Dados Cadastrais',
 				value: 'cvm_cadastro',
-				action: 'Cvm - dados cadastrais',
+				action: 'Cvm dados cadastrais',
 			},
 			{
-				name: 'CVM Processos - Consulta De Processos',
+				name: 'CVM Processos Consulta de Processos',
 				value: 'cvm_processos',
-				action: 'Cvm processos - consulta de processos',
+				action: 'Cvm processos consulta de processos',
 			},
 			{
-				name: 'Deliberacoes CVM - Alertas De Suspensao',
+				name: 'Deliberacoes CVM Alertas de Suspensao',
 				value: 'deliberacoes_cvm',
-				action: 'Deliberacoes cvm - alertas de suspensao',
+				action: 'Deliberacoes cvm alertas de suspensao',
 			},
 			{
-				name: 'Identificacao De Processo CVM',
+				name: 'Identificacao de Processo CVM',
 				value: 'identificacao_processo_cvm',
 				action: 'Identificacao de processo cvm',
 			}

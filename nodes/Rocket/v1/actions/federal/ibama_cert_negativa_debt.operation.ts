@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['federal'], operation: ['ibama_cert_negativa_debt'] } },
 		},
 	{
-			displayName: 'CPF / CNPJ',
+			displayName: 'CPF/CNPJ',
 			name: 'doc',
 			type: 'string',
 			default: '',

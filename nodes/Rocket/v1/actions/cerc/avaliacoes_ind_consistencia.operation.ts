@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cerc'], operation: ['avaliacoes_ind_consistencia'] } },
 	},
 	{
-			displayName: 'VALIDACAO ID',
+			displayName: 'Validacao ID',
 			name: 'validacaoId',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',

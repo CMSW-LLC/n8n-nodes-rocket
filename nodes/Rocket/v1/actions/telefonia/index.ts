@@ -25,9 +25,9 @@ const operations: INodeProperties[] = [
 				action: 'Consulta aparelho celular bloqueado',
 			},
 			{
-				name: 'Telefonica - Guia De Assinantes',
+				name: 'Telefonica Guia de Assinantes',
 				value: 'telefonica',
-				action: 'Telefonica - guia de assinantes',
+				action: 'Telefonica guia de assinantes',
 			}
 		],
 		default: 'imei',

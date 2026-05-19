@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_4regiao'] } },
 	},
 	{
-			displayName: 'LOCALIDADE',
+			displayName: 'Localidade',
 			name: 'localidade',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_4regiao'] } },
 		},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

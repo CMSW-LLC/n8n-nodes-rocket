@@ -27,7 +27,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CLIENTE',
+			displayName: 'Cliente',
 			name: 'cliente',
 			type: 'string',
 			default: '',
@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',

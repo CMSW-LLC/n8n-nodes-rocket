@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,14 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ASSOCIATION ID',
+			displayName: 'Association ID',
 			name: 'associationId',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
 		},
 	{
-			displayName: 'LINK TRANSACTION URL',
+			displayName: 'LINK Transaction URL',
 			name: 'linkTransactionUrl',
 			type: 'string',
 			default: '',

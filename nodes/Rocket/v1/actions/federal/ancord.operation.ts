@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['ancord'] } },
 	},
 	{
-			displayName: 'Tipo De Consulta',
+			displayName: 'Tipo de Consulta',
 			name: 'tipoConsulta',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CPF Ou CNPJ Para Consulta',
+			displayName: 'CPF Ou CNPJ para Consulta',
 			name: 'cpfCnpj',
 			type: 'string',
 			default: '',

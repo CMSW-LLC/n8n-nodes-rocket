@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['ofac_consolidated_list'] } },
 	},
 	{
-			displayName: 'SOBRENOME',
+			displayName: 'Sobrenome',
 			name: 'sobrenome',
 			type: 'string',
 			default: '',

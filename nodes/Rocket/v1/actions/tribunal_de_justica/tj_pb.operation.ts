@@ -33,7 +33,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pb'] } },
 		},
 	{
-			displayName: 'PROCESSO',
+			displayName: 'Processo',
 			name: 'processo',
 			type: 'string',
 			default: '',

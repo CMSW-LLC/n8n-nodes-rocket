@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_ap'] } },
 	},
 	{
-			displayName: 'NUM PROCESSO',
+			displayName: 'NUM Processo',
 			name: 'numProcesso',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_ap'] } },
 		},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

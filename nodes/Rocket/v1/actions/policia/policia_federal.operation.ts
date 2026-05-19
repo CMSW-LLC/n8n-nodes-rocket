@@ -26,14 +26,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NATURALIDADE UF',
+			displayName: 'Naturalidade UF',
 			name: 'naturalidadeUf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_federal'] } },
 		},
 	{
-			displayName: 'NACIONALIDADE',
+			displayName: 'Nacionalidade',
 			name: 'nacionalidade',
 			type: 'string',
 			default: '',
@@ -55,7 +55,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_federal'] } },
 		},
 	{
-			displayName: 'SERIE PASSAPORTE',
+			displayName: 'SERIE Passaporte',
 			name: 'seriePassaporte',
 			type: 'string',
 			default: '',
@@ -69,14 +69,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_federal'] } },
 		},
 	{
-			displayName: 'NASCIMENTO',
+			displayName: 'Nascimento',
 			name: 'nascimento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_federal'] } },
 		},
 	{
-			displayName: 'Num Passaporte',
+			displayName: 'NUM Passaporte',
 			name: 'numPassaporte',
 			type: 'string',
 			default: '',
@@ -90,7 +90,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_federal'] } },
 		},
 	{
-			displayName: 'NATURALIDADE',
+			displayName: 'Naturalidade',
 			name: 'naturalidade',
 			type: 'string',
 			default: '',

@@ -22,11 +22,6 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'ALLCHECK - LOCALIZADOR',
-				value: 'allcheck_localizador',
-				action: 'Allcheck - localizador',
-			},
-			{
 				name: 'ALLCHECK Consulta CNPJ/CPF',
 				value: 'allchkcad',
 				action: 'Allcheck consulta cnpj/cpf',
@@ -40,9 +35,14 @@ const operations: INodeProperties[] = [
 				name: 'ALLCHECK Consulta Veiculos',
 				value: 'allchkveic',
 				action: 'Allcheck consulta veiculos',
+			},
+			{
+				name: 'ALLCHECK Localizador',
+				value: 'allcheck_localizador',
+				action: 'Allcheck localizador',
 			}
 		],
-		default: 'allcheck_localizador',
+		default: 'allchkcad',
 	},
 ];
 

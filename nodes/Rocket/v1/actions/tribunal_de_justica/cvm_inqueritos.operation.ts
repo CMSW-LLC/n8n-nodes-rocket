@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['cvm_inqueritos'] } },
 	},
 	{
-			displayName: 'CPF / CNPJ',
+			displayName: 'CPF/CNPJ',
 			name: 'cpfCnpj',
 			type: 'string',
 			default: '',

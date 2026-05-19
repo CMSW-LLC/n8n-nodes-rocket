@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_goiania'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_goiania'] } },
 		},
 	{
-			displayName: 'INSCRICAO',
+			displayName: 'Inscricao',
 			name: 'inscricao',
 			type: 'string',
 			default: '',

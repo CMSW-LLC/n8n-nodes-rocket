@@ -41,39 +41,19 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Inovamind - Receita Federal - CPF',
-				value: 'inovamind_cpf_rf',
-				action: 'Inovamind - receita federal - cpf',
-			},
-			{
-				name: 'Inovamind - Validacao Numero RG - Detalhe',
-				value: 'inovamind_rg_detalhe',
-				action: 'Inovamind - validacao numero rg - detalhe',
-			},
-			{
-				name: 'Inovamind - Validacao Numero RG - Token',
-				value: 'inovamind_rg_token',
-				action: 'Inovamind - validacao numero rg - token',
-			},
-			{
-				name: 'Inovamind - Validacao RG',
-				value: 'inovamind_rg',
-				action: 'Inovamind - validacao rg',
-			},
-			{
 				name: 'Inovamind CNH',
 				value: 'inovamind_cnh',
 				action: 'Inovamind cnh',
 			},
 			{
-				name: 'Inovamind CNH - Detalhe',
+				name: 'Inovamind CNH Detalhe',
 				value: 'inovamind_cnh_detalhe',
-				action: 'Inovamind cnh - detalhe',
+				action: 'Inovamind cnh detalhe',
 			},
 			{
-				name: 'Inovamind CNH - Token',
+				name: 'Inovamind CNH Token',
 				value: 'inovamind_cnh_token',
-				action: 'Inovamind cnh - token',
+				action: 'Inovamind cnh token',
 			},
 			{
 				name: 'Inovamind Consulta Assistencia Social',
@@ -91,24 +71,24 @@ const operations: INodeProperties[] = [
 				action: 'Inovamind doadores campanha pj',
 			},
 			{
-				name: 'Inovamind Doadores De Campanha PF - Detalhe',
+				name: 'Inovamind Doadores de Campanha PF Detalhe',
 				value: 'inovamind_doadores_campanha_pf_detalhe',
-				action: 'Inovamind doadores de campanha pf - detalhe',
+				action: 'Inovamind doadores de campanha pf detalhe',
 			},
 			{
-				name: 'Inovamind Doadores De Campanha PF - Token',
+				name: 'Inovamind Doadores de Campanha PF Token',
 				value: 'inovamind_doadores_campanha_pf_token',
-				action: 'Inovamind doadores de campanha pf - token',
+				action: 'Inovamind doadores de campanha pf token',
 			},
 			{
-				name: 'Inovamind Doadores De Campanha PJ - Detalhe',
+				name: 'Inovamind Doadores de Campanha PJ Detalhe',
 				value: 'inovamind_doadores_campanha_pj_detalhe',
-				action: 'Inovamind doadores de campanha pj - detalhe',
+				action: 'Inovamind doadores de campanha pj detalhe',
 			},
 			{
-				name: 'Inovamind Doadores De Campanha PJ - Token',
+				name: 'Inovamind Doadores de Campanha PJ Token',
 				value: 'inovamind_doadores_campanha_pj_token',
-				action: 'Inovamind doadores de campanha pj - token',
+				action: 'Inovamind doadores de campanha pj token',
 			},
 			{
 				name: 'Inovamind Endereco',
@@ -116,47 +96,67 @@ const operations: INodeProperties[] = [
 				action: 'Inovamind endereco',
 			},
 			{
-				name: 'Inovamind Endereco - Detalhe',
+				name: 'Inovamind Endereco Detalhe',
 				value: 'inovamind_endereco_detalhe',
-				action: 'Inovamind endereco - detalhe',
+				action: 'Inovamind endereco detalhe',
 			},
 			{
-				name: 'Inovamind Endereco - Token',
+				name: 'Inovamind Endereco Token',
 				value: 'inovamind_endereco_token',
-				action: 'Inovamind endereco - token',
+				action: 'Inovamind endereco token',
 			},
 			{
-				name: 'Inovamind Nome Da Mae',
+				name: 'Inovamind Nome da Mae',
 				value: 'inovamind_nome_mae',
 				action: 'Inovamind nome da mae',
 			},
 			{
-				name: 'Inovamind Nome Da Mae - Detalhe',
+				name: 'Inovamind Nome da Mae Detalhe',
 				value: 'inovamind_nome_mae_detalhe',
-				action: 'Inovamind nome da mae - detalhe',
+				action: 'Inovamind nome da mae detalhe',
 			},
 			{
-				name: 'Inovamind Nome Da Mae - Token',
+				name: 'Inovamind Nome da Mae Token',
 				value: 'inovamind_nome_mae_token',
-				action: 'Inovamind nome da mae - token',
+				action: 'Inovamind nome da mae token',
 			},
 			{
-				name: 'Inovamind Pep',
+				name: 'Inovamind PEP',
 				value: 'inovamind_pep',
 				action: 'Inovamind pep',
 			},
 			{
-				name: 'Inovamind PEP - Detalhe',
+				name: 'Inovamind PEP Detalhe',
 				value: 'inovamind_pep_detalhe',
-				action: 'Inovamind pep - detalhe',
+				action: 'Inovamind pep detalhe',
 			},
 			{
-				name: 'Inovamind PEP - Token',
+				name: 'Inovamind PEP Token',
 				value: 'inovamind_pep_token',
-				action: 'Inovamind pep - token',
+				action: 'Inovamind pep token',
+			},
+			{
+				name: 'Inovamind Receita Federal CPF',
+				value: 'inovamind_cpf_rf',
+				action: 'Inovamind receita federal cpf',
+			},
+			{
+				name: 'Inovamind Validacao NUMERO RG Detalhe',
+				value: 'inovamind_rg_detalhe',
+				action: 'Inovamind validacao numero rg detalhe',
+			},
+			{
+				name: 'Inovamind Validacao NUMERO RG Token',
+				value: 'inovamind_rg_token',
+				action: 'Inovamind validacao numero rg token',
+			},
+			{
+				name: 'Inovamind Validacao RG',
+				value: 'inovamind_rg',
+				action: 'Inovamind validacao rg',
 			}
 		],
-		default: 'inovamind_cpf_rf',
+		default: 'inovamind_cnh',
 	},
 ];
 

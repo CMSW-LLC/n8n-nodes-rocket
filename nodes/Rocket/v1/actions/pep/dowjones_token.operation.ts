@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['dowjones_token'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_token'] } },
 		},
 	{
-			displayName: 'CLIENT ID',
+			displayName: 'Client ID',
 			name: 'clientId',
 			type: 'string',
 			default: '',
@@ -43,7 +43,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ASSOCIATION ID',
+			displayName: 'Association ID',
 			name: 'associationId',
 			type: 'string',
 			default: '',
@@ -58,21 +58,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'EXTERNAL ID',
+			displayName: 'External ID',
 			name: 'externalId',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_token'] } },
 		},
 	{
-			displayName: 'COUNTRY',
+			displayName: 'Country',
 			name: 'country',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_token'] } },
 		},
 	{
-			displayName: 'GENDER',
+			displayName: 'Gender',
 			name: 'gender',
 			type: 'string',
 			default: '',
@@ -87,7 +87,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DEVICE',
+			displayName: 'Device',
 			name: 'device',
 			type: 'string',
 			default: '',

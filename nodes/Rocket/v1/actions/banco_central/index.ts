@@ -21,17 +21,17 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Bacen Consulta Nome Por Cpf',
+				name: 'Bacen Consulta Nome Por CPF',
 				value: 'bacen_nome_cpf',
 				action: 'Bacen consulta nome por cpf',
 			},
 			{
-				name: 'BCB - Cotacao Dolar',
+				name: 'BCB Cotacao Dolar',
 				value: 'bcb_cotacao_dolar',
-				action: 'Bcb - cotacao dolar',
+				action: 'Bcb cotacao dolar',
 			},
 			{
-				name: 'SCR BANCO CENTRAL',
+				name: 'SCR BANCO Central',
 				value: 'bcb',
 				action: 'Scr banco central',
 			}

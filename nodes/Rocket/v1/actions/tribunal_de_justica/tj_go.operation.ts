@@ -33,14 +33,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_go'] } },
 		},
 	{
-			displayName: 'CAPITAL INTERIOR',
+			displayName: 'Capital Interior',
 			name: 'capitalInterior',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_go'] } },
 		},
 	{
-			displayName: 'NUM PROCESSO',
+			displayName: 'NUM Processo',
 			name: 'numProcesso',
 			type: 'string',
 			default: '',

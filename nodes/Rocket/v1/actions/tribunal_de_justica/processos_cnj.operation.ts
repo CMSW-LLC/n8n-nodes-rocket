@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_cnj'] } },
 		},
 	{
-			displayName: 'TIPO CONSULTA',
+			displayName: 'TIPO Consulta',
 			name: 'tipo',
 			type: 'string',
 			default: '',

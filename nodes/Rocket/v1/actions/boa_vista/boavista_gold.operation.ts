@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -36,21 +36,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'FATURAMENTO',
+			displayName: 'Faturamento',
 			name: 'faturamento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 		},
 	{
-			displayName: 'EXTRA PENDENCIAS',
+			displayName: 'EXTRA Pendencias',
 			name: 'extraPendencias',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 		},
 	{
-			displayName: 'EXTRA PROTESTOS',
+			displayName: 'EXTRA Protestos',
 			name: 'extraProtestos',
 			type: 'string',
 			default: '',

@@ -23,32 +23,32 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'BIG DATA - RELACIONAMENTOS',
-				value: 'bigdata_relacionamento',
-				action: 'Big data - relacionamentos',
-			},
-			{
 				name: 'BIG DATA DADOS PJ',
 				value: 'bigdata_dados_pj',
 				action: 'Big data dados pj',
 			},
 			{
-				name: 'BIG DATA INDICADORES DE ATIVIDADE PJ',
+				name: 'BIG DATA Indicadores de Atividade PJ',
 				value: 'bigdata_ind_ativ_pj',
 				action: 'Big data indicadores de atividade pj',
 			},
 			{
-				name: 'Big Data Pessoas - Dados Basicos',
+				name: 'Big Data Pessoas Dados Basicos',
 				value: 'bigdata_dados_pessoas',
-				action: 'Big data pessoas - dados basicos',
+				action: 'Big data pessoas dados basicos',
 			},
 			{
-				name: 'BIGDATA DADOS RAIZ',
+				name: 'BIG DATA Relacionamentos',
+				value: 'bigdata_relacionamento',
+				action: 'Big data relacionamentos',
+			},
+			{
+				name: 'Bigdata DADOS RAIZ',
 				value: 'bigdata_dados_raiz',
 				action: 'Bigdata dados raiz',
 			}
 		],
-		default: 'bigdata_relacionamento',
+		default: 'bigdata_dados_pj',
 	},
 ];
 

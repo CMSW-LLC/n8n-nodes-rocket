@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['spc'], operation: ['spc_mix_j'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,14 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTOCONSUMIDOR',
+			displayName: 'Documentoconsumidor',
 			name: 'documentoconsumidor',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['spc'], operation: ['spc_mix_j'] } },
 		},
 	{
-			displayName: 'Tipo Consumidor',
+			displayName: 'TIPO Consumidor',
 			name: 'tipoConsumidor',
 			type: 'string',
 			default: '',
@@ -91,14 +91,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['spc'], operation: ['spc_mix_j'] } },
 		},
 	{
-			displayName: 'Numero Cheque Inicial',
+			displayName: 'NUMERO Cheque Inicial',
 			name: 'numeroChequeInicial',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['spc'], operation: ['spc_mix_j'] } },
 		},
 	{
-			displayName: 'Banco Cheque Inicial',
+			displayName: 'BANCO Cheque Inicial',
 			name: 'bancoChequeInicial',
 			type: 'string',
 			default: '',

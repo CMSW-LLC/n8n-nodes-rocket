@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cm_software'], operation: ['clearsale'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,14 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TELEFONE',
+			displayName: 'Telefone',
 			name: 'telefone',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['clearsale'] } },
 		},
 	{
-			displayName: 'DOCUMENTO TIPO',
+			displayName: 'Documento TIPO',
 			name: 'documentoTipo',
 			type: 'string',
 			default: '',
@@ -43,14 +43,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['clearsale'] } },
 		},
 	{
-			displayName: 'SESSION ID',
+			displayName: 'Session ID',
 			name: 'sessionId',
 			type: 'string',
 			default: '',
@@ -64,7 +64,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['cm_software'], operation: ['clearsale'] } },
 		},
 	{
-			displayName: 'SEND OPTION',
+			displayName: 'SEND Option',
 			name: 'sendOption',
 			type: 'string',
 			default: '',
@@ -93,7 +93,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['cm_software'], operation: ['clearsale'] } },
 		},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

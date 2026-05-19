@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['europa'], operation: ['procurados_europol'] } },
 	},
 	{
-			displayName: 'SEARCH',
+			displayName: 'Search',
 			name: 'search',
 			type: 'string',
 			default: '',

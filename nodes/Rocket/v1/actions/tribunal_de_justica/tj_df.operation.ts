@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 	},
 	{
-			displayName: 'NUM PROCESSO',
+			displayName: 'NUM Processo',
 			name: 'numProcesso',
 			type: 'string',
 			default: '',
@@ -25,21 +25,21 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 		},
 	{
-			displayName: 'COMARCA',
+			displayName: 'Comarca',
 			name: 'comarca',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 		},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 		},
 	{
-			displayName: 'INSTANCIA',
+			displayName: 'Instancia',
 			name: 'instancia',
 			type: 'string',
 			default: '',

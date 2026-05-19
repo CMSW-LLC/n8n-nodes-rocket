@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
@@ -56,7 +56,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
 		},
 	{
-			displayName: 'Tipo De Consulta Para Credit Bureau - PF Ou PJ',
+			displayName: 'Tipo de Consulta para Credit Bureau PF Ou PJ',
 			name: 'consulta',
 			type: 'string',
 			default: '',
