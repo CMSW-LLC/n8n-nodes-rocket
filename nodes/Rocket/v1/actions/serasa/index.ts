@@ -29,14 +29,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Consulta Serasa Crednet Light',
+				name: 'Consulta SERASA - Crednet Light',
 				value: 'serasa_crednet_light',
-				action: 'Consulta serasa crednet light',
+				action: 'Consulta crednet light',
 			},
 			{
-				name: 'Consulta Serasa Crednet TOP',
+				name: 'Consulta SERASA - Crednet TOP',
 				value: 'serasa_crednet_top',
-				action: 'Consulta serasa crednet top',
+				action: 'Consulta crednet',
 			},
 			{
 				name: 'Credit Bureau',
@@ -44,24 +44,24 @@ const operations: INodeProperties[] = [
 				action: 'Credit bureau',
 			},
 			{
-				name: 'Ip20',
+				name: 'IP20',
 				value: 'SERASA_IP20',
 				action: 'Ip20',
 			},
 			{
 				name: 'Serasa Avancado PJ',
 				value: 'serasa_avancado_pj',
-				action: 'Serasa avancado pj',
+				action: 'Serasa avancado',
 			},
 			{
-				name: 'Serasa B49c Base Inconsistencia',
+				name: 'Serasa B49C - Base Inconsistencia',
 				value: 'serasa_base_inconsistencia',
-				action: 'Serasa b49c base inconsistencia',
+				action: 'Serasa base inconsistencia',
 			},
 			{
-				name: 'Serasa B49c Concentre',
+				name: 'Serasa B49C - Concentre',
 				value: 'b49c_concentre',
-				action: 'Serasa b49c concentre',
+				action: 'Serasa concentre',
 			},
 			{
 				name: 'Serasa Confie',
@@ -76,10 +76,10 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Serasa Intermediario PJ',
 				value: 'serasa_intermediario_pj',
-				action: 'Serasa intermediario pj',
+				action: 'Serasa intermediario',
 			},
 			{
-				name: 'Verify ID PF',
+				name: 'VERIFY ID PF',
 				value: 'verify_id_pf',
 				action: 'Verify id pf',
 			}

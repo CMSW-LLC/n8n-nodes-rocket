@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['usa_criminal'], operation: ['linkedin'] } },
 	},
 	{
-			displayName: 'Usuário de Acesso Ao Provedor',
+			displayName: 'Usuário De Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha de Acesso Ao Provedor',
+			displayName: 'Senha De Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Password',
+			displayName: 'PASSWORD',
 			name: 'password',
 			type: 'string',
 			default: '',
@@ -37,7 +37,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Companie',
+			displayName: 'COMPANIE',
 			name: 'companie',
 			type: 'string',
 			default: '',
@@ -45,7 +45,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Username',
+			displayName: 'USERNAME',
 			name: 'username',
 			type: 'string',
 			default: '',

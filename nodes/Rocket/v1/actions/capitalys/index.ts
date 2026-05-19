@@ -22,10 +22,10 @@ const operations: INodeProperties[] = [
 			{
 				name: 'API Captalys',
 				value: 'api_captalys',
-				action: 'Api captalys',
+				action: 'Captalys',
 			},
 			{
-				name: 'Web Hook Captalys',
+				name: 'WebHook Captalys',
 				value: 'webhook_captalys',
 				action: 'Web hook captalys',
 			}

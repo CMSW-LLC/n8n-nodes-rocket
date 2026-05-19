@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pr'] } },
 	},
 	{
-			displayName: 'Distribuicao',
+			displayName: 'DISTRIBUICAO',
 			name: 'distribuicao',
 			type: 'string',
 			default: '',
@@ -25,14 +25,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pr'] } },
 		},
 	{
-			displayName: 'NOME Completo',
+			displayName: 'NOME COMPLETO',
 			name: 'nomeCompleto',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pr'] } },
 		},
 	{
-			displayName: 'ANO Inicio',
+			displayName: 'ANO INICIO',
 			name: 'anoInicio',
 			type: 'string',
 			default: '',
@@ -47,7 +47,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Competencia',
+			displayName: 'COMPETENCIA',
 			name: 'competencia',
 			type: 'string',
 			default: '',
@@ -62,7 +62,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUM Processo',
+			displayName: 'NUM PROCESSO',
 			name: 'numProcesso',
 			type: 'string',
 			default: '',
@@ -76,7 +76,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pr'] } },
 		},
 	{
-			displayName: 'NUM Antigo',
+			displayName: 'NUM ANTIGO',
 			name: 'numAntigo',
 			type: 'string',
 			default: '',

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_df'] } },
 	},
 	{
-			displayName: 'Cfdf(inscricao Estadual)',
+			displayName: 'CFDF(Inscricao Estadual)',
 			name: 'cfdf',
 			type: 'string',
 			default: '',

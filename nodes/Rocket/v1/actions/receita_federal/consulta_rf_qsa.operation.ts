@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['receita_federal'], operation: ['consulta_rf_qsa'] } },
 	},
 	{
-			displayName: 'CNPJ da Empresa',
+			displayName: 'CNPJ Da Empresa',
 			name: 'cnpj',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Habilita Consulta em DADOS Abertos',
+			displayName: 'HABILITA CONSULTA EM DADOS ABERTOS',
 			name: 'dadosAbertos',
 			type: 'string',
 			default: '',

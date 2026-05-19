@@ -18,14 +18,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
 		},
 	{
-			displayName: 'QTDE Resultados',
+			displayName: 'QTDE RESULTADOS',
 			name: 'qtdeResultados',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
 		},
 	{
-			displayName: 'Filtro',
+			displayName: 'FILTRO',
 			name: 'filtro',
 			type: 'string',
 			default: '',

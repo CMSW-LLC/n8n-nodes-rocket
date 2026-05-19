@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Documento',
+			displayName: 'DOCUMENTO',
 			name: 'documento',
 			type: 'string',
 			default: '',

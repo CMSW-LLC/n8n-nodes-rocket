@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_pessoas'] } },
 	},
 	{
-			displayName: 'Documento',
+			displayName: 'DOCUMENTO',
 			name: 'documento',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Ambiente',
+			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Access TOKEN',
+			displayName: 'ACCESS TOKEN',
 			name: 'accessToken',
 			type: 'string',
 			default: '',

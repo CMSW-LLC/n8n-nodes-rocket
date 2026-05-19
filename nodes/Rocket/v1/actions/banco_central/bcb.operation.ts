@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
 	},
 	{
-			displayName: 'Usuário de Acesso Ao Provedor',
+			displayName: 'Usuário De Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha de Acesso Ao Provedor',
+			displayName: 'Senha De Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,21 +28,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUM Historico',
+			displayName: 'NUM HISTORICO',
 			name: 'numHistorico',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
 		},
 	{
-			displayName: 'Tiporetorno',
+			displayName: 'TIPORETORNO',
 			name: 'tiporetorno',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
 		},
 	{
-			displayName: 'Tp Cliente',
+			displayName: 'tpCliente',
 			name: 'tpcliente',
 			type: 'string',
 			default: '',
@@ -50,7 +50,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Cod Cliente',
+			displayName: 'codCliente',
 			name: 'codcliente',
 			type: 'string',
 			default: '',
@@ -58,14 +58,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Ambiente',
+			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
 		},
 	{
-			displayName: 'Data Base',
+			displayName: 'dataBase',
 			name: 'database',
 			type: 'string',
 			default: '',

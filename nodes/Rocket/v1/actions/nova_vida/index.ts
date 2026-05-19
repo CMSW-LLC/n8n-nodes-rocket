@@ -28,52 +28,52 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Inadimplencia TK',
+				name: 'InadimplenciaTK',
 				value: 'nvti_ws023',
 				action: 'Inadimplencia tk',
 			},
 			{
 				name: 'Nova Vida Inadimplencia PF',
 				value: 'novavida_inadimplencia_pf',
-				action: 'Nova vida inadimplencia pf',
+				action: 'Nova vida inadimplencia',
 			},
 			{
 				name: 'Nova Vida Inadimplencia PJ',
 				value: 'novavida_inadimplencia_pj',
-				action: 'Nova vida inadimplencia pj',
+				action: 'Nova vida inadimplencia',
 			},
 			{
-				name: 'Nova Vida WS Nvcheck',
+				name: 'Nova Vida WS NVCHECK',
 				value: 'novavida_nvcheck',
-				action: 'Nova vida ws nvcheck',
+				action: 'Nova vida',
 			},
 			{
-				name: 'NV Obito Tarifado',
+				name: 'NV - Obito Tarifado',
 				value: 'nvti_ws009_tarifado',
-				action: 'Nv obito tarifado',
+				action: 'Obito tarifado',
 			},
 			{
-				name: 'NV Pessoas Empresas Tk Tarifado',
+				name: 'NV - PessoasEmpresasTk Tarifado',
 				value: 'nv_pessoas_empr_tk_tarifado',
-				action: 'Nv pessoas empresas tk tarifado',
+				action: 'Pessoas empresas tk tarifado',
 			},
 			{
-				name: 'NV Situacao Cadastral TK Tarifado',
+				name: 'NV - SituacaoCadastralTK Tarifado',
 				value: 'nv_sit_cad_tk_tarifado',
-				action: 'Nv situacao cadastral tk tarifado',
+				action: 'Situacao cadastral tk tarifado',
 			},
 			{
-				name: 'Obito TK',
+				name: 'ObitoTK',
 				value: 'nvti_ws009',
 				action: 'Obito tk',
 			},
 			{
-				name: 'Pessoas Empresas Tk',
+				name: 'PessoasEmpresasTk',
 				value: 'nvti_ws012',
 				action: 'Pessoas empresas tk',
 			},
 			{
-				name: 'Socios TK',
+				name: 'SociosTK',
 				value: 'nvti_ws016',
 				action: 'Socios tk',
 			}

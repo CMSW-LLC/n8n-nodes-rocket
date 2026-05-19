@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
 	},
 	{
-			displayName: 'Usuário de Acesso Ao Provedor',
+			displayName: 'Usuário De Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha de Acesso Ao Provedor',
+			displayName: 'Senha De Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -36,7 +36,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOC Number',
+			displayName: 'DOC NUMBER',
 			name: 'docNumber',
 			type: 'string',
 			default: '',
@@ -58,7 +58,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TIPO Entidade',
+			displayName: 'TIPO ENTIDADE',
 			name: 'tipoEntidade',
 			type: 'string',
 			default: '',

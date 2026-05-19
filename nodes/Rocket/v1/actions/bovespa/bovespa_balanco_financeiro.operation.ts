@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Empresa',
+			displayName: 'EMPRESA',
 			name: 'empresa',
 			type: 'string',
 			default: '',
@@ -33,7 +33,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['bovespa'], operation: ['bovespa_balanco_financeiro'] } },
 		},
 	{
-			displayName: 'Balanco',
+			displayName: 'BALANCO',
 			name: 'balanco',
 			type: 'string',
 			default: '',

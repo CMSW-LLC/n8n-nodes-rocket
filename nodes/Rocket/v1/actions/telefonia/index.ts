@@ -25,7 +25,7 @@ const operations: INodeProperties[] = [
 				action: 'Consulta aparelho celular bloqueado',
 			},
 			{
-				name: 'Telefonica Guia de Assinantes',
+				name: 'Telefonica - Guia De Assinantes',
 				value: 'telefonica',
 				action: 'Telefonica guia de assinantes',
 			}

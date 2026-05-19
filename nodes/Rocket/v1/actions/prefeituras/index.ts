@@ -27,9 +27,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Prefeitura BH (certidao/Fic)',
+				name: 'Prefeitura BH (Certidao/FIC)',
 				value: 'prefeitura_bh',
-				action: 'Prefeitura bh (certidao/fic)',
+				action: 'Prefeitura certidao fic',
 			},
 			{
 				name: 'Prefeitura Cuiaba',
@@ -37,22 +37,22 @@ const operations: INodeProperties[] = [
 				action: 'Prefeitura cuiaba',
 			},
 			{
-				name: 'Prefeitura de Brasilia',
+				name: 'Prefeitura De Brasilia',
 				value: 'prefeitura_brasilia',
 				action: 'Prefeitura de brasilia',
 			},
 			{
-				name: 'Prefeitura de Curitiba',
+				name: 'Prefeitura De Curitiba',
 				value: 'prefeitura_ctba',
 				action: 'Prefeitura de curitiba',
 			},
 			{
-				name: 'Prefeitura de Sao Paulo Dados Cadastrais',
+				name: 'Prefeitura De Sao Paulo - Dados Cadastrais',
 				value: 'prefeitura_sp',
 				action: 'Prefeitura de sao paulo dados cadastrais',
 			},
 			{
-				name: 'Prefeitura do Rio de Janeiro',
+				name: 'Prefeitura Do Rio De Janeiro',
 				value: 'prefeitura_riojaneiro',
 				action: 'Prefeitura do rio de janeiro',
 			},

@@ -19,7 +19,7 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Pagtur API',
+				name: 'PAGTUR API',
 				value: 'pagtur_api',
 				action: 'Pagtur api',
 			}

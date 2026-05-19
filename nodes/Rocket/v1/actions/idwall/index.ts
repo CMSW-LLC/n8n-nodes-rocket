@@ -34,7 +34,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'ID WALL PEP Resposta',
 				value: 'idwall_pep_resp',
-				action: 'Id wall pep resposta',
+				action: 'Resposta',
 			},
 			{
 				name: 'Idwall Documentoscopia',
@@ -59,27 +59,27 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Idwall Midias Negativas PF',
 				value: 'idwall_midias_n_pf',
-				action: 'Idwall midias negativas pf',
+				action: 'Idwall midias negativas',
 			},
 			{
 				name: 'Idwall Midias Negativas PF Resposta',
 				value: 'idwall_midias_n_pf_resp',
-				action: 'Idwall midias negativas pf resposta',
+				action: 'Idwall midias negativas resposta',
 			},
 			{
 				name: 'Idwall Midias Negativas PJ',
 				value: 'idwall_midias_n_pj',
-				action: 'Idwall midias negativas pj',
+				action: 'Idwall midias negativas',
 			},
 			{
 				name: 'Idwall Midias Negativas PJ Resposta',
 				value: 'idwall_midias_n_pj_resp',
-				action: 'Idwall midias negativas pj resposta',
+				action: 'Idwall midias negativas resposta',
 			},
 			{
 				name: 'Idwall PEP',
 				value: 'idwall_pep',
-				action: 'Idwall pep',
+				action: 'Idwall',
 			},
 			{
 				name: 'Idwall Processos',
@@ -87,14 +87,14 @@ const operations: INodeProperties[] = [
 				action: 'Idwall processos',
 			},
 			{
-				name: 'Idwall Processos PJ',
+				name: 'IDWALL Processos PJ',
 				value: 'idwall_processos_pj',
-				action: 'Idwall processos pj',
+				action: 'Processos',
 			},
 			{
-				name: 'Idwall Processos PJ Resposta',
+				name: 'IDWALL Processos PJ Resposta',
 				value: 'idwall_processos_pj_resp',
-				action: 'Idwall processos pj resposta',
+				action: 'Processos resposta',
 			},
 			{
 				name: 'Idwall Processos Resp',

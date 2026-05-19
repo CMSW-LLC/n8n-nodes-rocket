@@ -25,7 +25,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe_unificada'] } },
 		},
 	{
-			displayName: 'TIPO Pesquisa',
+			displayName: 'TIPO PESQUISA',
 			name: 'tipoPesquisa',
 			type: 'string',
 			default: '',

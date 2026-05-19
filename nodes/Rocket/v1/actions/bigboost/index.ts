@@ -21,7 +21,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Big Boost API',
 				value: 'bigboost',
-				action: 'Big boost api',
+				action: 'Big boost',
 			}
 		],
 		default: 'bigboost',

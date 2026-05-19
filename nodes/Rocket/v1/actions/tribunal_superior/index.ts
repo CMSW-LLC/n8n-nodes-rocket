@@ -20,14 +20,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Tribunal Superior do Trabalho',
+				name: 'Tribunal Superior Do Trabalho',
 				value: 'tst',
 				action: 'Tribunal superior do trabalho',
 			},
 			{
-				name: 'TSE Tribunal Superior Eleitoral',
+				name: 'TSE - Tribunal Superior Eleitoral',
 				value: 'tse',
-				action: 'Tse tribunal superior eleitoral',
+				action: 'Tribunal superior eleitoral',
 			}
 		],
 		default: 'tst',

@@ -21,7 +21,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'CCB Relatorio CNPJ',
 				value: 'ccb_relatorio',
-				action: 'Ccb relatorio cnpj',
+				action: 'Relatorio',
 			}
 		],
 		default: 'ccb_relatorio',

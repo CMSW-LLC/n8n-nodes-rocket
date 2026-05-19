@@ -27,12 +27,28 @@ function normalizeLabel(s: string): string {
 		.trim();
 }
 
+/** Corrige typos da API tipo "BIg" → "Big" antes do title case. */
+function normalizeWordCasing(word: string): string {
+	if (/^[A-Z]{2,}[a-z]/.test(word) && word !== word.toUpperCase()) {
+		return word.charAt(0) + word.slice(1).toLowerCase();
+	}
+	return word;
+}
+
+function isAllUppercaseWord(word: string): boolean {
+	return word === word.toUpperCase();
+}
+
 /**
  * Title case compatível com `node-param-display-name-miscased` (pacote `title-case`).
  */
 export function toTitleCase(s: string): string {
 	if (!s) return s;
-	return titleCase(normalizeLabel(s));
+	const normalized = normalizeLabel(s)
+		.split(/\s+/)
+		.map(normalizeWordCasing)
+		.join(' ');
+	return titleCase(normalized);
 }
 
 /**
@@ -44,11 +60,22 @@ export function toSentenceCase(s: string): string {
 }
 
 /**
+ * Action de operation option — mesma lógica do eslint (ignora palavras 100% maiúsculas, ex.: API).
+ */
+export function toOperationAction(name: string): string {
+	const withoutAllUppercase = name
+		.split(/\s+/)
+		.filter((word) => !isAllUppercaseWord(word))
+		.join(' ');
+	return sentenceCase(withoutAllUppercase || name);
+}
+
+/**
  * `name` + `action` de uma operation option (options do parâmetro Operation).
  */
 export function toOperationOptionLabels(descricao: string): { name: string; action: string } {
 	const name = toTitleCase(descricao);
-	const action = toSentenceCase(name);
+	const action = toOperationAction(name);
 	return { name, action };
 }
 

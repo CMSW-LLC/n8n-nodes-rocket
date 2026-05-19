@@ -19,9 +19,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'CNSEG Web Service RNS Consulta Por Placa',
+				name: 'CNSEG WebService - RNS Consulta Por Placa',
 				value: 'cnseg_placa_ws',
-				action: 'Cnseg web service rns consulta por placa',
+				action: 'Web service consulta por placa',
 			}
 		],
 		default: 'cnseg_placa_ws',

@@ -21,7 +21,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Boa Vista Score Positivo PF',
 				value: 'boa_vista_score_positivo_pf',
-				action: 'Boa vista score positivo pf',
+				action: 'Boa vista score positivo',
 			}
 		],
 		default: 'boa_vista_score_positivo_pf',

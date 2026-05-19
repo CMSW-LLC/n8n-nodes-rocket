@@ -24,7 +24,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Quod Consulta Score CPF',
 				value: 'quod_pf',
-				action: 'Quod consulta score cpf',
+				action: 'Quod consulta score',
 			},
 			{
 				name: 'Quod Faturamento Presumido',
@@ -34,12 +34,12 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Quod PJ',
 				value: 'quod_pj',
-				action: 'Quod pj',
+				action: 'Quod',
 			},
 			{
 				name: 'Quod Renda Presumida CPF',
 				value: 'quod_renda_presumida_pf',
-				action: 'Quod renda presumida cpf',
+				action: 'Quod renda presumida',
 			}
 		],
 		default: 'quod_pf',

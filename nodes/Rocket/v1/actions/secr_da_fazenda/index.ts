@@ -19,9 +19,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Cadesp Consulta Publica Ao Cadastro ICMS',
+				name: 'CADESP - Consulta Publica Ao Cadastro ICMS',
 				value: 'cadesp_icms',
-				action: 'Cadesp consulta publica ao cadastro icms',
+				action: 'Consulta publica ao cadastro',
 			}
 		],
 		default: 'cadesp_icms',

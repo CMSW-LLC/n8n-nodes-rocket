@@ -18,14 +18,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_2'] } },
 		},
 	{
-			displayName: 'Documento',
+			displayName: 'DOCUMENTO',
 			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_2'] } },
 		},
 	{
-			displayName: 'TIPO Documento',
+			displayName: 'TIPO DOCUMENTO',
 			name: 'tipoDocumento',
 			type: 'string',
 			default: '',

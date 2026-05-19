@@ -27,34 +27,34 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Base de Dados Contexto',
+				name: 'Base De Dados - Contexto',
 				value: 'base_dados_contexto',
 				action: 'Base de dados contexto',
 			},
 			{
-				name: 'Clear Sale',
+				name: 'ClearSale',
 				value: 'clearsale',
 				action: 'Clear sale',
 			},
 			{
-				name: 'Console de Validacao Cadastral PF',
+				name: 'Console De Validacao Cadastral PF',
 				value: 'cvc_pf',
-				action: 'Console de validacao cadastral pf',
+				action: 'Console de validacao cadastral',
 			},
 			{
-				name: 'Console de Validacao Cadastral PJ',
+				name: 'Console De Validacao Cadastral PJ',
 				value: 'cvc_pj',
-				action: 'Console de validacao cadastral pj',
+				action: 'Console de validacao cadastral',
 			},
 			{
-				name: 'Extracao de Dados Passaporte e CNH',
+				name: 'Extracao De Dados Passaporte E CNH',
 				value: 'cnh_extracao_dados',
-				action: 'Extracao de dados passaporte e cnh',
+				action: 'Extracao de dados passaporte',
 			},
 			{
-				name: 'Ip2location',
+				name: 'IP2Location',
 				value: 'ip2location',
-				action: 'Ip2location',
+				action: 'Ip2 location',
 			},
 			{
 				name: 'Rocket Assessment',
@@ -62,9 +62,9 @@ const operations: INodeProperties[] = [
 				action: 'Rocket assessment',
 			},
 			{
-				name: 'SMS Envio de Sms Via API Gateway',
+				name: 'SMS - Envio De Sms via API Gateway',
 				value: 'apigateway_sms',
-				action: 'Sms envio de sms via api gateway',
+				action: 'Envio de sms via gateway',
 			},
 			{
 				name: 'Validar Cnh',

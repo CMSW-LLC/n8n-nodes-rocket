@@ -26,14 +26,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Bairro',
+			displayName: 'BAIRRO',
 			name: 'bairro',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_rj'] } },
 		},
 	{
-			displayName: 'Nascimento',
+			displayName: 'NASCIMENTO',
 			name: 'nascimento',
 			type: 'string',
 			default: '',
@@ -63,7 +63,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_rj'] } },
 		},
 	{
-			displayName: 'Logradouro',
+			displayName: 'LOGRADOURO',
 			name: 'logradouro',
 			type: 'string',
 			default: '',
@@ -91,7 +91,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_rj'] } },
 		},
 	{
-			displayName: 'Expedicao',
+			displayName: 'EXPEDICAO',
 			name: 'expedicao',
 			type: 'string',
 			default: '',

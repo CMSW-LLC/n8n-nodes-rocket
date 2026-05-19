@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['poder360_detalhe'] } },
 	},
 	{
-			displayName: 'LINK Detalhe',
+			displayName: 'LINK DETALHE',
 			name: 'linkDetalhe',
 			type: 'string',
 			default: '',

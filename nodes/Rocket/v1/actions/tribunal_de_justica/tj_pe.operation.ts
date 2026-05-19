@@ -25,7 +25,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe'] } },
 		},
 	{
-			displayName: 'Processo',
+			displayName: 'PROCESSO',
 			name: 'processo',
 			type: 'string',
 			default: '',
@@ -46,7 +46,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe'] } },
 		},
 	{
-			displayName: 'Advogado',
+			displayName: 'ADVOGADO',
 			name: 'advogado',
 			type: 'string',
 			default: '',

@@ -23,7 +23,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'CEP Correios',
 				value: 'correios',
-				action: 'Cep correios',
+				action: 'Correios',
 			},
 			{
 				name: 'CEP LIVRE',

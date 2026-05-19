@@ -21,7 +21,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Tipificacao Base64 OSAS',
 				value: 'tipificacao_base64_osas',
-				action: 'Tipificacao base64 osas',
+				action: 'Tipificacao base64',
 			}
 		],
 		default: 'tipificacao_base64_osas',

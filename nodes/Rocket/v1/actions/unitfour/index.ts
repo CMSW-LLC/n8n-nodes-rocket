@@ -20,14 +20,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Unitfour CNPJ',
+				name: 'Unitfour - CNPJ',
 				value: 'unitfour_cnpj',
-				action: 'Unitfour cnpj',
+				action: 'Unitfour',
 			},
 			{
-				name: 'Unitfour CPF',
+				name: 'Unitfour - CPF',
 				value: 'unitfour_cpf',
-				action: 'Unitfour cpf',
+				action: 'Unitfour',
 			}
 		],
 		default: 'unitfour_cnpj',

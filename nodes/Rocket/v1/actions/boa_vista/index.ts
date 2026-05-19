@@ -29,11 +29,6 @@ const operations: INodeProperties[] = [
 				action: 'Boa vista acerta positivo essencial',
 			},
 			{
-				name: 'Boa Vista Consta Debito',
-				value: 'boavista_consta_debito',
-				action: 'Boa vista consta debito',
-			},
-			{
 				name: 'Boa Vista Define Risco Positivo',
 				value: 'boa_vista_define_risco_positivo',
 				action: 'Boa vista define risco positivo',
@@ -51,7 +46,12 @@ const operations: INodeProperties[] = [
 			{
 				name: 'Boa Vista Modular PF Cadastral',
 				value: 'boa_vista_modular_pf_cadastral',
-				action: 'Boa vista modular pf cadastral',
+				action: 'Boa vista modular cadastral',
+			},
+			{
+				name: 'BoaVista Consta Debito',
+				value: 'boavista_consta_debito',
+				action: 'Boa vista consta debito',
 			}
 		],
 		default: 'boa_vista_acerta_pos_essencial',
