@@ -8,7 +8,34 @@ import 'dotenv/config';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { parseProvidersData } from './providers-types';
+import { sanitizeProviderDescription } from './factory-string-utils';
+import { parseProvidersData, type Provider } from './providers-types';
+
+function sanitizeProvidersList(providers: Provider[]): Provider[] {
+	return providers.map((p) => ({
+		...p,
+		descricao: sanitizeProviderDescription(p.descricao),
+	}));
+}
+
+function sanitizeProvidersRaw(raw: unknown): unknown {
+	const providers = parseProvidersData(raw);
+	if (providers.length === 0) {
+		return raw;
+	}
+	const sanitized = sanitizeProvidersList(providers);
+	if (Array.isArray(raw)) {
+		return sanitized;
+	}
+	const obj = raw as { provedores?: Provider[]; data?: Provider[] };
+	if (obj.provedores) {
+		return { ...obj, provedores: sanitized };
+	}
+	if (obj.data) {
+		return { ...obj, data: sanitized };
+	}
+	return sanitized;
+}
 
 const API_URL = process.env.N8N_RCK_API_URL + 'provedores';
 const LIST_PROVIDERS_PATH = './scripts/list-providers.json';
@@ -30,11 +57,13 @@ async function main(): Promise<void> {
 			throw new Error('API retornou nenhum provedor');
 		}
 
+		const sanitizedRaw = sanitizeProvidersRaw(raw);
+
 		const listProvidersDir = path.dirname(listProvidersPath);
 		if (!fs.existsSync(listProvidersDir)) {
 			fs.mkdirSync(listProvidersDir, { recursive: true });
 		}
-		fs.writeFileSync(listProvidersPath, JSON.stringify(raw, null, 2), 'utf-8');
+		fs.writeFileSync(listProvidersPath, JSON.stringify(sanitizedRaw, null, 2), 'utf-8');
 		console.log(`API consultada. Dados salvos em ${listProvidersPath} (${providers.length} provedores)`);
 	} catch (err) {
 		if (fs.existsSync(listProvidersPath)) {

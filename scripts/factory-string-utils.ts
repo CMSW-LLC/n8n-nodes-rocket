@@ -39,6 +39,37 @@ function isAllUppercaseWord(word: string): boolean {
 	return word === word.toUpperCase();
 }
 
+/** Typos conhecidos retornados pela API Rocket (descricao do provedor). */
+const KNOWN_DESCRIPTION_TYPOS: ReadonlyArray<[RegExp, string]> = [[/\bBIg\b/g, 'Big']];
+
+/**
+ * Limpa a descricao vinda da API antes de gerar name/action (evita "B ig boost" no lint).
+ */
+export function sanitizeProviderDescription(descricao: string): string {
+	let s = normalizeLabel(descricao);
+	for (const [pattern, replacement] of KNOWN_DESCRIPTION_TYPOS) {
+		s = s.replace(pattern, replacement);
+	}
+	return s
+		.split(/\s+/)
+		.map(normalizeWordCasing)
+		.join(' ');
+}
+
+/** Mesma validação do eslint `node-param-operation-option-action-miscased`. */
+export function isOperationOptionActionValid(action: string): boolean {
+	const withoutAllUppercase = action
+		.split(/\s+/)
+		.filter((word) => !isAllUppercaseWord(word))
+		.join(' ');
+	return withoutAllUppercase === sentenceCase(withoutAllUppercase);
+}
+
+/** Mesma validação do eslint `node-param-display-name-miscased` (options.name). */
+export function isOperationOptionNameValid(name: string): boolean {
+	return name === titleCase(name);
+}
+
 /**
  * Title case compatível com `node-param-display-name-miscased` (pacote `title-case`).
  */
@@ -74,8 +105,30 @@ export function toOperationAction(name: string): string {
  * `name` + `action` de uma operation option (options do parâmetro Operation).
  */
 export function toOperationOptionLabels(descricao: string): { name: string; action: string } {
-	const name = toTitleCase(descricao);
-	const action = toOperationAction(name);
+	let sanitized = sanitizeProviderDescription(descricao);
+	// title-case preserva frases 100% em maiúsculas (ex.: "BIG BOOST API")
+	if (/^[A-Z0-9\s\-/]+$/.test(sanitized) && /[A-Z]{2,}/.test(sanitized)) {
+		sanitized = sanitized.toLowerCase();
+	}
+	let name = toTitleCase(sanitized);
+	let action = toOperationAction(name);
+
+	// Garante valores que passam no ESLint (evita circular fix, ex. bigboost/BIg)
+	if (!isOperationOptionNameValid(name)) {
+		name = toTitleCase(sanitized.toLowerCase());
+	}
+	if (!isOperationOptionActionValid(action)) {
+		action = toOperationAction(name);
+	}
+	if (!isOperationOptionActionValid(action)) {
+		action = sentenceCase(
+			name
+				.split(/\s+/)
+				.filter((w) => !isAllUppercaseWord(w))
+				.join(' '),
+		);
+	}
+
 	return { name, action };
 }
 
