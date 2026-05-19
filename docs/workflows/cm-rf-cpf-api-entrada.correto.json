@@ -1,0 +1,116 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "api/cm-rf-cpf",
+        "responseMode": "responseNode",
+        "options": { "allowedOrigins": "*" }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [-3568, 1696],
+      "id": "cef33dea-e601-45e2-8cc6-e62cf7e09498",
+      "name": "API Entrada",
+      "webhookId": "98dab507-2d30-4b1d-8c3b-4a387760d5f4"
+    },
+    {
+      "parameters": {
+        "jsCode": "var raw  = $input.first().json;\nvar body = (raw.body != null) ? raw.body : raw;\nvar data;\ntry   { data = (typeof body === 'string') ? JSON.parse(body) : body; }\ncatch (e) { data = {}; }\n\nif (data.error && typeof data.error === 'string') {\n  var match = data.error.match(/\\{[\\s\\S]*\\}/);\n  if (match) {\n    try { data = JSON.parse(match[0]); } catch(e) {}\n  }\n}\n\nvar isCmResponse = (data.accepted != null);\nvar isHttpError  = (!isCmResponse && data.statusCode != null && data.error != null);\n\nvar accepted    = false;\nvar sucessoJson;\nvar erroJson;\n\nif (isCmResponse) {\n  accepted = (data.accepted === true || data.accepted === 'true');\n\n  if (accepted) {\n    sucessoJson = JSON.stringify({\n      status:  'success',\n      accepted: true,\n      message: String(data.message || '-'),\n      ticket:  String(data.ticket  || '-')\n    });\n  } else {\n    erroJson = JSON.stringify({\n      status:    'error',\n      errorType: 'accepted_false',\n      message:   'Solicitacao recusada pelo provedor.',\n      detail:    String(data.message || '-')\n    });\n  }\n\n} else if (isHttpError) {\n  erroJson = JSON.stringify({\n    status:     'error',\n    errorType:  'http_error',\n    message:    String(data.message || 'Erro desconhecido'),\n    detail:     'Codigo: ' + String(data.statusCode) + ' | ' + String(data.error),\n    statusCode: data.statusCode\n  });\n\n} else {\n  erroJson = JSON.stringify({\n    status:    'error',\n    errorType: 'unknown',\n    message:   'Estrutura de resposta nao reconhecida.',\n    raw:       data\n  });\n}\n\nreturn [{ json: {\n  accepted:   accepted,\n  sucessoJson: sucessoJson || null,\n  erroJson:   erroJson    || null\n} }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-3120, 1696],
+      "id": "33864316-c640-4280-9348-6c5d194c7395",
+      "name": "Verifica Accepted"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [{ "value1": "={{String($json.accepted)}}", "value2": "true" }]
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [-2896, 1696],
+      "id": "368b8363-6a75-4bd2-9d97-e9cfef2495f1",
+      "name": "Accepted?"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{$json.sucessoJson}}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json; charset=utf-8" },
+              { "name": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [-2672, 1504],
+      "id": "d2389905-f46b-4bdf-9b1d-d13ce18fefaf",
+      "name": "Responde Sucesso"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{$json.erroJson}}",
+        "options": {
+          "responseCode": 422,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "application/json; charset=utf-8" },
+              { "name": "Access-Control-Allow-Origin", "value": "*" }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [-2672, 1888],
+      "id": "0a805d50-08c4-4209-9bc6-c8a5cf8a8317",
+      "name": "Responde Erro"
+    },
+    {
+      "parameters": {
+        "resource": "receita_federal",
+        "operation": "rf_cpf",
+        "webhookUrl": "https://rocket-api-cache.cmsw.com/n8n/callback",
+        "cpf": "={{$json.cpf}}",
+        "dtNascto": "={{$json.dt_nasc}}"
+      },
+      "type": "CUSTOM.rocket",
+      "typeVersion": 3,
+      "position": [-3312, 1696],
+      "id": "89a83208-0b30-42a6-9fe1-41c61a321bf8",
+      "name": "Rf situacao cadastral cpf",
+      "credentials": {
+        "rocketApi": { "id": "ILcdn1JCybOijdAB", "name": "API_KEY_N8N" }
+      }
+    }
+  ],
+  "connections": {
+    "API Entrada": {
+      "main": [[{ "node": "Rf situacao cadastral cpf", "type": "main", "index": 0 }]]
+    },
+    "Verifica Accepted": {
+      "main": [[{ "node": "Accepted?", "type": "main", "index": 0 }]]
+    },
+    "Accepted?": {
+      "main": [
+        [{ "node": "Responde Sucesso", "type": "main", "index": 0 }],
+        [{ "node": "Responde Erro", "type": "main", "index": 0 }]
+      ]
+    },
+    "Rf situacao cadastral cpf": {
+      "main": [[{ "node": "Verifica Accepted", "type": "main", "index": 0 }]]
+    }
+  },
+  "pinData": {},
+  "meta": { "templateCredsSetupCompleted": true }
+}

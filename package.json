@@ -1,0 +1,61 @@
+{
+    "name": "n8n-nodes-rocket",
+    "version": "0.1.1",
+    "description": "N8N community node para consulta a provedores de dados via Rocket API (CMSW) — bureau de crédito, Receita Federal, dados veiculares, telefonia, PEP e muito mais.",
+    "license": "MIT",
+    "homepage": "https://rocket-providers.cmsw.com/docs/n8n-nodes-rocket",
+    "keywords": [
+        "n8n-community-node-package"
+    ],
+    "author": {
+        "name": "CMSW",
+        "email": "contato@cmsw.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmrck/n8n-nodes-rocket.git"
+    },
+    "scripts": {
+        "generate:providers": "tsx scripts/factory-providers.ts",
+        "generate:providers-v1": "tsx scripts/factory-providers-v1.ts",
+        "generate:group-providers": "tsx scripts/factory-group-providers.ts",
+        "generate:all": "npm run generate:providers && npm run generate:group-providers && npm run generate:providers-v1",
+        "prebuild": "npm run generate:all",
+        "build": "n8n-node build",
+        "build:compile": "npm run generate:all && npm run lint:fix && npm run lint && n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "strict": false,
+        "credentials": [
+            "dist/credentials/RocketApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/Rocket/Rocket.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "dotenv": "^17.3.1",
+        "eslint": "9.32.0",
+        "prettier": "^3.8.1",
+        "release-it": "^20.0.0",
+        "tsx": "^4.21.0",
+        "typescript": "^6.0.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    },
+    "overrides": {
+        "change-case": "4.1.2"
+    }
+}

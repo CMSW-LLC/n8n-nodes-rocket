@@ -1,0 +1,36 @@
+#!/bin/bash
+# Deploy para produção - compila no container e popula o volume para o n8n
+# NÃO precisa de Node instalado no servidor
+
+set -e
+source .env
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+N8N_CONTAINER="n8n"
+
+echo "==> n8n-nodes-rocket: Deploy (build no container)"
+echo "    Diretório: $SCRIPT_DIR"
+echo
+
+# 1. Parar o n8n se estiver em execução
+if docker ps -q --filter "name=^${N8N_CONTAINER}$" | grep -q .; then
+    echo "==> Container '${N8N_CONTAINER}' em execução. Parando..."
+    docker stop "${N8N_CONTAINER}"
+    echo "    Parado."
+    echo
+fi
+
+# 2. Compilar e popular o volume
+./build
+
+echo
+echo "==> Deploy concluído. Volume populado."
+echo
+
+# 3. Reiniciar o n8n
+echo "==> Reiniciando n8n..."
+echo "    cd $N8N_RCK_PATH && ./restart"
+cd "$N8N_RCK_PATH"
+./restart

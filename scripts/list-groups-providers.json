@@ -1,0 +1,370 @@
+[
+  {
+    "id_grupo_provedor": 28,
+    "descricao_grupo": "ACERTID"
+  },
+  {
+    "id_grupo_provedor": 18,
+    "descricao_grupo": "ALLCHECK"
+  },
+  {
+    "id_grupo_provedor": 90,
+    "descricao_grupo": "Alloha"
+  },
+  {
+    "id_grupo_provedor": 29,
+    "descricao_grupo": "AML"
+  },
+  {
+    "id_grupo_provedor": 84,
+    "descricao_grupo": "ANDBANK"
+  },
+  {
+    "id_grupo_provedor": 77,
+    "descricao_grupo": "ASSERTIVA"
+  },
+  {
+    "id_grupo_provedor": 7,
+    "descricao_grupo": "BANCO CENTRAL"
+  },
+  {
+    "id_grupo_provedor": 68,
+    "descricao_grupo": "BIANCOGRES"
+  },
+  {
+    "id_grupo_provedor": 70,
+    "descricao_grupo": "BIG DATA"
+  },
+  {
+    "id_grupo_provedor": 83,
+    "descricao_grupo": "BigBoost"
+  },
+  {
+    "id_grupo_provedor": 64,
+    "descricao_grupo": "BMG"
+  },
+  {
+    "id_grupo_provedor": 43,
+    "descricao_grupo": "BOA VISTA"
+  },
+  {
+    "id_grupo_provedor": 44,
+    "descricao_grupo": "BOVESPA"
+  },
+  {
+    "id_grupo_provedor": 92,
+    "descricao_grupo": "BRADESCO"
+  },
+  {
+    "id_grupo_provedor": 78,
+    "descricao_grupo": "Brain"
+  },
+  {
+    "id_grupo_provedor": 23,
+    "descricao_grupo": "CAD.POS BOA VISTA"
+  },
+  {
+    "id_grupo_provedor": 22,
+    "descricao_grupo": "CAD.POS SERASA"
+  },
+  {
+    "id_grupo_provedor": 24,
+    "descricao_grupo": "CAD.POS SPC"
+  },
+  {
+    "id_grupo_provedor": 81,
+    "descricao_grupo": "CAPITALYS"
+  },
+  {
+    "id_grupo_provedor": 63,
+    "descricao_grupo": "CCB"
+  },
+  {
+    "id_grupo_provedor": 32,
+    "descricao_grupo": "CDLRIO"
+  },
+  {
+    "id_grupo_provedor": 58,
+    "descricao_grupo": "CERC"
+  },
+  {
+    "id_grupo_provedor": 73,
+    "descricao_grupo": "CETELEM"
+  },
+  {
+    "id_grupo_provedor": 85,
+    "descricao_grupo": "CHECKBEM"
+  },
+  {
+    "id_grupo_provedor": 47,
+    "descricao_grupo": "CLEAR ID"
+  },
+  {
+    "id_grupo_provedor": 91,
+    "descricao_grupo": "CLEARSALE"
+  },
+  {
+    "id_grupo_provedor": 16,
+    "descricao_grupo": "CM_SOFTWARE"
+  },
+  {
+    "id_grupo_provedor": 45,
+    "descricao_grupo": "CNSEG"
+  },
+  {
+    "id_grupo_provedor": 46,
+    "descricao_grupo": "COFACE"
+  },
+  {
+    "id_grupo_provedor": 34,
+    "descricao_grupo": "COLOMBIA"
+  },
+  {
+    "id_grupo_provedor": 25,
+    "descricao_grupo": "CONTA_PAGAMENTO"
+  },
+  {
+    "id_grupo_provedor": 14,
+    "descricao_grupo": "CORREIOS"
+  },
+  {
+    "id_grupo_provedor": 27,
+    "descricao_grupo": "CREDILINK"
+  },
+  {
+    "id_grupo_provedor": 41,
+    "descricao_grupo": "CVM"
+  },
+  {
+    "id_grupo_provedor": 3,
+    "descricao_grupo": "DEPTO DE TRANSITO"
+  },
+  {
+    "id_grupo_provedor": 55,
+    "descricao_grupo": "EGEA"
+  },
+  {
+    "id_grupo_provedor": 48,
+    "descricao_grupo": "EMAIL"
+  },
+  {
+    "id_grupo_provedor": 13,
+    "descricao_grupo": "EQUIFAX"
+  },
+  {
+    "id_grupo_provedor": 69,
+    "descricao_grupo": "ESFERA_5"
+  },
+  {
+    "id_grupo_provedor": 9,
+    "descricao_grupo": "ESTADUAL"
+  },
+  {
+    "id_grupo_provedor": 88,
+    "descricao_grupo": "EUROPA"
+  },
+  {
+    "id_grupo_provedor": 8,
+    "descricao_grupo": "FEDERAL"
+  },
+  {
+    "id_grupo_provedor": 40,
+    "descricao_grupo": "FORTLEV"
+  },
+  {
+    "id_grupo_provedor": 38,
+    "descricao_grupo": "GUIA BOLSO"
+  },
+  {
+    "id_grupo_provedor": 79,
+    "descricao_grupo": "IDWall"
+  },
+  {
+    "id_grupo_provedor": 0,
+    "descricao_grupo": "INATIVOS"
+  },
+  {
+    "id_grupo_provedor": 71,
+    "descricao_grupo": "INOVAMIND"
+  },
+  {
+    "id_grupo_provedor": 15,
+    "descricao_grupo": "JUNTAS COMERCIAIS"
+  },
+  {
+    "id_grupo_provedor": 36,
+    "descricao_grupo": "KOIN"
+  },
+  {
+    "id_grupo_provedor": 87,
+    "descricao_grupo": "Lexis Nexis"
+  },
+  {
+    "id_grupo_provedor": 37,
+    "descricao_grupo": "LIVELO"
+  },
+  {
+    "id_grupo_provedor": 74,
+    "descricao_grupo": "MASTERCARD"
+  },
+  {
+    "id_grupo_provedor": 56,
+    "descricao_grupo": "MINERVA"
+  },
+  {
+    "id_grupo_provedor": 57,
+    "descricao_grupo": "NEOWAY"
+  },
+  {
+    "id_grupo_provedor": 19,
+    "descricao_grupo": "NORTIX"
+  },
+  {
+    "id_grupo_provedor": 33,
+    "descricao_grupo": "NOVA VIDA"
+  },
+  {
+    "id_grupo_provedor": 75,
+    "descricao_grupo": "OPENBANKING"
+  },
+  {
+    "id_grupo_provedor": 39,
+    "descricao_grupo": "ORGAOS DE CLASSE"
+  },
+  {
+    "id_grupo_provedor": 80,
+    "descricao_grupo": "OSAS"
+  },
+  {
+    "id_grupo_provedor": 86,
+    "descricao_grupo": "PAGTUR"
+  },
+  {
+    "id_grupo_provedor": 42,
+    "descricao_grupo": "PEP"
+  },
+  {
+    "id_grupo_provedor": 5,
+    "descricao_grupo": "POLICIA"
+  },
+  {
+    "id_grupo_provedor": 52,
+    "descricao_grupo": "POLOCRED"
+  },
+  {
+    "id_grupo_provedor": 10,
+    "descricao_grupo": "PREFEITURAS"
+  },
+  {
+    "id_grupo_provedor": 50,
+    "descricao_grupo": "PROCOB"
+  },
+  {
+    "id_grupo_provedor": 76,
+    "descricao_grupo": "PROMOBANK"
+  },
+  {
+    "id_grupo_provedor": 51,
+    "descricao_grupo": "PROSCORE"
+  },
+  {
+    "id_grupo_provedor": 72,
+    "descricao_grupo": "PROTEGE"
+  },
+  {
+    "id_grupo_provedor": 30,
+    "descricao_grupo": "PROTHEUS"
+  },
+  {
+    "id_grupo_provedor": 82,
+    "descricao_grupo": "QUOD"
+  },
+  {
+    "id_grupo_provedor": 60,
+    "descricao_grupo": "RAPIDOO"
+  },
+  {
+    "id_grupo_provedor": 1,
+    "descricao_grupo": "RECEITA FEDERAL"
+  },
+  {
+    "id_grupo_provedor": 59,
+    "descricao_grupo": "RESOLV"
+  },
+  {
+    "id_grupo_provedor": 65,
+    "descricao_grupo": "ROCKET_MAX"
+  },
+  {
+    "id_grupo_provedor": 61,
+    "descricao_grupo": "RPA"
+  },
+  {
+    "id_grupo_provedor": 21,
+    "descricao_grupo": "SECR DA FAZENDA"
+  },
+  {
+    "id_grupo_provedor": 12,
+    "descricao_grupo": "SERASA"
+  },
+  {
+    "id_grupo_provedor": 49,
+    "descricao_grupo": "SERVICOS"
+  },
+  {
+    "id_grupo_provedor": 4,
+    "descricao_grupo": "SINTEGRA"
+  },
+  {
+    "id_grupo_provedor": 53,
+    "descricao_grupo": "SISTEMAS TH"
+  },
+  {
+    "id_grupo_provedor": 67,
+    "descricao_grupo": "SOCOPA"
+  },
+  {
+    "id_grupo_provedor": 35,
+    "descricao_grupo": "SOLARIS"
+  },
+  {
+    "id_grupo_provedor": 62,
+    "descricao_grupo": "SOTREQ"
+  },
+  {
+    "id_grupo_provedor": 17,
+    "descricao_grupo": "SPC"
+  },
+  {
+    "id_grupo_provedor": 11,
+    "descricao_grupo": "TELEFONIA"
+  },
+  {
+    "id_grupo_provedor": 66,
+    "descricao_grupo": "TERRA"
+  },
+  {
+    "id_grupo_provedor": 2,
+    "descricao_grupo": "TRIBUNAL DE JUSTICA"
+  },
+  {
+    "id_grupo_provedor": 20,
+    "descricao_grupo": "TRIBUNAL SUPERIOR"
+  },
+  {
+    "id_grupo_provedor": 54,
+    "descricao_grupo": "UNITFOUR"
+  },
+  {
+    "id_grupo_provedor": 26,
+    "descricao_grupo": "USA CRIMINAL"
+  },
+  {
+    "id_grupo_provedor": 31,
+    "descricao_grupo": "VOTORANTIM"
+  },
+  {
+    "id_grupo_provedor": 6,
+    "descricao_grupo": "ZIPCODE"
+  }
+]

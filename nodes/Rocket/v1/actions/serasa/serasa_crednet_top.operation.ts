@@ -1,0 +1,248 @@
+/* Arquivo gerado automaticamente por scripts/factory-providers-v1.ts - não editar manualmente */
+
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+
+import { webhookUrlDescription } from '../../descriptions/common.description';
+import { rocketApiRequest } from '../../transport';
+
+export const properties: INodeProperties[] = [
+	{
+		...webhookUrlDescription,
+		displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+	},
+	{
+			displayName: 'Usuário De Acesso Ao Provedor',
+			name: 'usuario',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+			required: true,
+		},
+	{
+			displayName: 'Senha De Acesso Ao Provedor',
+			name: 'senha',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+			typeOptions: { password: true },
+			required: true,
+		},
+	{
+			displayName: 'Opc52',
+			name: 'opc52',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'DDD',
+			name: 'ddd',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'DOCUMENTO',
+			name: 'documento',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+			required: true,
+		},
+	{
+			displayName: 'ENDERECO',
+			name: 'endereco',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'NOMEMAE',
+			name: 'nomemae',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'NOMEPAI',
+			name: 'nomepai',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'Opc51',
+			name: 'opc51',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'Opc61',
+			name: 'opc61',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'Opc62',
+			name: 'opc62',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'Opc63',
+			name: 'opc63',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'Opc71',
+			name: 'opc71',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'RG',
+			name: 'rg',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'TELEFONE',
+			name: 'telefone',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'UF',
+			name: 'uf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'UFRG',
+			name: 'ufrg',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'VERSAOLAYOUT',
+			name: 'versaolayout',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'CODIGODISTRIBUIDOR',
+			name: 'codigodistribuidor',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'CODIGOCONSULTA',
+			name: 'codigoconsulta',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'CIDADE',
+			name: 'cidade',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'CHEQUE',
+			name: 'cheque',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'CEP',
+			name: 'cep',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'BAIRRO',
+			name: 'bairro',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+	{
+			displayName: 'DATANASC',
+			name: 'datanasc',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_crednet_top'] } },
+		},
+];
+
+export const description = properties;
+
+export async function execute(this: IExecuteFunctions, i: number) {
+	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
+	const parametros: IDataObject = {
+		'usuario': this.getNodeParameter('usuario', i) as string,
+		'senha': this.getNodeParameter('senha', i) as string,
+		'OPC52': this.getNodeParameter('opc52', i) as string,
+		'DDD': this.getNodeParameter('ddd', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
+		'ENDERECO': this.getNodeParameter('endereco', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
+		'NOMEMAE': this.getNodeParameter('nomemae', i) as string,
+		'NOMEPAI': this.getNodeParameter('nomepai', i) as string,
+		'OPC51': this.getNodeParameter('opc51', i) as string,
+		'OPC61': this.getNodeParameter('opc61', i) as string,
+		'OPC62': this.getNodeParameter('opc62', i) as string,
+		'OPC63': this.getNodeParameter('opc63', i) as string,
+		'OPC71': this.getNodeParameter('opc71', i) as string,
+		'RG': this.getNodeParameter('rg', i) as string,
+		'TELEFONE': this.getNodeParameter('telefone', i) as string,
+		'UF': this.getNodeParameter('uf', i) as string,
+		'UFRG': this.getNodeParameter('ufrg', i) as string,
+		'VERSAOLAYOUT': this.getNodeParameter('versaolayout', i) as string,
+		'CODIGODISTRIBUIDOR': this.getNodeParameter('codigodistribuidor', i) as string,
+		'CODIGOCONSULTA': this.getNodeParameter('codigoconsulta', i) as string,
+		'CIDADE': this.getNodeParameter('cidade', i) as string,
+		'CHEQUE': this.getNodeParameter('cheque', i) as string,
+		'CEP': this.getNodeParameter('cep', i) as string,
+		'BAIRRO': this.getNodeParameter('bairro', i) as string,
+		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'DATANASC': this.getNodeParameter('datanasc', i) as string,
+	};
+
+	return await rocketApiRequest.call(this, 'POST', '', {
+		origem_solic: 'N8N',
+		provider: 'serasa_crednet_top',
+		parametros,
+		webhookUrl,
+	});
+}

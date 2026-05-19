@@ -1,0 +1,82 @@
+# Docker Compose do pacote n8n-nodes-rocket (community nodes para n8n)
+# Compila o projeto DENTRO do container (não precisa de Node no host)
+#
+# Volume nomeado n8n-nodes-rocket-dist:
+#   - Nome fixo para o n8n (e outras apps) montarem o mesmo volume
+#   - Criado automaticamente pelo Compose na primeira utilização; ./deploy também cria se faltar
+#   - Este serviço só grava em /output (package.json, dist/)
+#
+# Uso:
+#   1. Build (compila e popula o volume n8n-nodes-rocket-dist):
+#      docker compose run --rm build
+#
+#   2. n8n / outra app: no compose, montar volume "n8n-nodes-rocket-dist" (mesmo nome Docker)
+
+services:
+  # Constrói a imagem Docker do pacote (opcional)
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: n8n-nodes-rocket:latest
+    container_name: n8n-nodes-rocket-builder
+
+  # Compila o projeto no container e grava package.json + dist no volume
+  # Não use image: node:20-alpine aqui — @n8n/node-cli puxa isolated-vm (node-gyp + Node >= 22).
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build-env
+    image: n8n-nodes-rocket-build-env:latest
+    container_name: n8n-nodes-rocket-build
+    working_dir: /app
+    environment:
+      - CMSW_API_KEY
+    volumes:
+      - .:/app
+      - rocket-nodes-dist:/output
+    command: >
+      sh -c "
+        npm install &&
+        npm run build:compile &&
+        rm -rf /output/dist &&
+        cp package.json /output/ &&
+        cp -r dist /output/ &&
+        cp verify-n8n-mount.sh /output/ 2>/dev/null || true &&
+        echo 'Build concluído. Volume n8n-nodes-rocket-dist atualizado (dist antigo removido).'
+      "
+    # Para rebuild completo com atualização dos providers:
+    #   CMSW_API_KEY=sua_chave docker compose run --rm build-full
+    # build:compile = lint + tsc (sem regenerar providers; usa arquivos já gerados)
+# echo 'Build concluído. Volume n8n-nodes-rocket-dist populado.'
+
+  # Alias de 'build': mantido por compatibilidade com scripts existentes.
+  # Desde que 'build:compile' já inclui 'generate:all', o comportamento é idêntico ao serviço 'build'.
+  build-full:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build-env
+    image: n8n-nodes-rocket-build-env:latest
+    working_dir: /app
+    environment:
+      - CMSW_API_KEY
+    volumes:
+      - .:/app
+      - rocket-nodes-dist:/output
+    command: >
+      sh -c "
+        npm install &&
+        npm run build:compile &&
+        rm -rf /output/dist &&
+        cp package.json /output/ &&
+        cp -r dist /output/ &&
+        cp verify-n8n-mount.sh /output/ 2>/dev/null || true &&
+        echo 'Build COMPLETO concluído. Providers atualizados. Volume n8n-nodes-rocket-dist atualizado.'
+      "
+
+volumes:
+  rocket-nodes-dist:
+    name: rocket-nodes-dist
+    external: true

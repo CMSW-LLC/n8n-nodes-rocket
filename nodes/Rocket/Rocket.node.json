@@ -1,0 +1,22 @@
+{
+    "node": "n8n-nodes-base.serviceLauncher",
+    "nodeVersion": "1.0",
+    "codexVersion": "1.0",
+    "categories": [
+      "Utility",
+      "Analytics",
+      "Finance & Accounting"
+    ],
+    "resources": {
+      "credentialDocumentation": [
+        {
+          "url": ""
+        }
+      ],
+      "primaryDocumentation": [
+        {
+          "url": ""
+        }
+      ]
+    }
+  }

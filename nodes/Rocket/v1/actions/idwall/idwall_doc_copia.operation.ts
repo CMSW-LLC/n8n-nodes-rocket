@@ -1,0 +1,80 @@
+/* Arquivo gerado automaticamente por scripts/factory-providers-v1.ts - não editar manualmente */
+
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+
+import { webhookUrlDescription } from '../../descriptions/common.description';
+import { rocketApiRequest } from '../../transport';
+
+export const properties: INodeProperties[] = [
+	{
+		...webhookUrlDescription,
+		displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+	},
+	{
+			displayName: 'TOKEN',
+			name: 'token',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+			typeOptions: { password: true },
+			required: true,
+		},
+	{
+			displayName: 'URL DOC FRENTE',
+			name: 'urlDocFrente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+			required: true,
+		},
+	{
+			displayName: 'URL DOC VERSO',
+			name: 'urlDocVerso',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+		},
+	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+			required: true,
+		},
+	{
+			displayName: 'URL DOC',
+			name: 'urlDoc',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+		},
+];
+
+export const description = properties;
+
+export async function execute(this: IExecuteFunctions, i: number) {
+	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
+	const parametros: IDataObject = {
+		'TOKEN': this.getNodeParameter('token', i) as string,
+		'URL_DOC_FRENTE': this.getNodeParameter('urlDocFrente', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
+		'URL_DOC_VERSO': this.getNodeParameter('urlDocVerso', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
+		'URL_DOC': this.getNodeParameter('urlDoc', i) as string,
+	};
+
+	return await rocketApiRequest.call(this, 'POST', '', {
+		origem_solic: 'N8N',
+		provider: 'idwall_doc_copia',
+		parametros,
+		webhookUrl,
+	});
+}
