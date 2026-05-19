@@ -11,16 +11,16 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['depto_de_transito'], operation: ['detran_amapa'] } },
 	},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'DATA NASCIMENTO',
+			name: 'dataNascimento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['depto_de_transito'], operation: ['detran_amapa'] } },
 			required: true,
 		},
 	{
-			displayName: 'DATA NASCIMENTO',
-			name: 'dataNascimento',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['depto_de_transito'], operation: ['detran_amapa'] } },
@@ -41,8 +41,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'NOME': this.getNodeParameter('nome', i) as string,
 		'DATA_NASCIMENTO': this.getNodeParameter('dataNascimento', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 

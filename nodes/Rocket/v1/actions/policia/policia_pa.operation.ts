@@ -11,6 +11,38 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
 	},
 	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
+			required: true,
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
+			required: true,
+		},
+	{
+			displayName: 'RG',
+			name: 'rg',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
+			required: true,
+		},
+	{
+			displayName: 'ESTADOEMISSOR',
+			name: 'estadoemissor',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
+			required: true,
+		},
+	{
 			displayName: 'CIDADE',
 			name: 'cidade',
 			type: 'string',
@@ -34,16 +66,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
 		},
 	{
-			displayName: 'RG',
-			name: 'rg',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
-			required: true,
-		},
-	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'NASCIMENTO',
+			name: 'nascimento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
@@ -57,30 +81,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
 			required: true,
 		},
-	{
-			displayName: 'CPF',
-			name: 'cpf',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
-			required: true,
-		},
-	{
-			displayName: 'NASCIMENTO',
-			name: 'nascimento',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
-			required: true,
-		},
-	{
-			displayName: 'ESTADOEMISSOR',
-			name: 'estadoemissor',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
-			required: true,
-		},
 ];
 
 export const description = properties;
@@ -88,15 +88,15 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'CPF': this.getNodeParameter('cpf', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
+		'RG': this.getNodeParameter('rg', i) as string,
+		'ESTADOEMISSOR': this.getNodeParameter('estadoemissor', i) as string,
 		'CIDADE': this.getNodeParameter('cidade', i) as string,
 		'ESTADO': this.getNodeParameter('estado', i) as string,
 		'PAI': this.getNodeParameter('pai', i) as string,
-		'RG': this.getNodeParameter('rg', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
-		'MAE': this.getNodeParameter('mae', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'NASCIMENTO': this.getNodeParameter('nascimento', i) as string,
-		'ESTADOEMISSOR': this.getNodeParameter('estadoemissor', i) as string,
+		'MAE': this.getNodeParameter('mae', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

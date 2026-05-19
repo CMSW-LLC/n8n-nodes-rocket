@@ -18,13 +18,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['rf_irpf'] } },
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['receita_federal'], operation: ['rf_irpf'] } },
-		},
-	{
 			displayName: 'DATA NASCIMENTO',
 			name: 'dataNascimento',
 			type: 'string',
@@ -38,6 +31,13 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['rf_irpf'] } },
 		},
+	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['receita_federal'], operation: ['rf_irpf'] } },
+		},
 ];
 
 export const description = properties;
@@ -46,9 +46,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'YEAR_LAST': this.getNodeParameter('yearLast', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'DATA_NASCIMENTO': this.getNodeParameter('dataNascimento', i) as string,
 		'YEAR_FIRST': this.getNodeParameter('yearFirst', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

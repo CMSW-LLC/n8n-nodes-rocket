@@ -28,13 +28,6 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['promobank'], operation: ['promobank'] } },
-		},
-	{
 			displayName: 'NUMERO BENEFICIO',
 			name: 'numeroBeneficio',
 			type: 'string',
@@ -49,6 +42,13 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['promobank'], operation: ['promobank'] } },
 			required: true,
 		},
+	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['promobank'], operation: ['promobank'] } },
+		},
 ];
 
 export const description = properties;
@@ -58,9 +58,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'NUMERO_BENEFICIO': this.getNodeParameter('numeroBeneficio', i) as string,
 		'CODIGO_EMPRESA': this.getNodeParameter('codigoEmpresa', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

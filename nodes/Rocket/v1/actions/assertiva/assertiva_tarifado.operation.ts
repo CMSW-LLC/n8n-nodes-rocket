@@ -36,19 +36,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'PLUS',
+			name: 'plus',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['assertiva'], operation: ['assertiva_tarifado'] } },
+		},
+	{
 			displayName: 'ID FINALIDADE',
 			name: 'idFinalidade',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['assertiva'], operation: ['assertiva_tarifado'] } },
 			required: true,
-		},
-	{
-			displayName: 'PLUS',
-			name: 'plus',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['assertiva'], operation: ['assertiva_tarifado'] } },
 		},
 ];
 
@@ -60,8 +60,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
-		'ID_FINALIDADE': this.getNodeParameter('idFinalidade', i) as string,
 		'PLUS': this.getNodeParameter('plus', i) as string,
+		'ID_FINALIDADE': this.getNodeParameter('idFinalidade', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

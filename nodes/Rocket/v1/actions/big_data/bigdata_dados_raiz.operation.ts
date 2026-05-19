@@ -28,19 +28,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'NIT',
+			name: 'nit',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_raiz'] } },
+		},
+	{
 			displayName: 'DOC',
 			name: 'doc',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_raiz'] } },
 			required: true,
-		},
-	{
-			displayName: 'NIT',
-			name: 'nit',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_raiz'] } },
 		},
 ];
 
@@ -51,8 +51,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DOC': this.getNodeParameter('doc', i) as string,
 		'NIT': this.getNodeParameter('nit', i) as string,
+		'DOC': this.getNodeParameter('doc', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

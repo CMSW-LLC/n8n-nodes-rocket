@@ -28,6 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_acerta_pos_essencial'] } },
+			required: true,
+		},
+	{
 			displayName: 'TIPO CREDITO',
 			name: 'tipoCredito',
 			type: 'string',
@@ -41,14 +49,6 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_acerta_pos_essencial'] } },
 		},
-	{
-			displayName: 'CPF',
-			name: 'cpf',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_acerta_pos_essencial'] } },
-			required: true,
-		},
 ];
 
 export const description = properties;
@@ -58,9 +58,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 		'TIPO_CREDITO': this.getNodeParameter('tipoCredito', i) as string,
 		'SCORE': this.getNodeParameter('score', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

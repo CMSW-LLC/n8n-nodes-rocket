@@ -11,6 +11,22 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
 	},
 	{
+			displayName: 'NASCIMENTO',
+			name: 'nascimento',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
+			required: true,
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
+			required: true,
+		},
+	{
 			displayName: 'RG',
 			name: 'rg',
 			type: 'string',
@@ -26,27 +42,11 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
-			required: true,
-		},
-	{
 			displayName: 'MAE',
 			name: 'mae',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
-		},
-	{
-			displayName: 'NASCIMENTO',
-			name: 'nascimento',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_se'] } },
-			required: true,
 		},
 ];
 
@@ -55,11 +55,11 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'NASCIMENTO': this.getNodeParameter('nascimento', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'RG': this.getNodeParameter('rg', i) as string,
 		'PAI': this.getNodeParameter('pai', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 		'MAE': this.getNodeParameter('mae', i) as string,
-		'NASCIMENTO': this.getNodeParameter('nascimento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

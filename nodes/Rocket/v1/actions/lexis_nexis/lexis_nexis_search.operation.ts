@@ -28,14 +28,6 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
-			required: true,
-		},
-	{
 			displayName: 'KEY',
 			name: 'key',
 			type: 'string',
@@ -44,8 +36,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TIPO ENTIDADE',
-			name: 'tipoEntidade',
+			displayName: 'DOC NUMBER',
+			name: 'docNumber',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
@@ -58,8 +50,16 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
 		},
 	{
-			displayName: 'DOC NUMBER',
-			name: 'docNumber',
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
+			required: true,
+		},
+	{
+			displayName: 'TIPO ENTIDADE',
+			name: 'tipoEntidade',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['lexis_nexis'], operation: ['lexis_nexis_search'] } },
@@ -73,11 +73,11 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 		'KEY': this.getNodeParameter('key', i) as string,
-		'TIPO_ENTIDADE': this.getNodeParameter('tipoEntidade', i) as string,
-		'DOC_TYPE': this.getNodeParameter('docType', i) as string,
 		'DOC_NUMBER': this.getNodeParameter('docNumber', i) as string,
+		'DOC_TYPE': this.getNodeParameter('docType', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
+		'TIPO_ENTIDADE': this.getNodeParameter('tipoEntidade', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

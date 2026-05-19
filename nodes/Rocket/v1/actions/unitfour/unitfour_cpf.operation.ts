@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTO',
-			name: 'documento',
+			displayName: 'TIPO',
+			name: 'tipo',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['unitfour'], operation: ['unitfour_cpf'] } },
 			required: true,
 		},
 	{
-			displayName: 'TIPO',
-			name: 'tipo',
+			displayName: 'DOCUMENTO',
+			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['unitfour'], operation: ['unitfour_cpf'] } },
@@ -59,8 +59,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 		'TIPO': this.getNodeParameter('tipo', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 		'CLIENTE': this.getNodeParameter('cliente', i) as string,
 	};
 

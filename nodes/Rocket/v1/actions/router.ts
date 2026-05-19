@@ -5,17 +5,12 @@ import { NodeOperationError } from 'n8n-workflow';
 
 import * as acertid from './acertid';
 import * as allcheck from './allcheck';
-import * as alloha from './alloha';
-import * as andbank from './andbank';
 import * as assertiva from './assertiva';
 import * as bancoCentral from './banco_central';
-import * as biancogres from './biancogres';
 import * as bigData from './big_data';
 import * as bigboost from './bigboost';
 import * as boaVista from './boa_vista';
 import * as bovespa from './bovespa';
-import * as bradesco from './bradesco';
-import * as brain from './brain';
 import * as cadposBoaVista from './cadpos_boa_vista';
 import * as capitalys from './capitalys';
 import * as ccb from './ccb';
@@ -35,7 +30,6 @@ import * as juntasComerciais from './juntas_comerciais';
 import * as lexisNexis from './lexis_nexis';
 import * as neoway from './neoway';
 import * as novaVida from './nova_vida';
-import * as openbanking from './openbanking';
 import * as osas from './osas';
 import * as pagtur from './pagtur';
 import * as pep from './pep';
@@ -45,10 +39,8 @@ import * as promobank from './promobank';
 import * as quod from './quod';
 import * as receitaFederal from './receita_federal';
 import * as resolv from './resolv';
-import * as rpa from './rpa';
 import * as secrDaFazenda from './secr_da_fazenda';
 import * as serasa from './serasa';
-import * as servicos from './servicos';
 import * as sintegra from './sintegra';
 import * as spc from './spc';
 import * as telefonia from './telefonia';
@@ -71,29 +63,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 			'allchktel': allcheck['allchktel'].execute,
 			'allchkveic': allcheck['allchkveic'].execute,
 	},
-	'alloha': {
-			'alloha_atualizar_status_sydle': alloha['alloha_atualizar_status_sydle'].execute,
-			'alloha_conclusao_financeira': alloha['alloha_conclusao_financeira'].execute,
-			'alloha_define_risco_positivo': alloha['alloha_define_risco_positivo'].execute,
-			'alloha_extracao_dados_finance': alloha['alloha_extracao_dados_finance'].execute,
-			'alloha_extracao_dados_qualify': alloha['alloha_extracao_dados_qualify'].execute,
-			'alloha_extracao_dados_finance_lote': alloha['alloha_extracao_dados_finance_lote'].execute,
-			'alloha_indicar_conclusao_analise_mesa_credito': alloha['alloha_indicar_conclusao_analise_mesa_credito'].execute,
-			'alloha_indicar_decisao_automatica': alloha['alloha_indicar_decisao_automatica'].execute,
-			'alloha_indicar_fim_analise': alloha['alloha_indicar_fim_analise'].execute,
-			'alloha_obter_dados_analise': alloha['alloha_obter_dados_analise'].execute,
-			'alloha_obter_link_doc': alloha['alloha_obter_link_doc'].execute,
-			'alloha_obter_status_venda': alloha['alloha_obter_status_venda'].execute,
-			'alloha_busca_end_cep_bairro': alloha['alloha_busca_end_cep_bairro'].execute,
-			'alloha_busca_prospecto_id': alloha['alloha_busca_prospecto_id'].execute,
-			'alloha_b2e_atualizar_parecer': alloha['alloha_b2e_atualizar_parecer'].execute,
-			'alloha_b2e_envio_proposta': alloha['alloha_b2e_envio_proposta'].execute,
-			'alloha_b2e_obter_parecer': alloha['alloha_b2e_obter_parecer'].execute,
-			'alloha_clearsale_datatrust': alloha['alloha_clearsale_datatrust'].execute,
-	},
-	'andbank': {
-			'callback_andbank': andbank['callback_andbank'].execute,
-	},
 	'assertiva': {
 			'assertiva': assertiva['assertiva'].execute,
 			'assertiva_cnpj': assertiva['assertiva_cnpj'].execute,
@@ -104,9 +73,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 			'bacen_nome_cpf': bancoCentral['bacen_nome_cpf'].execute,
 			'bcb_cotacao_dolar': bancoCentral['bcb_cotacao_dolar'].execute,
 			'bcb': bancoCentral['bcb'].execute,
-	},
-	'biancogres': {
-			'biancogres_socios': biancogres['biancogres_socios'].execute,
 	},
 	'big_data': {
 			'bigdata_relacionamento': bigData['bigdata_relacionamento'].execute,
@@ -128,13 +94,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 	},
 	'bovespa': {
 			'bovespa_balanco_financeiro': bovespa['bovespa_balanco_financeiro'].execute,
-	},
-	'bradesco': {
-			'bradesco_kyc': bradesco['bradesco_kyc'].execute,
-			'bradesco_upload_documentos': bradesco['bradesco_upload_documentos'].execute,
-	},
-	'brain': {
-			'callback_brain': brain['callback_brain'].execute,
 	},
 	'cadpos_boa_vista': {
 			'boa_vista_score_positivo_pf': cadposBoaVista['boa_vista_score_positivo_pf'].execute,
@@ -163,17 +122,10 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 			'clearsale': cmSoftware['clearsale'].execute,
 			'cvc_pf': cmSoftware['cvc_pf'].execute,
 			'cvc_pj': cmSoftware['cvc_pj'].execute,
-			'dados_contexto_fluxo_csj': cmSoftware['dados_contexto_fluxo_csj'].execute,
-			'dados_input_fluxo_csj': cmSoftware['dados_input_fluxo_csj'].execute,
-			'cpfsrv_distancia_cep_cep': cmSoftware['cpfsrv_distancia_cep_cep'].execute,
 			'cnh_extracao_dados': cmSoftware['cnh_extracao_dados'].execute,
 			'ip2location': cmSoftware['ip2location'].execute,
 			'cvc_assessment': cmSoftware['cvc_assessment'].execute,
 			'apigateway_sms': cmSoftware['apigateway_sms'].execute,
-			'token_pix': cmSoftware['token_pix'].execute,
-			'validacao_faturas': cmSoftware['validacao_faturas'].execute,
-			'validacao_passaporte_cnh': cmSoftware['validacao_passaporte_cnh'].execute,
-			'validacao_biometrica': cmSoftware['validacao_biometrica'].execute,
 			'cnh_digito': cmSoftware['cnh_digito'].execute,
 	},
 	'cnseg': {
@@ -298,11 +250,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 			'nvti_ws012': novaVida['nvti_ws012'].execute,
 			'nvti_ws016': novaVida['nvti_ws016'].execute,
 	},
-	'openbanking': {
-			'ob_consulta_dict': openbanking['ob_consulta_dict'].execute,
-			'ob_consulta_dict_estatistica': openbanking['ob_consulta_dict_estatistica'].execute,
-			'ob_consulta_dict_regkey': openbanking['ob_consulta_dict_regkey'].execute,
-	},
 	'osas': {
 			'tipificacao_base64_osas': osas['tipificacao_base64_osas'].execute,
 	},
@@ -389,9 +336,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 	'resolv': {
 			'cetelem_resolv_obito': resolv['cetelem_resolv_obito'].execute,
 	},
-	'rpa': {
-			'rpa_adm_send_nf': rpa['rpa_adm_send_nf'].execute,
-	},
 	'secr_da_fazenda': {
 			'cadesp_icms': secrDaFazenda['cadesp_icms'].execute,
 	},
@@ -407,9 +351,6 @@ const operationHandlers: Record<RocketType['resource'], Record<string, Operation
 			'serasa_b49c': serasa['serasa_b49c'].execute,
 			'serasa_intermediario_pj': serasa['serasa_intermediario_pj'].execute,
 			'verify_id_pf': serasa['verify_id_pf'].execute,
-	},
-	'servicos': {
-			'google': servicos['google'].execute,
 	},
 	'sintegra': {
 			'sintegra_sp': sintegra['sintegra_sp'].execute,

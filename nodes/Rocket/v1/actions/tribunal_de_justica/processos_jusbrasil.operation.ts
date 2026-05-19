@@ -11,8 +11,8 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
 	},
 	{
-			displayName: 'FILTRO',
-			name: 'filtro',
+			displayName: 'BUSCA',
+			name: 'busca',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
@@ -25,8 +25,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
 		},
 	{
-			displayName: 'BUSCA',
-			name: 'busca',
+			displayName: 'FILTRO',
+			name: 'filtro',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['processos_jusbrasil'] } },
@@ -38,9 +38,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'FILTRO': this.getNodeParameter('filtro', i) as string,
-		'QTDE_RESULTADOS': this.getNodeParameter('qtdeResultados', i) as string,
 		'BUSCA': this.getNodeParameter('busca', i) as string,
+		'QTDE_RESULTADOS': this.getNodeParameter('qtdeResultados', i) as string,
+		'FILTRO': this.getNodeParameter('filtro', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

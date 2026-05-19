@@ -18,15 +18,15 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_sc'] } },
 		},
 	{
-			displayName: 'NUMERO PROCESSO',
-			name: 'numeroProcesso',
+			displayName: 'INSTANCIA',
+			name: 'instancia',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_sc'] } },
 		},
 	{
-			displayName: 'INSTANCIA',
-			name: 'instancia',
+			displayName: 'NUMERO PROCESSO',
+			name: 'numeroProcesso',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_sc'] } },
@@ -46,8 +46,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'NOME_PARTE': this.getNodeParameter('nomeParte', i) as string,
-		'NUMERO_PROCESSO': this.getNodeParameter('numeroProcesso', i) as string,
 		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
+		'NUMERO_PROCESSO': this.getNodeParameter('numeroProcesso', i) as string,
 		'DOCUMENTO_PARTE': this.getNodeParameter('documentoParte', i) as string,
 	};
 

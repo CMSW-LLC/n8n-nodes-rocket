@@ -11,6 +11,13 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_sp'] } },
 	},
 	{
+			displayName: 'Nire',
+			name: 'nire',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_sp'] } },
+		},
+	{
 			displayName: 'IE',
 			name: 'ie',
 			type: 'string',
@@ -24,13 +31,6 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_sp'] } },
 		},
-	{
-			displayName: 'Nire',
-			name: 'nire',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_sp'] } },
-		},
 ];
 
 export const description = properties;
@@ -38,9 +38,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'NIRE': this.getNodeParameter('nire', i) as string,
 		'IE': this.getNodeParameter('ie', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
-		'NIRE': this.getNodeParameter('nire', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -11,19 +11,19 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
 	},
 	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
+		},
+	{
 			displayName: 'DATA FECHAMENTO',
 			name: 'dataFechamento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
 			required: true,
-		},
-	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb_cotacao_dolar'] } },
 		},
 ];
 
@@ -32,8 +32,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'DATA_FECHAMENTO': this.getNodeParameter('dataFechamento', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'DATA_FECHAMENTO': this.getNodeParameter('dataFechamento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

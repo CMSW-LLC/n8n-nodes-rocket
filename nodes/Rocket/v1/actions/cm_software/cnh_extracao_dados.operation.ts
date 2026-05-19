@@ -28,20 +28,6 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTO TICKET',
-			name: 'documentoTicket',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
-		},
-	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
-		},
-	{
 			displayName: 'DOCUMENTO URL',
 			name: 'documentoUrl',
 			type: 'string',
@@ -49,8 +35,22 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
 		},
 	{
+			displayName: 'DOCUMENTO TICKET',
+			name: 'documentoTicket',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
+		},
+	{
 			displayName: 'DOCUMENTO UID',
 			name: 'documentoUid',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
+		},
+	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['cnh_extracao_dados'] } },
@@ -64,10 +64,10 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DOCUMENTO_TICKET': this.getNodeParameter('documentoTicket', i) as string,
-		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'DOCUMENTO_URL': this.getNodeParameter('documentoUrl', i) as string,
+		'DOCUMENTO_TICKET': this.getNodeParameter('documentoTicket', i) as string,
 		'DOCUMENTO_UID': this.getNodeParameter('documentoUid', i) as string,
+		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

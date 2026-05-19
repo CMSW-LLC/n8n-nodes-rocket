@@ -28,6 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'N CNH',
+			name: 'nCnh',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cnh_token'] } },
+			required: true,
+		},
+	{
 			displayName: 'UF CNH',
 			name: 'ufCnh',
 			type: 'string',
@@ -43,14 +51,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cnh_token'] } },
 			required: true,
 		},
-	{
-			displayName: 'N CNH',
-			name: 'nCnh',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cnh_token'] } },
-			required: true,
-		},
 ];
 
 export const description = properties;
@@ -60,9 +60,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
+		'N_CNH': this.getNodeParameter('nCnh', i) as string,
 		'UF_CNH': this.getNodeParameter('ufCnh', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
-		'N_CNH': this.getNodeParameter('nCnh', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

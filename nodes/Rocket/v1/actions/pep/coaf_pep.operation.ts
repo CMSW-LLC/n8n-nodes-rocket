@@ -28,15 +28,15 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['coaf_pep'] } },
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['coaf_pep'] } },
@@ -50,8 +50,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

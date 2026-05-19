@@ -5,17 +5,12 @@ import { NodeConnectionTypes, type INodeTypeDescription } from 'n8n-workflow';
 
 import * as acertid from './acertid';
 import * as allcheck from './allcheck';
-import * as alloha from './alloha';
-import * as andbank from './andbank';
 import * as assertiva from './assertiva';
 import * as bancoCentral from './banco_central';
-import * as biancogres from './biancogres';
 import * as bigData from './big_data';
 import * as bigboost from './bigboost';
 import * as boaVista from './boa_vista';
 import * as bovespa from './bovespa';
-import * as bradesco from './bradesco';
-import * as brain from './brain';
 import * as cadposBoaVista from './cadpos_boa_vista';
 import * as capitalys from './capitalys';
 import * as ccb from './ccb';
@@ -35,7 +30,6 @@ import * as juntasComerciais from './juntas_comerciais';
 import * as lexisNexis from './lexis_nexis';
 import * as neoway from './neoway';
 import * as novaVida from './nova_vida';
-import * as openbanking from './openbanking';
 import * as osas from './osas';
 import * as pagtur from './pagtur';
 import * as pep from './pep';
@@ -45,10 +39,8 @@ import * as promobank from './promobank';
 import * as quod from './quod';
 import * as receitaFederal from './receita_federal';
 import * as resolv from './resolv';
-import * as rpa from './rpa';
 import * as secrDaFazenda from './secr_da_fazenda';
 import * as serasa from './serasa';
-import * as servicos from './servicos';
 import * as sintegra from './sintegra';
 import * as spc from './spc';
 import * as telefonia from './telefonia';
@@ -85,17 +77,12 @@ export const versionDescription: INodeTypeDescription = {
 			options: [
 				{ name: 'ACERTID', value: 'acertid' },
 				{ name: 'ALLCHECK', value: 'allcheck' },
-				{ name: 'Alloha', value: 'alloha' },
-				{ name: 'ANDBANK', value: 'andbank' },
 				{ name: 'ASSERTIVA', value: 'assertiva' },
 				{ name: 'BANCO CENTRAL', value: 'banco_central' },
-				{ name: 'BIANCOGRES', value: 'biancogres' },
 				{ name: 'BIG DATA', value: 'big_data' },
 				{ name: 'BigBoost', value: 'bigboost' },
 				{ name: 'BOA VISTA', value: 'boa_vista' },
 				{ name: 'BOVESPA', value: 'bovespa' },
-				{ name: 'BRADESCO', value: 'bradesco' },
-				{ name: 'Brain', value: 'brain' },
 				{ name: 'CAD.POS BOA VISTA', value: 'cadpos_boa_vista' },
 				{ name: 'CAPITALYS', value: 'capitalys' },
 				{ name: 'CCB', value: 'ccb' },
@@ -115,7 +102,6 @@ export const versionDescription: INodeTypeDescription = {
 				{ name: 'Lexis Nexis', value: 'lexis_nexis' },
 				{ name: 'NEOWAY', value: 'neoway' },
 				{ name: 'NOVA VIDA', value: 'nova_vida' },
-				{ name: 'OPENBANKING', value: 'openbanking' },
 				{ name: 'OSAS', value: 'osas' },
 				{ name: 'PAGTUR', value: 'pagtur' },
 				{ name: 'PEP', value: 'pep' },
@@ -125,10 +111,8 @@ export const versionDescription: INodeTypeDescription = {
 				{ name: 'QUOD', value: 'quod' },
 				{ name: 'RECEITA FEDERAL', value: 'receita_federal' },
 				{ name: 'RESOLV', value: 'resolv' },
-				{ name: 'RPA', value: 'rpa' },
 				{ name: 'SECR DA FAZENDA', value: 'secr_da_fazenda' },
 				{ name: 'SERASA', value: 'serasa' },
-				{ name: 'SERVICOS', value: 'servicos' },
 				{ name: 'SINTEGRA', value: 'sintegra' },
 				{ name: 'SPC', value: 'spc' },
 				{ name: 'TELEFONIA', value: 'telefonia' },
@@ -141,17 +125,12 @@ export const versionDescription: INodeTypeDescription = {
 		},
 		...acertid.description,
 		...allcheck.description,
-		...alloha.description,
-		...andbank.description,
 		...assertiva.description,
 		...bancoCentral.description,
-		...biancogres.description,
 		...bigData.description,
 		...bigboost.description,
 		...boaVista.description,
 		...bovespa.description,
-		...bradesco.description,
-		...brain.description,
 		...cadposBoaVista.description,
 		...capitalys.description,
 		...ccb.description,
@@ -171,7 +150,6 @@ export const versionDescription: INodeTypeDescription = {
 		...lexisNexis.description,
 		...neoway.description,
 		...novaVida.description,
-		...openbanking.description,
 		...osas.description,
 		...pagtur.description,
 		...pep.description,
@@ -181,10 +159,8 @@ export const versionDescription: INodeTypeDescription = {
 		...quod.description,
 		...receitaFederal.description,
 		...resolv.description,
-		...rpa.description,
 		...secrDaFazenda.description,
 		...serasa.description,
-		...servicos.description,
 		...sintegra.description,
 		...spc.description,
 		...telefonia.description,

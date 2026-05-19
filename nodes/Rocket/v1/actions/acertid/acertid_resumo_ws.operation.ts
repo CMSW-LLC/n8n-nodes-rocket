@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ID Do Iniciar Consulta',
-			name: 'idconsulta',
+			displayName: 'INICIADAEM',
+			name: 'iniciadaem',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['acertid'], operation: ['acertid_resumo_ws'] } },
 			required: true,
 		},
 	{
-			displayName: 'INICIADAEM',
-			name: 'iniciadaem',
+			displayName: 'ID Do Iniciar Consulta',
+			name: 'idconsulta',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['acertid'], operation: ['acertid_resumo_ws'] } },
@@ -52,8 +52,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'IDCONSULTA': this.getNodeParameter('idconsulta', i) as string,
 		'INICIADAEM': this.getNodeParameter('iniciadaem', i) as string,
+		'IDCONSULTA': this.getNodeParameter('idconsulta', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

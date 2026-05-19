@@ -11,19 +11,19 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
 	},
 	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
+		},
+	{
 			displayName: 'MENSAGEM',
 			name: 'mensagem',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
 			required: true,
-		},
-	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
 		},
 	{
 			displayName: 'TELEFONE',
@@ -40,8 +40,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'MENSAGEM': this.getNodeParameter('mensagem', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'MENSAGEM': this.getNodeParameter('mensagem', i) as string,
 		'TELEFONE': this.getNodeParameter('telefone', i) as string,
 	};
 

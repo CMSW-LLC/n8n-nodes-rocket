@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DT NASCIMENTO',
-			name: 'dtNascimento',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cpf_rf'] } },
 			required: true,
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'DT NASCIMENTO',
+			name: 'dtNascimento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cpf_rf'] } },
@@ -52,8 +52,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DT_NASCIMENTO': this.getNodeParameter('dtNascimento', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'DT_NASCIMENTO': this.getNodeParameter('dtNascimento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

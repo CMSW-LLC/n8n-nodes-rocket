@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'IMAGEM',
-			name: 'imagem',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['datavalid_biometria_face'] } },
 			required: true,
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'IMAGEM',
+			name: 'imagem',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['datavalid_biometria_face'] } },
@@ -52,8 +52,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'IMAGEM': this.getNodeParameter('imagem', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'IMAGEM': this.getNodeParameter('imagem', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

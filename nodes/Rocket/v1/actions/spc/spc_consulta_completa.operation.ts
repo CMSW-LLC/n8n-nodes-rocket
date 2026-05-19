@@ -28,6 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'Ambiente',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['spc'], operation: ['spc_consulta_completa'] } },
+			required: true,
+		},
+	{
 			displayName: 'TIPO CONSUMIDOR',
 			name: 'tipoConsumidor',
 			type: 'string',
@@ -38,14 +46,6 @@ export const properties: INodeProperties[] = [
 	{
 			displayName: 'DOCUMENTO CONSUMIDOR',
 			name: 'documentoConsumidor',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['spc'], operation: ['spc_consulta_completa'] } },
-			required: true,
-		},
-	{
-			displayName: 'Ambiente',
-			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['spc'], operation: ['spc_consulta_completa'] } },
@@ -68,9 +68,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
+		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'TIPO_CONSUMIDOR': this.getNodeParameter('tipoConsumidor', i) as string,
 		'DOCUMENTO_CONSUMIDOR': this.getNodeParameter('documentoConsumidor', i) as string,
-		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'CODIGO_PRODUTO': this.getNodeParameter('codigoProduto', i) as string,
 	};
 

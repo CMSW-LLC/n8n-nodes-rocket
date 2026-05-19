@@ -11,11 +11,19 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
 	},
 	{
-			displayName: 'RG',
-			name: 'rg',
+			displayName: 'MAE',
+			name: 'mae',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
+			required: true,
 		},
 	{
 			displayName: 'NASCIMENTO',
@@ -33,8 +41,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
 		},
 	{
-			displayName: 'MAE',
-			name: 'mae',
+			displayName: 'RG',
+			name: 'rg',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
@@ -47,14 +55,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
 			required: true,
 		},
-	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['policia'], operation: ['policia_al'] } },
-			required: true,
-		},
 ];
 
 export const description = properties;
@@ -62,12 +62,12 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'RG': this.getNodeParameter('rg', i) as string,
+		'MAE': this.getNodeParameter('mae', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'NASCIMENTO': this.getNodeParameter('nascimento', i) as string,
 		'PAI': this.getNodeParameter('pai', i) as string,
-		'MAE': this.getNodeParameter('mae', i) as string,
+		'RG': this.getNodeParameter('rg', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

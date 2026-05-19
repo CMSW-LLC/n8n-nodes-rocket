@@ -11,22 +11,8 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
 	},
 	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
-		},
-	{
-			displayName: 'TIPO PESSOA',
-			name: 'tipoPessoa',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
-		},
-	{
-			displayName: 'INSTANCIA',
-			name: 'instancia',
+			displayName: 'COMARCA',
+			name: 'comarca',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
@@ -40,6 +26,20 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'TIPO PESSOA',
+			name: 'tipoPessoa',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
+		},
+	{
 			displayName: 'NUM PROCESSO',
 			name: 'numProcesso',
 			type: 'string',
@@ -47,8 +47,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
 		},
 	{
-			displayName: 'COMARCA',
-			name: 'comarca',
+			displayName: 'INSTANCIA',
+			name: 'instancia',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rr'] } },
@@ -60,12 +60,12 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'NOME': this.getNodeParameter('nome', i) as string,
-		'TIPO_PESSOA': this.getNodeParameter('tipoPessoa', i) as string,
-		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
-		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
-		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
 		'COMARCA': this.getNodeParameter('comarca', i) as string,
+		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
+		'TIPO_PESSOA': this.getNodeParameter('tipoPessoa', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
+		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
+		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

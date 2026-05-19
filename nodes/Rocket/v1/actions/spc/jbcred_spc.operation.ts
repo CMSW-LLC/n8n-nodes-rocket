@@ -28,8 +28,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'SEQUENCIAL',
-			name: 'sequencial',
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['spc'], operation: ['jbcred_spc'] } },
@@ -43,8 +43,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
+			displayName: 'SEQUENCIAL',
+			name: 'sequencial',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['spc'], operation: ['jbcred_spc'] } },
@@ -58,9 +58,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'SEQUENCIAL': this.getNodeParameter('sequencial', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
+		'SEQUENCIAL': this.getNodeParameter('sequencial', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

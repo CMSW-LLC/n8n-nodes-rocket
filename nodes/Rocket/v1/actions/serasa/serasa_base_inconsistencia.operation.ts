@@ -28,19 +28,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_base_inconsistencia'] } },
+		},
+	{
 			displayName: 'CPF',
 			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_base_inconsistencia'] } },
 			required: true,
-		},
-	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_base_inconsistencia'] } },
 		},
 ];
 
@@ -51,8 +51,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

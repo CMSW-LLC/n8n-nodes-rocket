@@ -28,13 +28,18 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TOKEN',
-			name: 'token',
+			displayName: 'ASSOCIATION ID',
+			name: 'associationId',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
-			typeOptions: { password: true },
-			required: true,
+		},
+	{
+			displayName: 'LINK TRANSACTION URL',
+			name: 'linkTransactionUrl',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
 		},
 	{
 			displayName: 'CASE ID',
@@ -44,22 +49,17 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
 		},
 	{
-			displayName: 'ASSOCIATION ID',
-			name: 'associationId',
+			displayName: 'TOKEN',
+			name: 'token',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
+			typeOptions: { password: true },
+			required: true,
 		},
 	{
 			displayName: 'YEAR OF BIRTH',
 			name: 'yearOfBirth',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
-		},
-	{
-			displayName: 'LINK TRANSACTION URL',
-			name: 'linkTransactionUrl',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones_resposta'] } },
@@ -73,11 +73,11 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'TOKEN': this.getNodeParameter('token', i) as string,
-		'CASE_ID': this.getNodeParameter('caseId', i) as string,
 		'ASSOCIATION_ID': this.getNodeParameter('associationId', i) as string,
-		'YEAR_OF_BIRTH': this.getNodeParameter('yearOfBirth', i) as string,
 		'LINK_TRANSACTION_URL': this.getNodeParameter('linkTransactionUrl', i) as string,
+		'CASE_ID': this.getNodeParameter('caseId', i) as string,
+		'TOKEN': this.getNodeParameter('token', i) as string,
+		'YEAR_OF_BIRTH': this.getNodeParameter('yearOfBirth', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

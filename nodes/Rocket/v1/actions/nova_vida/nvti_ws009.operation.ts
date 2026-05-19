@@ -36,19 +36,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['nova_vida'], operation: ['nvti_ws009'] } },
+		},
+	{
 			displayName: 'DOCUMENTO',
 			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['nova_vida'], operation: ['nvti_ws009'] } },
 			required: true,
-		},
-	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['nova_vida'], operation: ['nvti_ws009'] } },
 		},
 ];
 
@@ -60,8 +60,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
 		'CLIENTE': this.getNodeParameter('cliente', i) as string,
-		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia'] } },
 	},
 	{
-			displayName: 'CPF CNPJ',
-			name: 'cpfCnpj',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'CPF CNPJ',
+			name: 'cpfCnpj',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia'] } },
@@ -38,8 +38,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
+		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'ID_DETALHE': this.getNodeParameter('idDetalhe', i) as string,
 	};
 

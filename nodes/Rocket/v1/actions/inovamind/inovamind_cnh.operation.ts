@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'UF CNH',
-			name: 'ufCnh',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cnh'] } },
 			required: true,
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'UF CNH',
+			name: 'ufCnh',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_cnh'] } },
@@ -60,8 +60,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'UF_CNH': this.getNodeParameter('ufCnh', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'UF_CNH': this.getNodeParameter('ufCnh', i) as string,
 		'N_CNH': this.getNodeParameter('nCnh', i) as string,
 	};
 

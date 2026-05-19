@@ -11,6 +11,22 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
 	},
 	{
+			displayName: 'ID FLUXO DASH',
+			name: 'idFluxoDash',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
+			required: true,
+		},
+	{
+			displayName: 'CONTEXTO',
+			name: 'contexto',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
+			required: true,
+		},
+	{
 			displayName: 'ID WORK DASH',
 			name: 'idWorkDash',
 			type: 'string',
@@ -24,22 +40,6 @@ export const properties: INodeProperties[] = [
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
-		},
-	{
-			displayName: 'CONTEXTO',
-			name: 'contexto',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
-			required: true,
-		},
-	{
-			displayName: 'ID FLUXO DASH',
-			name: 'idFluxoDash',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
-			required: true,
 		},
 	{
 			displayName: 'ID EMPRESA DASH',
@@ -64,10 +64,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'ID_FLUXO_DASH': this.getNodeParameter('idFluxoDash', i) as string,
+		'CONTEXTO': this.getNodeParameter('contexto', i) as string,
 		'ID_WORK_DASH': this.getNodeParameter('idWorkDash', i) as string,
 		'DATA_HORA_DASH': this.getNodeParameter('dataHoraDash', i) as string,
-		'CONTEXTO': this.getNodeParameter('contexto', i) as string,
-		'ID_FLUXO_DASH': this.getNodeParameter('idFluxoDash', i) as string,
 		'ID_EMPRESA_DASH': this.getNodeParameter('idEmpresaDash', i) as string,
 		'TICKET_DASH': this.getNodeParameter('ticketDash', i) as string,
 	};

@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['secr_da_fazenda'], operation: ['cadesp_icms'] } },
 	},
 	{
-			displayName: 'CNPJ',
-			name: 'cnpj',
+			displayName: 'Nire',
+			name: 'nire',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['secr_da_fazenda'], operation: ['cadesp_icms'] } },
 		},
 	{
-			displayName: 'Nire',
-			name: 'nire',
+			displayName: 'CNPJ',
+			name: 'cnpj',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['secr_da_fazenda'], operation: ['cadesp_icms'] } },
@@ -38,8 +38,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 		'NIRE': this.getNodeParameter('nire', i) as string,
+		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 		'IE': this.getNodeParameter('ie', i) as string,
 	};
 

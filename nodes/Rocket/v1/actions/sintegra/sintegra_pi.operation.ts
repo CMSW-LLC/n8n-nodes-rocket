@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_pi'] } },
 	},
 	{
-			displayName: 'IE',
-			name: 'ie',
+			displayName: 'CPF / CNPJ',
+			name: 'cpfcnpj',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_pi'] } },
 		},
 	{
-			displayName: 'CPF / CNPJ',
-			name: 'cpfcnpj',
+			displayName: 'IE',
+			name: 'ie',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_pi'] } },
@@ -31,8 +31,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'IE': this.getNodeParameter('ie', i) as string,
 		'CPFCNPJ': this.getNodeParameter('cpfcnpj', i) as string,
+		'IE': this.getNodeParameter('ie', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

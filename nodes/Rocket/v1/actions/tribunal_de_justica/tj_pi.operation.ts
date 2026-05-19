@@ -11,6 +11,13 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pi'] } },
 	},
 	{
+			displayName: 'CPF CNPJ',
+			name: 'cpfCnpj',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pi'] } },
+		},
+	{
 			displayName: 'GRAU',
 			name: 'grau',
 			type: 'string',
@@ -25,13 +32,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pi'] } },
 			required: true,
 		},
-	{
-			displayName: 'CPF CNPJ',
-			name: 'cpfCnpj',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pi'] } },
-		},
 ];
 
 export const description = properties;
@@ -39,9 +39,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'GRAU': this.getNodeParameter('grau', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
-		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

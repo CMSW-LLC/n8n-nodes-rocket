@@ -19,16 +19,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'RG',
-			name: 'rg',
+			displayName: 'DATA NASCIMENTO',
+			name: 'dataNascimento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_rs'] } },
 			required: true,
 		},
 	{
-			displayName: 'DATA NASCIMENTO',
-			name: 'dataNascimento',
+			displayName: 'RG',
+			name: 'rg',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_rs'] } },
@@ -42,8 +42,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'NOME': this.getNodeParameter('nome', i) as string,
-		'RG': this.getNodeParameter('rg', i) as string,
 		'DATA_NASCIMENTO': this.getNodeParameter('dataNascimento', i) as string,
+		'RG': this.getNodeParameter('rg', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -11,8 +11,8 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['tse_dados_eleitorais'] } },
 	},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'NM PARTIDO',
+			name: 'nmPartido',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['tse_dados_eleitorais'] } },
@@ -25,8 +25,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['tse_dados_eleitorais'] } },
 		},
 	{
-			displayName: 'NM PARTIDO',
-			name: 'nmPartido',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['tse_dados_eleitorais'] } },
@@ -45,9 +45,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'NOME': this.getNodeParameter('nome', i) as string,
-		'DT_NASC': this.getNodeParameter('dtNasc', i) as string,
 		'NM_PARTIDO': this.getNodeParameter('nmPartido', i) as string,
+		'DT_NASC': this.getNodeParameter('dtNasc', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 

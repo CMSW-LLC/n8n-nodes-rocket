@@ -11,20 +11,20 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['idwall'], operation: ['idwall_processos_pj'] } },
 	},
 	{
+			displayName: 'CNPJ',
+			name: 'cnpj',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_processos_pj'] } },
+			required: true,
+		},
+	{
 			displayName: 'TOKEN',
 			name: 'token',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_processos_pj'] } },
 			typeOptions: { password: true },
-			required: true,
-		},
-	{
-			displayName: 'CNPJ',
-			name: 'cnpj',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_processos_pj'] } },
 			required: true,
 		},
 ];
@@ -34,8 +34,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'TOKEN': this.getNodeParameter('token', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
+		'TOKEN': this.getNodeParameter('token', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

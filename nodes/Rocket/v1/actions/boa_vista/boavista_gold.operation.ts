@@ -28,19 +28,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'SCORE ATA',
-			name: 'scoreAta',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
-		},
-	{
 			displayName: 'CNPJ',
 			name: 'cnpj',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 			required: true,
+		},
+	{
+			displayName: 'FATURAMENTO',
+			name: 'faturamento',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 		},
 	{
 			displayName: 'EXTRA PENDENCIAS',
@@ -50,8 +50,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 		},
 	{
-			displayName: 'FATURAMENTO',
-			name: 'faturamento',
+			displayName: 'EXTRA PROTESTOS',
+			name: 'extraProtestos',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
@@ -64,8 +64,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
 		},
 	{
-			displayName: 'EXTRA PROTESTOS',
-			name: 'extraProtestos',
+			displayName: 'SCORE ATA',
+			name: 'scoreAta',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boavista_gold'] } },
@@ -79,12 +79,12 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'SCORE_ATA': this.getNodeParameter('scoreAta', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
-		'EXTRA_PENDENCIAS': this.getNodeParameter('extraPendencias', i) as string,
 		'FATURAMENTO': this.getNodeParameter('faturamento', i) as string,
-		'SCORE_EMP': this.getNodeParameter('scoreEmp', i) as string,
+		'EXTRA_PENDENCIAS': this.getNodeParameter('extraPendencias', i) as string,
 		'EXTRA_PROTESTOS': this.getNodeParameter('extraProtestos', i) as string,
+		'SCORE_EMP': this.getNodeParameter('scoreEmp', i) as string,
+		'SCORE_ATA': this.getNodeParameter('scoreAta', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

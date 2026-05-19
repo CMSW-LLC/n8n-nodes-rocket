@@ -11,20 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
 	},
 	{
-			displayName: 'DAY',
-			name: 'day',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
-		},
-	{
-			displayName: 'YEAR',
-			name: 'year',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
-		},
-	{
 			displayName: 'MONTH',
 			name: 'month',
 			type: 'string',
@@ -39,6 +25,20 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
 			required: true,
 		},
+	{
+			displayName: 'YEAR',
+			name: 'year',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
+		},
+	{
+			displayName: 'DAY',
+			name: 'day',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['pep'], operation: ['csnu'] } },
+		},
 ];
 
 export const description = properties;
@@ -46,10 +46,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'DAY': this.getNodeParameter('day', i) as string,
-		'YEAR': this.getNodeParameter('year', i) as string,
 		'MONTH': this.getNodeParameter('month', i) as string,
 		'NAME': this.getNodeParameter('name', i) as string,
+		'YEAR': this.getNodeParameter('year', i) as string,
+		'DAY': this.getNodeParameter('day', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

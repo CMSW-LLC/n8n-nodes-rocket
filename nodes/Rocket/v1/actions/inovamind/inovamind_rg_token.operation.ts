@@ -36,16 +36,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ORGAO EMISSOR',
-			name: 'orgaoEmissor',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_rg_token'] } },
 			required: true,
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'ORGAO EMISSOR',
+			name: 'orgaoEmissor',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_rg_token'] } },
@@ -69,8 +69,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
 		'RG': this.getNodeParameter('rg', i) as string,
-		'ORGAO_EMISSOR': this.getNodeParameter('orgaoEmissor', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'ORGAO_EMISSOR': this.getNodeParameter('orgaoEmissor', i) as string,
 		'UF_ORGAO_EMISSOR': this.getNodeParameter('ufOrgaoEmissor', i) as string,
 	};
 

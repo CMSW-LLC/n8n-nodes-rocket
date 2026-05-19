@@ -28,15 +28,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Tipo De Consulta Para Credit Bureau - PF Ou PJ',
-			name: 'consulta',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
-		},
-	{
-			displayName: 'CNPJ PJ',
-			name: 'cnpj',
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
@@ -49,15 +42,22 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
 		},
 	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
+			displayName: 'Feature',
+			name: 'score',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
 		},
 	{
-			displayName: 'Feature',
-			name: 'score',
+			displayName: 'CNPJ PJ',
+			name: 'cnpj',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
+		},
+	{
+			displayName: 'Tipo De Consulta Para Credit Bureau - PF Ou PJ',
+			name: 'consulta',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_cb'] } },
@@ -71,11 +71,11 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CONSULTA': this.getNodeParameter('consulta', i) as string,
-		'CNPJ': this.getNodeParameter('cnpj', i) as string,
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 		'SCORE': this.getNodeParameter('score', i) as string,
+		'CNPJ': this.getNodeParameter('cnpj', i) as string,
+		'CONSULTA': this.getNodeParameter('consulta', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

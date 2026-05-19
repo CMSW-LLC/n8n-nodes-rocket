@@ -11,16 +11,16 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['prefeituras'], operation: ['pref_porto_alegre'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
-			name: 'documento',
+			displayName: 'TIPO',
+			name: 'tipo',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['pref_porto_alegre'] } },
 			required: true,
 		},
 	{
-			displayName: 'TIPO',
-			name: 'tipo',
+			displayName: 'DOCUMENTO',
+			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['pref_porto_alegre'] } },
@@ -33,8 +33,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 		'TIPO': this.getNodeParameter('tipo', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

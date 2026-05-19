@@ -11,16 +11,16 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cm_software'], operation: ['ip2location'] } },
 	},
 	{
-			displayName: 'KEY',
-			name: 'key',
+			displayName: 'IP',
+			name: 'ip',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['ip2location'] } },
 			required: true,
 		},
 	{
-			displayName: 'IP',
-			name: 'ip',
+			displayName: 'KEY',
+			name: 'key',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['ip2location'] } },
@@ -33,8 +33,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'KEY': this.getNodeParameter('key', i) as string,
 		'IP': this.getNodeParameter('ip', i) as string,
+		'KEY': this.getNodeParameter('key', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

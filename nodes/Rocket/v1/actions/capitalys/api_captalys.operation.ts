@@ -28,16 +28,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
-			required: true,
-		},
-	{
-			displayName: 'CLIENT SECRET',
-			name: 'clientSecret',
+			displayName: 'TICKET INPUT',
+			name: 'ticketInput',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
@@ -52,8 +44,17 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TICKET INPUT',
-			name: 'ticketInput',
+			displayName: 'CLIENT SECRET',
+			name: 'clientSecret',
+			type: 'string',
+			typeOptions: { password: true },
+			default: '',
+			displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
+			required: true,
+		},
+	{
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
@@ -68,10 +69,10 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
-		'CLIENT_SECRET': this.getNodeParameter('clientSecret', i) as string,
-		'CLIENT_ID': this.getNodeParameter('clientId', i) as string,
 		'TICKET_INPUT': this.getNodeParameter('ticketInput', i) as string,
+		'CLIENT_ID': this.getNodeParameter('clientId', i) as string,
+		'CLIENT_SECRET': this.getNodeParameter('clientSecret', i) as string,
+		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

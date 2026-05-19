@@ -11,21 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
 	},
 	{
-			displayName: 'NUMERO',
-			name: 'numero',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
-		},
-	{
-			displayName: 'LOGRADOURO',
-			name: 'logradouro',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
-			required: true,
-		},
-	{
 			displayName: 'LOCALIDADE',
 			name: 'localidade',
 			type: 'string',
@@ -41,6 +26,21 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
 			required: true,
 		},
+	{
+			displayName: 'NUMERO',
+			name: 'numero',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
+		},
+	{
+			displayName: 'LOGRADOURO',
+			name: 'logradouro',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
+			required: true,
+		},
 ];
 
 export const description = properties;
@@ -48,10 +48,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'NUMERO': this.getNodeParameter('numero', i) as string,
-		'LOGRADOURO': this.getNodeParameter('logradouro', i) as string,
 		'LOCALIDADE': this.getNodeParameter('localidade', i) as string,
 		'UF': this.getNodeParameter('uf', i) as string,
+		'NUMERO': this.getNodeParameter('numero', i) as string,
+		'LOGRADOURO': this.getNodeParameter('logradouro', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -28,16 +28,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTO',
-			name: 'documento',
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['indicio_fraude_clearsale'] } },
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
+			displayName: 'DOCUMENTO',
+			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['indicio_fraude_clearsale'] } },
@@ -52,8 +52,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

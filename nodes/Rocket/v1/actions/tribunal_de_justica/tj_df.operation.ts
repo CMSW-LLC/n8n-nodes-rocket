@@ -11,6 +11,13 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 	},
 	{
+			displayName: 'NUM PROCESSO',
+			name: 'numProcesso',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
+		},
+	{
 			displayName: 'NOME',
 			name: 'nome',
 			type: 'string',
@@ -32,13 +39,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
 		},
 	{
-			displayName: 'NUM PROCESSO',
-			name: 'numProcesso',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_df'] } },
-		},
-	{
 			displayName: 'INSTANCIA',
 			name: 'instancia',
 			type: 'string',
@@ -53,10 +53,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
 		'COMARCA': this.getNodeParameter('comarca', i) as string,
 		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
-		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
 		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
 	};
 

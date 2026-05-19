@@ -11,13 +11,11 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
 	},
 	{
-			displayName: 'TOKEN',
-			name: 'token',
+			displayName: 'URL DOC VERSO',
+			name: 'urlDocVerso',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
-			typeOptions: { password: true },
-			required: true,
 		},
 	{
 			displayName: 'URL DOC FRENTE',
@@ -35,11 +33,13 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'URL DOC VERSO',
-			name: 'urlDocVerso',
+			displayName: 'TOKEN',
+			name: 'token',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
+			typeOptions: { password: true },
+			required: true,
 		},
 	{
 			displayName: 'CPF',
@@ -63,10 +63,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'TOKEN': this.getNodeParameter('token', i) as string,
+		'URL_DOC_VERSO': this.getNodeParameter('urlDocVerso', i) as string,
 		'URL_DOC_FRENTE': this.getNodeParameter('urlDocFrente', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
-		'URL_DOC_VERSO': this.getNodeParameter('urlDocVerso', i) as string,
+		'TOKEN': this.getNodeParameter('token', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
 		'URL_DOC': this.getNodeParameter('urlDoc', i) as string,
 	};

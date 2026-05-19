@@ -26,15 +26,15 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'GRAU',
-			name: 'grau',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_se'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'GRAU',
+			name: 'grau',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_se'] } },
@@ -48,8 +48,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
 		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
-		'GRAU': this.getNodeParameter('grau', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
+		'GRAU': this.getNodeParameter('grau', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

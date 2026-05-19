@@ -11,6 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['usa_criminal'], operation: ['dockets_justia'] } },
 	},
 	{
+			displayName: 'PARTY NAME',
+			name: 'partyName',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['usa_criminal'], operation: ['dockets_justia'] } },
+			required: true,
+		},
+	{
 			displayName: 'JUDGE',
 			name: 'judge',
 			type: 'string',
@@ -24,14 +32,6 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['usa_criminal'], operation: ['dockets_justia'] } },
 		},
-	{
-			displayName: 'PARTY NAME',
-			name: 'partyName',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['usa_criminal'], operation: ['dockets_justia'] } },
-			required: true,
-		},
 ];
 
 export const description = properties;
@@ -39,9 +39,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'PARTY_NAME': this.getNodeParameter('partyName', i) as string,
 		'JUDGE': this.getNodeParameter('judge', i) as string,
 		'STATE': this.getNodeParameter('state', i) as string,
-		'PARTY_NAME': this.getNodeParameter('partyName', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

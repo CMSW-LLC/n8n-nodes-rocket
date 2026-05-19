@@ -11,13 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['tcu_contas_irregulares'] } },
 	},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['federal'], operation: ['tcu_contas_irregulares'] } },
-		},
-	{
 			displayName: 'CPF CNPJ',
 			name: 'cpfCnpj',
 			type: 'string',
@@ -31,6 +24,13 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['tcu_contas_irregulares'] } },
 		},
+	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['federal'], operation: ['tcu_contas_irregulares'] } },
+		},
 ];
 
 export const description = properties;
@@ -38,9 +38,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

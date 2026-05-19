@@ -28,12 +28,11 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CIDADE',
-			name: 'cidade',
+			displayName: 'NUMERO',
+			name: 'numero',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
-			required: true,
 		},
 	{
 			displayName: 'CPF',
@@ -54,13 +53,6 @@ export const properties: INodeProperties[] = [
 	{
 			displayName: 'TELEFONE',
 			name: 'telefone',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
-		},
-	{
-			displayName: 'NUMERO',
-			name: 'numero',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
@@ -88,6 +80,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
 		},
 	{
+			displayName: 'CIDADE',
+			name: 'cidade',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco'] } },
+			required: true,
+		},
+	{
 			displayName: 'UF',
 			name: 'uf',
 			type: 'string',
@@ -104,14 +104,14 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CIDADE': this.getNodeParameter('cidade', i) as string,
+		'NUMERO': this.getNodeParameter('numero', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
 		'LOGRADOURO': this.getNodeParameter('logradouro', i) as string,
 		'TELEFONE': this.getNodeParameter('telefone', i) as string,
-		'NUMERO': this.getNodeParameter('numero', i) as string,
 		'COMPLEMENTO': this.getNodeParameter('complemento', i) as string,
 		'BAIRRO': this.getNodeParameter('bairro', i) as string,
 		'CEP': this.getNodeParameter('cep', i) as string,
+		'CIDADE': this.getNodeParameter('cidade', i) as string,
 		'UF': this.getNodeParameter('uf', i) as string,
 	};
 

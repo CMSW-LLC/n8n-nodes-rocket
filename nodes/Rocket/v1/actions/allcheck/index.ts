@@ -29,7 +29,7 @@ const operations: INodeProperties[] = [
 			{
 				name: 'ALLCHECK Consulta Cnpj/cpf',
 				value: 'allchkcad',
-				action: 'Allcheck consulta cnpj/cpf',
+				action: 'Allcheck consulta cnpj cpf',
 			},
 			{
 				name: 'ALLCHECK Consulta Telefone',

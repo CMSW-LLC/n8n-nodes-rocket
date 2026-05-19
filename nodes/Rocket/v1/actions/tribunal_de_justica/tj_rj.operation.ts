@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
 	},
 	{
-			displayName: 'COMARCA',
-			name: 'comarca',
+			displayName: 'ANO INI',
+			name: 'anoIni',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
 		},
 	{
-			displayName: 'COMPETENCIA',
-			name: 'competencia',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
@@ -46,8 +46,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
 		},
 	{
-			displayName: 'ANO INI',
-			name: 'anoIni',
+			displayName: 'COMPETENCIA',
+			name: 'competencia',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
@@ -60,8 +60,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'COMARCA',
+			name: 'comarca',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_rj'] } },
@@ -73,14 +73,14 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'COMARCA': this.getNodeParameter('comarca', i) as string,
-		'COMPETENCIA': this.getNodeParameter('competencia', i) as string,
+		'ANO_INI': this.getNodeParameter('anoIni', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'NUM_PROCESSO': this.getNodeParameter('numProcesso', i) as string,
 		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'ORIGEM': this.getNodeParameter('origem', i) as string,
-		'ANO_INI': this.getNodeParameter('anoIni', i) as string,
+		'COMPETENCIA': this.getNodeParameter('competencia', i) as string,
 		'ANO_FIM': this.getNodeParameter('anoFim', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
+		'COMARCA': this.getNodeParameter('comarca', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

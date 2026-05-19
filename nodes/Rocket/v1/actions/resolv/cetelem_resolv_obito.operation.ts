@@ -28,6 +28,13 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'CPF',
+			name: 'cpf',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
+		},
+	{
 			displayName: 'DT NSCT',
 			name: 'dtNsct',
 			type: 'string',
@@ -35,8 +42,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
@@ -55,13 +62,6 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
 		},
-	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
-		},
 ];
 
 export const description = properties;
@@ -71,11 +71,11 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'DT_NSCT': this.getNodeParameter('dtNsct', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'DT_NSCT': this.getNodeParameter('dtNsct', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 		'TIPO_CONSULTA': this.getNodeParameter('tipoConsulta', i) as string,
 		'NM_MAE': this.getNodeParameter('nmMae', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

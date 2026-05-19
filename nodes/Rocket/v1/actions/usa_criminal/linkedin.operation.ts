@@ -37,19 +37,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'USERNAME',
-			name: 'username',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['usa_criminal'], operation: ['linkedin'] } },
-		},
-	{
 			displayName: 'COMPANIE',
 			name: 'companie',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['usa_criminal'], operation: ['linkedin'] } },
 			required: true,
+		},
+	{
+			displayName: 'USERNAME',
+			name: 'username',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['usa_criminal'], operation: ['linkedin'] } },
 		},
 ];
 
@@ -61,8 +61,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
 		'PASSWORD': this.getNodeParameter('password', i) as string,
-		'USERNAME': this.getNodeParameter('username', i) as string,
 		'COMPANIE': this.getNodeParameter('companie', i) as string,
+		'USERNAME': this.getNodeParameter('username', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

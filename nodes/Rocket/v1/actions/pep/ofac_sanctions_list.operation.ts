@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 	},
 	{
-			displayName: 'COUNTRY',
-			name: 'country',
+			displayName: 'STATE PROVINCE',
+			name: 'stateProvince',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 		},
 	{
-			displayName: 'SCORE',
-			name: 'score',
+			displayName: 'COUNTRY',
+			name: 'country',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
@@ -33,15 +33,8 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'STATE PROVINCE',
-			name: 'stateProvince',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
-		},
-	{
-			displayName: 'PROGRAM',
-			name: 'program',
+			displayName: 'SCORE',
+			name: 'score',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
@@ -53,6 +46,13 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 		},
+	{
+			displayName: 'PROGRAM',
+			name: 'program',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
+		},
 ];
 
 export const description = properties;
@@ -60,12 +60,12 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'COUNTRY': this.getNodeParameter('country', i) as string,
-		'SCORE': this.getNodeParameter('score', i) as string,
-		'NAME': this.getNodeParameter('name', i) as string,
 		'STATE_PROVINCE': this.getNodeParameter('stateProvince', i) as string,
-		'PROGRAM': this.getNodeParameter('program', i) as string,
+		'COUNTRY': this.getNodeParameter('country', i) as string,
+		'NAME': this.getNodeParameter('name', i) as string,
+		'SCORE': this.getNodeParameter('score', i) as string,
 		'LIST': this.getNodeParameter('list', i) as string,
+		'PROGRAM': this.getNodeParameter('program', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

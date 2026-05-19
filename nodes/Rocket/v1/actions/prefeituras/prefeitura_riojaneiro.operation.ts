@@ -18,15 +18,15 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_riojaneiro'] } },
 		},
 	{
-			displayName: 'DESCRICAO',
-			name: 'descricao',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_riojaneiro'] } },
 		},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'DESCRICAO',
+			name: 'descricao',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_riojaneiro'] } },
@@ -46,8 +46,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'INSCRICAO': this.getNodeParameter('inscricao', i) as string,
-		'DESCRICAO': this.getNodeParameter('descricao', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'DESCRICAO': this.getNodeParameter('descricao', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 	};
 

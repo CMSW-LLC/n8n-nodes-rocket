@@ -28,19 +28,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
+			displayName: 'LOGRADOURO',
+			name: 'logradouro',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['correios'], operation: ['ceplivre'] } },
+		},
+	{
 			displayName: 'CEP',
 			name: 'cep',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['correios'], operation: ['ceplivre'] } },
 			required: true,
-		},
-	{
-			displayName: 'LOGRADOURO',
-			name: 'logradouro',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['correios'], operation: ['ceplivre'] } },
 		},
 ];
 
@@ -51,8 +51,8 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CEP': this.getNodeParameter('cep', i) as string,
 		'LOGRADOURO': this.getNodeParameter('logradouro', i) as string,
+		'CEP': this.getNodeParameter('cep', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

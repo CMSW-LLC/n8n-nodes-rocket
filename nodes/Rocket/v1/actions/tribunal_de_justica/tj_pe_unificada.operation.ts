@@ -11,8 +11,8 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe_unificada'] } },
 	},
 	{
-			displayName: 'TIPO PESQUISA',
-			name: 'tipoPesquisa',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe_unificada'] } },
@@ -25,8 +25,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe_unificada'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'TIPO PESQUISA',
+			name: 'tipoPesquisa',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_pe_unificada'] } },
@@ -38,9 +38,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'TIPO_PESQUISA': this.getNodeParameter('tipoPesquisa', i) as string,
-		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
+		'CPF_CNPJ': this.getNodeParameter('cpfCnpj', i) as string,
+		'TIPO_PESQUISA': this.getNodeParameter('tipoPesquisa', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

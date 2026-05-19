@@ -19,14 +19,6 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ACCESS TOKEN',
-			name: 'accessToken',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_pessoas'] } },
-			required: true,
-		},
-	{
 			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
@@ -37,6 +29,16 @@ export const properties: INodeProperties[] = [
 			displayName: 'TOKEN ID',
 			name: 'tokenId',
 			type: 'string',
+			typeOptions: { password: true },
+			default: '',
+			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_pessoas'] } },
+			required: true,
+		},
+	{
+			displayName: 'ACCESS TOKEN',
+			name: 'accessToken',
+			type: 'string',
+			typeOptions: { password: true },
 			default: '',
 			displayOptions: { show: { resource: ['big_data'], operation: ['bigdata_dados_pessoas'] } },
 			required: true,
@@ -49,9 +51,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
-		'ACCESS_TOKEN': this.getNodeParameter('accessToken', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'TOKEN_ID': this.getNodeParameter('tokenId', i) as string,
+		'ACCESS_TOKEN': this.getNodeParameter('accessToken', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

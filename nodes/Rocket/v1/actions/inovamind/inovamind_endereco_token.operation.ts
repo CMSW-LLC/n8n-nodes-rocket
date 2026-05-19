@@ -28,20 +28,19 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CIDADE',
-			name: 'cidade',
+			displayName: 'CEP',
+			name: 'cep',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 			required: true,
 		},
 	{
-			displayName: 'UF',
-			name: 'uf',
+			displayName: 'BAIRRO',
+			name: 'bairro',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
-			required: true,
 		},
 	{
 			displayName: 'TELEFONE',
@@ -49,6 +48,14 @@ export const properties: INodeProperties[] = [
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
+		},
+	{
+			displayName: 'CIDADE',
+			name: 'cidade',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
+			required: true,
 		},
 	{
 			displayName: 'NUMERO',
@@ -81,15 +88,8 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 		},
 	{
-			displayName: 'BAIRRO',
-			name: 'bairro',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
-		},
-	{
-			displayName: 'CEP',
-			name: 'cep',
+			displayName: 'UF',
+			name: 'uf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
@@ -104,15 +104,15 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'CIDADE': this.getNodeParameter('cidade', i) as string,
-		'UF': this.getNodeParameter('uf', i) as string,
+		'CEP': this.getNodeParameter('cep', i) as string,
+		'BAIRRO': this.getNodeParameter('bairro', i) as string,
 		'TELEFONE': this.getNodeParameter('telefone', i) as string,
+		'CIDADE': this.getNodeParameter('cidade', i) as string,
 		'NUMERO': this.getNodeParameter('numero', i) as string,
 		'LOGRADOURO': this.getNodeParameter('logradouro', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
 		'COMPLEMENTO': this.getNodeParameter('complemento', i) as string,
-		'BAIRRO': this.getNodeParameter('bairro', i) as string,
-		'CEP': this.getNodeParameter('cep', i) as string,
+		'UF': this.getNodeParameter('uf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -28,13 +28,6 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
-			name: 'ambiente',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
-		},
-	{
 			displayName: 'NUM HISTORICO',
 			name: 'numHistorico',
 			type: 'string',
@@ -57,16 +50,23 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Data Base',
-			name: 'database',
+			displayName: 'Cod Cliente',
+			name: 'codcliente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
 			required: true,
 		},
 	{
-			displayName: 'Cod Cliente',
-			name: 'codcliente',
+			displayName: 'AMBIENTE',
+			name: 'ambiente',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
+		},
+	{
+			displayName: 'Data Base',
+			name: 'database',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['banco_central'], operation: ['bcb'] } },
@@ -81,12 +81,12 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
-		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'NUM_HISTORICO': this.getNodeParameter('numHistorico', i) as string,
 		'TIPORETORNO': this.getNodeParameter('tiporetorno', i) as string,
 		'tpCliente': this.getNodeParameter('tpcliente', i) as string,
-		'dataBase': this.getNodeParameter('database', i) as string,
 		'codCliente': this.getNodeParameter('codcliente', i) as string,
+		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
+		'dataBase': this.getNodeParameter('database', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

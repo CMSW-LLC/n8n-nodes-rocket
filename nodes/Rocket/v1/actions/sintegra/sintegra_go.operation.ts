@@ -11,13 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_go'] } },
 	},
 	{
-			displayName: 'CCE',
-			name: 'cce',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_go'] } },
-		},
-	{
 			displayName: 'CNPJ',
 			name: 'cnpj',
 			type: 'string',
@@ -31,6 +24,13 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_go'] } },
 		},
+	{
+			displayName: 'CCE',
+			name: 'cce',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_go'] } },
+		},
 ];
 
 export const description = properties;
@@ -38,9 +38,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CCE': this.getNodeParameter('cce', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'CCE': this.getNodeParameter('cce', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

@@ -11,16 +11,16 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['nova_vida'], operation: ['novavida_inadimplencia_pj'] } },
 	},
 	{
-			displayName: 'CNPJ',
-			name: 'cnpj',
+			displayName: 'UF',
+			name: 'uf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['nova_vida'], operation: ['novavida_inadimplencia_pj'] } },
 			required: true,
 		},
 	{
-			displayName: 'UF',
-			name: 'uf',
+			displayName: 'CNPJ',
+			name: 'cnpj',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['nova_vida'], operation: ['novavida_inadimplencia_pj'] } },
@@ -48,8 +48,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 		'UF': this.getNodeParameter('uf', i) as string,
+		'CNPJ': this.getNodeParameter('cnpj', i) as string,
 		'CLIENTE': this.getNodeParameter('cliente', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 	};

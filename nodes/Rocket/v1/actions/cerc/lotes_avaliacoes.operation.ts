@@ -11,15 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cerc'], operation: ['lotes_avaliacoes'] } },
 	},
 	{
-			displayName: 'TOKEN',
-			name: 'token',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['cerc'], operation: ['lotes_avaliacoes'] } },
-			typeOptions: { password: true },
-			required: true,
-		},
-	{
 			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
@@ -34,6 +25,15 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['cerc'], operation: ['lotes_avaliacoes'] } },
 			required: true,
 		},
+	{
+			displayName: 'TOKEN',
+			name: 'token',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['cerc'], operation: ['lotes_avaliacoes'] } },
+			typeOptions: { password: true },
+			required: true,
+		},
 ];
 
 export const description = properties;
@@ -41,9 +41,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'TOKEN': this.getNodeParameter('token', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'LOTE_ID': this.getNodeParameter('loteId', i) as string,
+		'TOKEN': this.getNodeParameter('token', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

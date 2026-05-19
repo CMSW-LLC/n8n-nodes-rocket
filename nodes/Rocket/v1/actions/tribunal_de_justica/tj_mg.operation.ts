@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
-			name: 'documento',
+			displayName: 'NOME',
+			name: 'nome',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
 		},
 	{
-			displayName: 'COMARCA',
-			name: 'comarca',
+			displayName: 'DOCUMENTO',
+			name: 'documento',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
@@ -32,15 +32,15 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
 		},
 	{
-			displayName: 'NOME',
-			name: 'nome',
+			displayName: 'TIPOPESSOA',
+			name: 'tipopessoa',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
 		},
 	{
-			displayName: 'TIPOPESSOA',
-			name: 'tipopessoa',
+			displayName: 'COMARCA',
+			name: 'comarca',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tj_mg'] } },
@@ -52,11 +52,11 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
-		'COMARCA': this.getNodeParameter('comarca', i) as string,
-		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
 		'NOME': this.getNodeParameter('nome', i) as string,
+		'DOCUMENTO': this.getNodeParameter('documento', i) as string,
+		'INSTANCIA': this.getNodeParameter('instancia', i) as string,
 		'TIPOPESSOA': this.getNodeParameter('tipopessoa', i) as string,
+		'COMARCA': this.getNodeParameter('comarca', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

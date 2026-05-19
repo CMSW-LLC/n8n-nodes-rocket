@@ -11,20 +11,6 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
 	},
 	{
-			displayName: 'MAE',
-			name: 'mae',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
-		},
-	{
-			displayName: 'NOME',
-			name: 'nome',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
-		},
-	{
 			displayName: 'DATA NASCIMENTO',
 			name: 'dataNascimento',
 			type: 'string',
@@ -39,6 +25,20 @@ export const properties: INodeProperties[] = [
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
 		},
+	{
+			displayName: 'MAE',
+			name: 'mae',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
+		},
+	{
+			displayName: 'NOME',
+			name: 'nome',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['tre_sp'] } },
+		},
 ];
 
 export const description = properties;
@@ -46,10 +46,10 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'MAE': this.getNodeParameter('mae', i) as string,
-		'NOME': this.getNodeParameter('nome', i) as string,
 		'DATA_NASCIMENTO': this.getNodeParameter('dataNascimento', i) as string,
 		'CPF': this.getNodeParameter('cpf', i) as string,
+		'MAE': this.getNodeParameter('mae', i) as string,
+		'NOME': this.getNodeParameter('nome', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

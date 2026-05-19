@@ -11,15 +11,15 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia_bf'] } },
 	},
 	{
-			displayName: 'CPF',
-			name: 'cpf',
+			displayName: 'NIS',
+			name: 'nis',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia_bf'] } },
 		},
 	{
-			displayName: 'NIS',
-			name: 'nis',
+			displayName: 'CPF',
+			name: 'cpf',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia_bf'] } },
@@ -31,8 +31,8 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
-		'CPF': this.getNodeParameter('cpf', i) as string,
 		'NIS': this.getNodeParameter('nis', i) as string,
+		'CPF': this.getNodeParameter('cpf', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

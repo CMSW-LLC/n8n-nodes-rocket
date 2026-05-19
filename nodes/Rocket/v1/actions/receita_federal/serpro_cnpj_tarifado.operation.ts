@@ -11,6 +11,13 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
 	},
 	{
+			displayName: 'TIPO CONSULTA',
+			name: 'tipoConsulta',
+			type: 'string',
+			default: '',
+			displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
+		},
+	{
 			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
@@ -25,13 +32,6 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
 			required: true,
 		},
-	{
-			displayName: 'TIPO CONSULTA',
-			name: 'tipoConsulta',
-			type: 'string',
-			default: '',
-			displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
-		},
 ];
 
 export const description = properties;
@@ -39,9 +39,9 @@ export const description = properties;
 export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
+		'TIPO_CONSULTA': this.getNodeParameter('tipoConsulta', i) as string,
 		'AMBIENTE': this.getNodeParameter('ambiente', i) as string,
 		'CNPJ': this.getNodeParameter('cnpj', i) as string,
-		'TIPO_CONSULTA': this.getNodeParameter('tipoConsulta', i) as string,
 	};
 
 	return await rocketApiRequest.call(this, 'POST', '', {

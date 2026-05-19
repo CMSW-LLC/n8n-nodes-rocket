@@ -18,11 +18,12 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['federal'], operation: ['ibama_cert_negativa_debt'] } },
 		},
 	{
-			displayName: 'Endereco',
-			name: 'endereco',
+			displayName: 'CPF / CNPJ',
+			name: 'doc',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['ibama_cert_negativa_debt'] } },
+			required: true,
 		},
 	{
 			displayName: 'Interessado',
@@ -32,12 +33,11 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['federal'], operation: ['ibama_cert_negativa_debt'] } },
 		},
 	{
-			displayName: 'CPF / CNPJ',
-			name: 'doc',
+			displayName: 'Endereco',
+			name: 'endereco',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['federal'], operation: ['ibama_cert_negativa_debt'] } },
-			required: true,
 		},
 	{
 			displayName: 'Estado',
@@ -61,9 +61,9 @@ export async function execute(this: IExecuteFunctions, i: number) {
 	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'BAIRRO': this.getNodeParameter('bairro', i) as string,
-		'ENDERECO': this.getNodeParameter('endereco', i) as string,
-		'INTERESSADO': this.getNodeParameter('interessado', i) as string,
 		'DOC': this.getNodeParameter('doc', i) as string,
+		'INTERESSADO': this.getNodeParameter('interessado', i) as string,
+		'ENDERECO': this.getNodeParameter('endereco', i) as string,
 		'ESTADO': this.getNodeParameter('estado', i) as string,
 		'CIDADE': this.getNodeParameter('cidade', i) as string,
 	};
