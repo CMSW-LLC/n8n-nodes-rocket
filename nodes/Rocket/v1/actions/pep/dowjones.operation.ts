@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['dowjones'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,14 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'EXTERNAL ID',
+			displayName: 'External ID',
 			name: 'externalId',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones'] } },
 		},
 	{
-			displayName: 'DEVICE',
+			displayName: 'Device',
 			name: 'device',
 			type: 'string',
 			default: '',
@@ -50,7 +50,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones'] } },
 		},
 	{
-			displayName: 'ASSOCIATION ID',
+			displayName: 'Association ID',
 			name: 'associationId',
 			type: 'string',
 			default: '',
@@ -64,7 +64,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['dowjones'] } },
 		},
 	{
-			displayName: 'CLIENT ID',
+			displayName: 'Client ID',
 			name: 'clientId',
 			type: 'string',
 			default: '',

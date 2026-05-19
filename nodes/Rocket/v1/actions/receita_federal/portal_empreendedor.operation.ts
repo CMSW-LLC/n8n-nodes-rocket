@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['receita_federal'], operation: ['portal_empreendedor'] } },
 	},
 	{
-			displayName: 'DATA NASCIMENTO',
+			displayName: 'DATA Nascimento',
 			name: 'dataNascimento',
 			type: 'string',
 			default: '',

@@ -25,9 +25,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'DETRAN AMAPA - Consulta HABILITACAO',
+				name: 'Detran AMAPA Consulta Habilitacao',
 				value: 'detran_amapa',
-				action: 'Detran amapa - consulta habilitacao',
+				action: 'Detran amapa consulta habilitacao',
 			},
 			{
 				name: 'Detran Ma Cnh',
@@ -40,9 +40,9 @@ const operations: INodeProperties[] = [
 				action: 'Detran pe',
 			},
 			{
-				name: 'DETRAN RJ - Consulta De Pontuacao E Infracoes',
+				name: 'Detran RJ Consulta de Pontuacao e Infracoes',
 				value: 'detran_rj_infracoes',
-				action: 'Detran rj - consulta de pontuacao e infracoes',
+				action: 'Detran rj consulta de pontuacao e infracoes',
 			},
 			{
 				name: 'Detran Rn',
@@ -50,9 +50,9 @@ const operations: INodeProperties[] = [
 				action: 'Detran rn',
 			},
 			{
-				name: 'DETRAN SC - Informacoes Sobre CNH',
+				name: 'Detran SC Informacoes Sobre CNH',
 				value: 'detran_sc_cnh',
-				action: 'Detran sc - informacoes sobre cnh',
+				action: 'Detran sc informacoes sobre cnh',
 			},
 			{
 				name: 'Detran SP Codev',

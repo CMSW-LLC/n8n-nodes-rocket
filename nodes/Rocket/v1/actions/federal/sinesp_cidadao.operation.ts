@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['sinesp_cidadao'] } },
 	},
 	{
-			displayName: 'PLACA NUMEROS',
+			displayName: 'PLACA Numeros',
 			name: 'placaNumeros',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'PLACA LETRAS',
+			displayName: 'PLACA Letras',
 			name: 'placaLetras',
 			type: 'string',
 			default: '',

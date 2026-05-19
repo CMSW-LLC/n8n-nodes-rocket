@@ -29,14 +29,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Consulta SERASA - Crednet Light',
+				name: 'Consulta Serasa Crednet Light',
 				value: 'serasa_crednet_light',
-				action: 'Consulta serasa - crednet light',
+				action: 'Consulta serasa crednet light',
 			},
 			{
-				name: 'Consulta SERASA - Crednet TOP',
+				name: 'Consulta Serasa Crednet TOP',
 				value: 'serasa_crednet_top',
-				action: 'Consulta serasa - crednet top',
+				action: 'Consulta serasa crednet top',
 			},
 			{
 				name: 'Credit Bureau',
@@ -54,14 +54,14 @@ const operations: INodeProperties[] = [
 				action: 'Serasa avancado pj',
 			},
 			{
-				name: 'Serasa B49c - Base Inconsistencia',
+				name: 'Serasa B49c Base Inconsistencia',
 				value: 'serasa_base_inconsistencia',
-				action: 'Serasa b49c - base inconsistencia',
+				action: 'Serasa b49c base inconsistencia',
 			},
 			{
-				name: 'Serasa B49c - Concentre',
+				name: 'Serasa B49c Concentre',
 				value: 'b49c_concentre',
-				action: 'Serasa b49c - concentre',
+				action: 'Serasa b49c concentre',
 			},
 			{
 				name: 'Serasa Confie',
@@ -79,7 +79,7 @@ const operations: INodeProperties[] = [
 				action: 'Serasa intermediario pj',
 			},
 			{
-				name: 'VERIFY ID PF',
+				name: 'Verify ID PF',
 				value: 'verify_id_pf',
 				action: 'Verify id pf',
 			}

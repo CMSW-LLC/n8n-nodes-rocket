@@ -19,9 +19,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'JUCESP - Ficha Cadastral Simplificada',
+				name: 'Jucesp Ficha Cadastral Simplificada',
 				value: 'jucesp_simples',
-				action: 'Jucesp - ficha cadastral simplificada',
+				action: 'Jucesp ficha cadastral simplificada',
 			}
 		],
 		default: 'jucesp_simples',

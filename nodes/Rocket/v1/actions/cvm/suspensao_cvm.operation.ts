@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cvm'], operation: ['suspensao_cvm'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

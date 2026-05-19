@@ -20,14 +20,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cerc'], operation: ['avaliacoes_dados_dfe'] } },
 		},
 	{
-			displayName: 'VALIDACAO ID',
+			displayName: 'Validacao ID',
 			name: 'validacaoId',
 			type: 'string',
 			default: '',

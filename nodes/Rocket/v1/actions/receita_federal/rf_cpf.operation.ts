@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Data De Nascimento',
+			displayName: 'Data de Nascimento',
 			name: 'dtNascto',
 			type: 'string',
 			default: '',

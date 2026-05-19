@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['ccb'], operation: ['ccb_relatorio'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'MERCADO',
+			displayName: 'Mercado',
 			name: 'mercado',
 			type: 'string',
 			default: '',

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TICKET INPUT',
+			displayName: 'Ticket INPUT',
 			name: 'ticketInput',
 			type: 'string',
 			default: '',
@@ -36,7 +36,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CLIENT ID',
+			displayName: 'Client ID',
 			name: 'clientId',
 			type: 'string',
 			default: '',
@@ -44,16 +44,16 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CLIENT SECRET',
+			displayName: 'Client Secret',
 			name: 'clientSecret',
 			type: 'string',
-			typeOptions: { password: true },
 			default: '',
 			displayOptions: { show: { resource: ['capitalys'], operation: ['api_captalys'] } },
+			typeOptions: { password: true },
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',

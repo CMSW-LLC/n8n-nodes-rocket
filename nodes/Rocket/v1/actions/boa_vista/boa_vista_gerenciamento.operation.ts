@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_gerenciamento'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_gerenciamento'] } },
 		},
 	{
-			displayName: 'ACOMP RATING',
+			displayName: 'ACOMP Rating',
 			name: 'acompRating',
 			type: 'string',
 			default: '',
@@ -49,14 +49,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_gerenciamento'] } },
 		},
 	{
-			displayName: 'ACOMP CADASTRAL',
+			displayName: 'ACOMP Cadastral',
 			name: 'acompCadastral',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['boa_vista'], operation: ['boa_vista_gerenciamento'] } },
 		},
 	{
-			displayName: 'Cnpj',
+			displayName: 'CNPJ',
 			name: 'cnpj',
 			type: 'string',
 			default: '',

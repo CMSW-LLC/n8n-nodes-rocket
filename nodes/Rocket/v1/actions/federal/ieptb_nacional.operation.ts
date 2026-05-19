@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['ieptb_nacional'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

@@ -24,14 +24,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'JBCRED SPC',
+				name: 'Jbcred SPC',
 				value: 'jbcred_spc',
 				action: 'Jbcred spc',
 			},
 			{
-				name: 'SCPC - Acerta Mais PF - Boa Vista',
+				name: 'SCPC Acerta Mais PF Boa Vista',
 				value: 'scpc_acerta_pf',
-				action: 'Scpc - acerta mais pf - boa vista',
+				action: 'Scpc acerta mais pf boa vista',
 			},
 			{
 				name: 'SPC Consulta Completa',
@@ -39,7 +39,7 @@ const operations: INodeProperties[] = [
 				action: 'Spc consulta completa',
 			},
 			{
-				name: 'SPC Inclusao E Exclusao',
+				name: 'SPC Inclusao e Exclusao',
 				value: 'spc_inclusao_exclusao',
 				action: 'Spc inclusao e exclusao',
 			},

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_6regiao'] } },
 	},
 	{
-			displayName: 'CPF / CNPJ',
+			displayName: 'CPF/CNPJ',
 			name: 'documento',
 			type: 'string',
 			default: '',

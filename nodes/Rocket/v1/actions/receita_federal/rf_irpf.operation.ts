@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['rf_irpf'] } },
 		},
 	{
-			displayName: 'DATA NASCIMENTO',
+			displayName: 'DATA Nascimento',
 			name: 'dataNascimento',
 			type: 'string',
 			default: '',

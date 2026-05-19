@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_pi'] } },
 	},
 	{
-			displayName: 'CPF / CNPJ',
+			displayName: 'CPF/CNPJ',
 			name: 'cpfcnpj',
 			type: 'string',
 			default: '',

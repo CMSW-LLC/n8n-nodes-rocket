@@ -20,7 +20,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'RAZAO SOCIAL',
+			displayName: 'RAZAO Social',
 			name: 'razaoSocial',
 			type: 'string',
 			default: '',

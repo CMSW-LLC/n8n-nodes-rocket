@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_rg'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -36,7 +36,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ORGAO EMISSOR',
+			displayName: 'ORGAO Emissor',
 			name: 'orgaoEmissor',
 			type: 'string',
 			default: '',
@@ -44,7 +44,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'UF ORGAO EMISSOR',
+			displayName: 'UF ORGAO Emissor',
 			name: 'ufOrgaoEmissor',
 			type: 'string',
 			default: '',

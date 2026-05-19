@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ESTADOEMISSOR',
+			displayName: 'Estadoemissor',
 			name: 'estadoemissor',
 			type: 'string',
 			default: '',
@@ -43,7 +43,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CIDADE',
+			displayName: 'Cidade',
 			name: 'cidade',
 			type: 'string',
 			default: '',
@@ -51,7 +51,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ESTADO',
+			displayName: 'Estado',
 			name: 'estado',
 			type: 'string',
 			default: '',
@@ -66,7 +66,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['policia'], operation: ['policia_pa'] } },
 		},
 	{
-			displayName: 'NASCIMENTO',
+			displayName: 'Nascimento',
 			name: 'nascimento',
 			type: 'string',
 			default: '',

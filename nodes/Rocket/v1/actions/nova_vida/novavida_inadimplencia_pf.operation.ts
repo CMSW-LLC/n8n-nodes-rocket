@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['nova_vida'], operation: ['novavida_inadimplencia_pf'] } },
 	},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
@@ -26,7 +26,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CLIENTE',
+			displayName: 'Cliente',
 			name: 'cliente',
 			type: 'string',
 			default: '',

@@ -20,7 +20,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'VALIDACAO ID',
+			displayName: 'Validacao ID',
 			name: 'validacaoId',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',

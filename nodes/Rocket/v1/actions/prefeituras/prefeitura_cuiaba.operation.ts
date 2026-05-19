@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_cuiaba'] } },
 	},
 	{
-			displayName: 'DOCUMENTO',
+			displayName: 'Documento',
 			name: 'documento',
 			type: 'string',
 			default: '',

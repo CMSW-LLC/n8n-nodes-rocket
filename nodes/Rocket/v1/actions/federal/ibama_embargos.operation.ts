@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['ibama_embargos'] } },
 	},
 	{
-			displayName: 'CNPJCPF',
+			displayName: 'Cnpjcpf',
 			name: 'cnpjcpf',
 			type: 'string',
 			default: '',

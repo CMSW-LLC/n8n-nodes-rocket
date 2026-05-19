@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
 	},
 	{
-			displayName: 'TIPO CONSULTA',
+			displayName: 'TIPO Consulta',
 			name: 'tipoConsulta',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['receita_federal'], operation: ['serpro_cnpj_tarifado'] } },
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',

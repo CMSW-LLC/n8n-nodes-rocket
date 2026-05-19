@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['ibge_municipios'] } },
 	},
 	{
-			displayName: 'NOME MUNICIPIO',
+			displayName: 'NOME Municipio',
 			name: 'nomeMunicipio',
 			type: 'string',
 			default: '',

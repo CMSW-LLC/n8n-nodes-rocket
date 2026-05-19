@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['spc'], operation: ['spc_consulta_completa'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -36,7 +36,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TIPO CONSUMIDOR',
+			displayName: 'TIPO Consumidor',
 			name: 'tipoConsumidor',
 			type: 'string',
 			default: '',
@@ -44,7 +44,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DOCUMENTO CONSUMIDOR',
+			displayName: 'Documento Consumidor',
 			name: 'documentoConsumidor',
 			type: 'string',
 			default: '',
@@ -52,7 +52,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CODIGO PRODUTO',
+			displayName: 'Codigo Produto',
 			name: 'codigoProduto',
 			type: 'string',
 			default: '',

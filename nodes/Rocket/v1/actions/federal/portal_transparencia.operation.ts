@@ -25,7 +25,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['federal'], operation: ['portal_transparencia'] } },
 		},
 	{
-			displayName: 'ID DETALHE',
+			displayName: 'ID Detalhe',
 			name: 'idDetalhe',
 			type: 'string',
 			default: '',

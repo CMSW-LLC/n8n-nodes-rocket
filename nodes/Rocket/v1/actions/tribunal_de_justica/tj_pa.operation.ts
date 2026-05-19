@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUM PROCESSO',
+			displayName: 'NUM Processo',
 			name: 'numProcesso',
 			type: 'string',
 			default: '',

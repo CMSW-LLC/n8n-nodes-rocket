@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['idwall'], operation: ['idwall_doc_copia'] } },
 		},
 	{
-			displayName: 'URL DOC FRENTE',
+			displayName: 'URL DOC Frente',
 			name: 'urlDocFrente',
 			type: 'string',
 			default: '',

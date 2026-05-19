@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
 	},
 	{
-			displayName: 'LOCALIDADE',
+			displayName: 'Localidade',
 			name: 'localidade',
 			type: 'string',
 			default: '',
@@ -34,7 +34,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['correios'], operation: ['correios_logradouro'] } },
 		},
 	{
-			displayName: 'LOGRADOURO',
+			displayName: 'Logradouro',
 			name: 'logradouro',
 			type: 'string',
 			default: '',

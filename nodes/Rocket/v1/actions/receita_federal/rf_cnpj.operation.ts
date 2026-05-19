@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ATIVAR PESQUISA EM DADOS ABERTOS',
+			displayName: 'Ativar Pesquisa em DADOS Abertos',
 			name: 'dadosAbertos',
 			type: 'string',
 			default: '',

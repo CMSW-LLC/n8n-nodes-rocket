@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cvm'], operation: ['afast_determinacao_judicial'] } },
 	},
 	{
-			displayName: 'NUMERO PROCESSO',
+			displayName: 'NUMERO Processo',
 			name: 'numeroProcesso',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cvm'], operation: ['afast_determinacao_judicial'] } },
 		},
 	{
-			displayName: 'PARTICIPANTE',
+			displayName: 'Participante',
 			name: 'participante',
 			type: 'string',
 			default: '',

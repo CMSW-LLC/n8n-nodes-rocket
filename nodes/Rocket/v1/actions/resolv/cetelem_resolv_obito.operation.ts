@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -49,7 +49,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['resolv'], operation: ['cetelem_resolv_obito'] } },
 		},
 	{
-			displayName: 'TIPO CONSULTA',
+			displayName: 'TIPO Consulta',
 			name: 'tipoConsulta',
 			type: 'string',
 			default: '',

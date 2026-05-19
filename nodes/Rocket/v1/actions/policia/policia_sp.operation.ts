@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['policia'], operation: ['policia_sp'] } },
 	},
 	{
-			displayName: 'EXPEDICAO',
+			displayName: 'Expedicao',
 			name: 'expedicao',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NASCIMENTO',
+			displayName: 'Nascimento',
 			name: 'nascimento',
 			type: 'string',
 			default: '',

@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CONTEXTO',
+			displayName: 'Contexto',
 			name: 'contexto',
 			type: 'string',
 			default: '',
@@ -42,7 +42,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['cm_software'], operation: ['base_dados_contexto'] } },
 		},
 	{
-			displayName: 'ID EMPRESA DASH',
+			displayName: 'ID Empresa DASH',
 			name: 'idEmpresaDash',
 			type: 'string',
 			default: '',
@@ -50,7 +50,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'TICKET DASH',
+			displayName: 'Ticket DASH',
 			name: 'ticketDash',
 			type: 'string',
 			default: '',

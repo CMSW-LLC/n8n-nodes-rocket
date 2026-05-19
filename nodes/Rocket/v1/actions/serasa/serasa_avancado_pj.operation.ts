@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['serasa'], operation: ['serasa_avancado_pj'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'AMBIENTE',
+			displayName: 'Ambiente',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
@@ -43,7 +43,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'REPORT NAME',
+			displayName: 'Report NAME',
 			name: 'reportName',
 			type: 'string',
 			default: '',
@@ -51,7 +51,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'OPCIONAL FEATURES',
+			displayName: 'Opcional Features',
 			name: 'opcionalFeatures',
 			type: 'string',
 			default: '',
@@ -65,28 +65,28 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_avancado_pj'] } },
 		},
 	{
-			displayName: 'RLC TRANSACTION VALUE',
+			displayName: 'RLC Transaction VALUE',
 			name: 'rlcTransactionValue',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_avancado_pj'] } },
 		},
 	{
-			displayName: 'RLC POLICY',
+			displayName: 'RLC Policy',
 			name: 'rlcPolicy',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_avancado_pj'] } },
 		},
 	{
-			displayName: 'MODELO LIMITE CREDITO',
+			displayName: 'Modelo Limite Credito',
 			name: 'modeloLimiteCredito',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['serasa_avancado_pj'] } },
 		},
 	{
-			displayName: 'MODELO INDICE RMS PJ',
+			displayName: 'Modelo Indice RMS PJ',
 			name: 'modeloIndiceRmsPj',
 			type: 'string',
 			default: '',

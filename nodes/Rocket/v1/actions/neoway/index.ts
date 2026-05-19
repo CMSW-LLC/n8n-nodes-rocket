@@ -19,7 +19,7 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Neoway Cnpj',
+				name: 'Neoway CNPJ',
 				value: 'neoway_cnpj',
 				action: 'Neoway cnpj',
 			}

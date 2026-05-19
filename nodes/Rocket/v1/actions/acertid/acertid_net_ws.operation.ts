@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['acertid'], operation: ['acertid_net_ws'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,7 +28,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'ESTADO',
+			displayName: 'Estado',
 			name: 'estado',
 			type: 'string',
 			default: '',
@@ -43,7 +43,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['acertid'], operation: ['acertid_net_ws'] } },
 		},
 	{
-			displayName: 'DATANASCIMENTO',
+			displayName: 'Datanascimento',
 			name: 'datanascimento',
 			type: 'string',
 			default: '',
@@ -51,7 +51,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'DATAEXPEDICAO',
+			displayName: 'Dataexpedicao',
 			name: 'dataexpedicao',
 			type: 'string',
 			default: '',
@@ -59,14 +59,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'CODIGOPOSTO',
+			displayName: 'Codigoposto',
 			name: 'codigoposto',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['acertid'], operation: ['acertid_net_ws'] } },
 		},
 	{
-			displayName: 'VALOROPERACAO',
+			displayName: 'Valoroperacao',
 			name: 'valoroperacao',
 			type: 'string',
 			default: '',
@@ -74,7 +74,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'PREENCHIMENTO',
+			displayName: 'Preenchimento',
 			name: 'preenchimento',
 			type: 'string',
 			default: '',

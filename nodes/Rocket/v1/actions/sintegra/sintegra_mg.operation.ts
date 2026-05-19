@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_mg'] } },
 		},
 	{
-			displayName: 'Numero Inscricao Estadual Produtor Rural',
+			displayName: 'NUMERO Inscricao Estadual Produtor Rural',
 			name: 'ieRural',
 			type: 'string',
 			default: '',

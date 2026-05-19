@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['serasa'], operation: ['verify_id_pf'] } },
 	},
 	{
-			displayName: 'Usuário De Acesso Ao Provedor',
+			displayName: 'Usuário de Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha De Acesso Ao Provedor',
+			displayName: 'Senha de Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -35,7 +35,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['verify_id_pf'] } },
 		},
 	{
-			displayName: 'CLIENT ID',
+			displayName: 'Client ID',
 			name: 'clientId',
 			type: 'string',
 			default: '',
@@ -51,7 +51,7 @@ export const properties: INodeProperties[] = [
 			placeholder: 'name@email.com',
 		},
 	{
-			displayName: 'PHONE NUMBER',
+			displayName: 'PHONE Number',
 			name: 'phoneNumber',
 			type: 'string',
 			default: '',
@@ -79,7 +79,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['serasa'], operation: ['verify_id_pf'] } },
 		},
 	{
-			displayName: 'DOCUMENT',
+			displayName: 'Document',
 			name: 'document',
 			type: 'string',
 			default: '',
@@ -102,21 +102,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'MOTHER NAME',
+			displayName: 'Mother NAME',
 			name: 'motherName',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['verify_id_pf'] } },
 		},
 	{
-			displayName: 'STREET',
+			displayName: 'Street',
 			name: 'street',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['serasa'], operation: ['verify_id_pf'] } },
 		},
 	{
-			displayName: 'NUMBER',
+			displayName: 'Number',
 			name: 'number',
 			type: 'string',
 			default: '',

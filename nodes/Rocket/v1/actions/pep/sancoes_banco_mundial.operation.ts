@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['sancoes_banco_mundial'] } },
 	},
 	{
-			displayName: 'SEARCH',
+			displayName: 'Search',
 			name: 'search',
 			type: 'string',
 			default: '',

@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_pr'] } },
 	},
 	{
-			displayName: 'IE PRODUTOR RURAL',
+			displayName: 'IE Produtor RURAL',
 			name: 'iepr',
 			type: 'string',
 			default: '',

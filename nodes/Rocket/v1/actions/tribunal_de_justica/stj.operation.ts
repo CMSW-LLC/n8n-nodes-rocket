@@ -18,7 +18,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['stj'] } },
 		},
 	{
-			displayName: 'NUM REGISTRO',
+			displayName: 'NUM Registro',
 			name: 'numRegistro',
 			type: 'string',
 			default: '',
@@ -32,7 +32,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['stj'] } },
 		},
 	{
-			displayName: 'FILTRO NOME',
+			displayName: 'Filtro NOME',
 			name: 'filtroNome',
 			type: 'string',
 			default: '',
