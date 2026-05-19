@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/cmrck/n8n-nodes-rocket.git"
+        "url": "https://github.com/CMSW-LLC/n8n-nodes-rocket.git"
     },
     "scripts": {
         "generate:providers": "tsx scripts/factory-providers.ts",

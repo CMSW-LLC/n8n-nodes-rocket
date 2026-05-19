@@ -102,7 +102,7 @@ RUN cd /usr/local/lib/node_modules/n8n && npm install n8n-nodes-rocket
 
 ```bash
 # 1. Clone este repositório
-git clone https://github.com/cmrck/n8n-nodes-rocket.git
+git clone https://github.com/CMSW-LLC/n8n-nodes-rocket.git
 cd n8n-nodes-rocket
 
 # 2. Configure a API Key no .env
