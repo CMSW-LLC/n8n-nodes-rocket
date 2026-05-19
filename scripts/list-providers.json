@@ -476,7 +476,7 @@
   {
     "id_site_provedor": 10972,
     "nome_chave": "bigboost",
-    "descricao": "BIg Boost API",
+    "descricao": "Big Boost API",
     "id_grupo_provedor": 83,
     "descricao_grupo": "BigBoost",
     "parametros": [
