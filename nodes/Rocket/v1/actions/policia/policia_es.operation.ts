@@ -34,7 +34,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Documento',
+			displayName: 'DOCUMENTO',
 			name: 'documento',
 			type: 'string',
 			default: '',
@@ -42,7 +42,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUM Documento',
+			displayName: 'NUM DOCUMENTO',
 			name: 'numDocumento',
 			type: 'string',
 			default: '',
@@ -50,7 +50,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Nascimento',
+			displayName: 'NASCIMENTO',
 			name: 'nascimento',
 			type: 'string',
 			default: '',

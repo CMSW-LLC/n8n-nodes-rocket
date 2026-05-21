@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# Exec 2: Build incremental (sem regenerar providers da API)
-# Executa: npm run lint:fix + npm run lint + n8n-node build
-# Para regenerar providers: use o script ./generate
+# Exec 1: Geração completa (busca API + gera arquivos + lint + build)
+# Executa: npm run generate:all + npm run lint:fix + npm run lint + n8n-node build
+# Requer: CMSW_API_KEY para buscar dados da API Rocket
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
@@ -12,8 +12,8 @@ VOLUME_NAME="rocket-nodes-dist"
 
 # 1. Recriar o volume (remover se existir, depois criar limpo)
 if docker volume inspect "${VOLUME_NAME}" >/dev/null 2>&1; then
-	    echo "==> Volume '${VOLUME_NAME}' existe. Removendo para recriar limpo..."
-	        docker volume rm "${VOLUME_NAME}"
+    echo "==> Volume '${VOLUME_NAME}' existe. Removendo para recriar limpo..."
+    docker volume rm "${VOLUME_NAME}"
 fi
 echo "==> Criando volume '${VOLUME_NAME}'..."
 docker volume create "${VOLUME_NAME}"
@@ -23,8 +23,7 @@ docker container prune -f
 docker image prune -f
 docker builder prune -f
 
-# 3. Build da imagem sem cache e execução do container de build
-docker compose build --no-cache build
-docker compose run --rm build
-
+# 3. Build da imagem sem cache e execução do container de geração (Exec 1)
+docker compose build --no-cache generate
+docker compose run --rm generate
 

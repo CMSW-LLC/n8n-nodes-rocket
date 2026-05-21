@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_riojaneiro'] } },
 	},
 	{
-			displayName: 'Inscricao',
+			displayName: 'INSCRICAO',
 			name: 'inscricao',
 			type: 'string',
 			default: '',
@@ -25,7 +25,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['prefeituras'], operation: ['prefeitura_riojaneiro'] } },
 		},
 	{
-			displayName: 'Descricao',
+			displayName: 'DESCRICAO',
 			name: 'descricao',
 			type: 'string',
 			default: '',

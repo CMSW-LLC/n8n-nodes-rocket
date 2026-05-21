@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['federal'], operation: ['cidade_fronteiricas'] } },
 	},
 	{
-			displayName: 'NOME Municipio',
+			displayName: 'NOME MUNICIPIO',
 			name: 'nomeMunicipio',
 			type: 'string',
 			default: '',

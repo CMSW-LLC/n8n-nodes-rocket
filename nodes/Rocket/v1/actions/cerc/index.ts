@@ -25,39 +25,39 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Cerc Avaliacoes Dados Dfe',
+				name: 'Cerc - Avaliacoes Dados Dfe',
 				value: 'avaliacoes_dados_dfe',
-				action: 'Cerc avaliacoes dados dfe',
+				action: 'Cerc - avaliacoes dados dfe',
 			},
 			{
-				name: 'Cerc Avaliacoes Dados Partes',
+				name: 'Cerc - Avaliacoes Dados Partes',
 				value: 'avaliacoes_dados_partes',
-				action: 'Cerc avaliacoes dados partes',
+				action: 'Cerc - avaliacoes dados partes',
 			},
 			{
-				name: 'Cerc Avaliacoes Direitos Creditorios',
+				name: 'Cerc - Avaliacoes Direitos Creditorios',
 				value: 'aval_direitos_creditorios',
-				action: 'Cerc avaliacoes direitos creditorios',
+				action: 'Cerc - avaliacoes direitos creditorios',
 			},
 			{
-				name: 'Cerc Avaliacoes Indicadores Consistencia',
+				name: 'Cerc - Avaliacoes Indicadores Consistencia',
 				value: 'avaliacoes_ind_consistencia',
-				action: 'Cerc avaliacoes indicadores consistencia',
+				action: 'Cerc - avaliacoes indicadores consistencia',
 			},
 			{
-				name: 'Cerc Consulta de Eventos da Avaliacao',
+				name: 'Cerc - Consulta De Eventos Da Avaliacao',
 				value: 'consulta_aval_eventos',
-				action: 'Cerc consulta de eventos da avaliacao',
+				action: 'Cerc - consulta de eventos da avaliacao',
 			},
 			{
-				name: 'Cerc Direitos Creditorios Lote',
+				name: 'Cerc - Direitos Creditorios Lote',
 				value: 'direitos_creditorios_lote',
-				action: 'Cerc direitos creditorios lote',
+				action: 'Cerc - direitos creditorios lote',
 			},
 			{
-				name: 'Cerc Lotes Avaliacoes',
+				name: 'Cerc - Lotes Avaliacoes',
 				value: 'lotes_avaliacoes',
-				action: 'Cerc lotes avaliacoes',
+				action: 'Cerc - lotes avaliacoes',
 			}
 		],
 		default: 'avaliacoes_dados_dfe',

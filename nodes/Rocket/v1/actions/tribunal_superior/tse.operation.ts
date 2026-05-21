@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_superior'], operation: ['tse'] } },
 	},
 	{
-			displayName: 'DT Nascimento',
+			displayName: 'DT NASCIMENTO',
 			name: 'dtNascimento',
 			type: 'string',
 			default: '',

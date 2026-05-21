@@ -43,24 +43,24 @@ const operations: INodeProperties[] = [
 				action: 'Nova vida inadimplencia pj',
 			},
 			{
-				name: 'Nova Vida WS Nvcheck',
+				name: 'Nova Vida WS NVCHECK',
 				value: 'novavida_nvcheck',
 				action: 'Nova vida ws nvcheck',
 			},
 			{
-				name: 'NV Obito Tarifado',
+				name: 'NV - Obito Tarifado',
 				value: 'nvti_ws009_tarifado',
-				action: 'Nv obito tarifado',
+				action: 'Nv - obito tarifado',
 			},
 			{
-				name: 'NV Pessoas Empresas Tk Tarifado',
+				name: 'NV - Pessoas Empresas Tk Tarifado',
 				value: 'nv_pessoas_empr_tk_tarifado',
-				action: 'Nv pessoas empresas tk tarifado',
+				action: 'Nv - pessoas empresas tk tarifado',
 			},
 			{
-				name: 'NV Situacao Cadastral TK Tarifado',
+				name: 'NV - Situacao Cadastral TK Tarifado',
 				value: 'nv_sit_cad_tk_tarifado',
-				action: 'Nv situacao cadastral tk tarifado',
+				action: 'Nv - situacao cadastral tk tarifado',
 			},
 			{
 				name: 'Obito TK',

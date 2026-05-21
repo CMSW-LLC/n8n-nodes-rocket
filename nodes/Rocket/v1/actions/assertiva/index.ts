@@ -22,22 +22,22 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Assertiva',
+				name: 'ASSERTIVA',
 				value: 'assertiva',
 				action: 'Assertiva',
 			},
 			{
-				name: 'Assertiva CNPJ',
+				name: 'ASSERTIVA CNPJ',
 				value: 'assertiva_cnpj',
 				action: 'Assertiva cnpj',
 			},
 			{
-				name: 'Assertiva CNPJ Tarifado',
+				name: 'ASSERTIVA CNPJ TARIFADO',
 				value: 'assertiva_cnpj_tarifado',
 				action: 'Assertiva cnpj tarifado',
 			},
 			{
-				name: 'Assertiva Tarifado',
+				name: 'ASSERTIVA TARIFADO',
 				value: 'assertiva_tarifado',
 				action: 'Assertiva tarifado',
 			}

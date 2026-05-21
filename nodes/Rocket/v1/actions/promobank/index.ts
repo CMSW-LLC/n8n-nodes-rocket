@@ -19,7 +19,7 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Promobank',
+				name: 'PROMOBANK',
 				value: 'promobank',
 				action: 'Promobank',
 			}

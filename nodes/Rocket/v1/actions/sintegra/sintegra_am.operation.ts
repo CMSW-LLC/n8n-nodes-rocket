@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_am'] } },
 	},
 	{
-			displayName: 'CNPJ',
+			displayName: 'Cnpj',
 			name: 'cnpj',
 			type: 'string',
 			default: '',

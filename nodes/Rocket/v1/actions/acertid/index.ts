@@ -20,14 +20,14 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Acert ID Via WS 3.0 Iniciar Consulta',
+				name: 'Acert ID Via WS 3.0 - Iniciar Consulta',
 				value: 'acertid_net_ws',
-				action: 'Acert id via ws 3.0 iniciar consulta',
+				action: 'Acert id via ws 3.0 - iniciar consulta',
 			},
 			{
-				name: 'Acert ID Via WS 3.0 Resumo Finalizar Consulta',
+				name: 'Acert ID Via WS 3.0 - Resumo Finalizar Consulta',
 				value: 'acertid_resumo_ws',
-				action: 'Acert id via ws 3.0 resumo finalizar consulta',
+				action: 'Acert id via ws 3.0 - resumo finalizar consulta',
 			}
 		],
 		default: 'acertid_net_ws',

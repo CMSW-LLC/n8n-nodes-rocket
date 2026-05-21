@@ -19,7 +19,7 @@ import {
 	resourceSlugToExportPrefix,
 	singularizeFileBase,
 	toCamelCase,
-	toOperationOptionLabels,
+	toSentenceCase,
 	toTitleCase,
 } from './factory-string-utils';
 import type { Provider } from './providers-types';
@@ -174,14 +174,13 @@ function generateResourceIndex(resourceSlug: string, providers: Provider[], opFi
 	);
 
 	const optionsLiteral = sortedProviders
-		.map((p) => {
-			const { name, action } = toOperationOptionLabels(p.descricao);
-			return `			{
-				name: '${escapeString(name)}',
+		.map(
+			(p) => `			{
+				name: '${escapeString(toTitleCase(p.descricao))}',
 				value: '${escapeString(p.nome_chave)}',
-				action: '${escapeString(action)}',
-			}`;
-		})
+				action: '${escapeString(toSentenceCase(toTitleCase(p.descricao)))}',
+			}`,
+		)
 		.join(',\n');
 
 	const firstOp = sortedProviders[0]?.nome_chave ?? '';

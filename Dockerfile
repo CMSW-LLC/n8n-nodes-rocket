@@ -21,7 +21,7 @@ RUN npm install
 COPY . .
 
 # Gera providers, verifica erros de código e compila o projeto
-RUN npm run build:compile
+RUN npm run build
 #RUN npm run release  # cria release com o pacote compilado
 
 # Runtime stage - imagem minimal com apenas os artefatos para o n8n

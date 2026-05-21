@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_1'] } },
 	},
 	{
-			displayName: 'Qtdret',
+			displayName: 'QTDRET',
 			name: 'qtdret',
 			type: 'string',
 			default: '',
@@ -32,14 +32,14 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_1'] } },
 		},
 	{
-			displayName: 'Porregiao',
+			displayName: 'PORREGIAO',
 			name: 'porregiao',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['tribunal_de_justica'], operation: ['trf_1'] } },
 		},
 	{
-			displayName: 'Estado',
+			displayName: 'ESTADO',
 			name: 'estado',
 			type: 'string',
 			default: '',
@@ -47,7 +47,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Cidade',
+			displayName: 'CIDADE',
 			name: 'cidade',
 			type: 'string',
 			default: '',
@@ -62,7 +62,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Processo',
+			displayName: 'PROCESSO',
 			name: 'processo',
 			type: 'string',
 			default: '',

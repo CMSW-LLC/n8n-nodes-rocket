@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-rocket",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "description": "N8N community node para consulta a provedores de dados via Rocket API (CMSW) — bureau de crédito, Receita Federal, dados veiculares, telefonia, PEP e muito mais.",
     "license": "MIT",
     "homepage": "https://rocket-providers.cmsw.com/docs/n8n-nodes-rocket",
@@ -13,17 +13,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/CMSW-LLC/n8n-nodes-rocket.git"
+        "url": "https://githua.com/CMSW-LLC/n8n-nodes-rocket.git"
     },
     "scripts": {
         "generate:providers": "tsx scripts/factory-providers.ts",
         "generate:providers-v1": "tsx scripts/factory-providers-v1.ts",
         "generate:group-providers": "tsx scripts/factory-group-providers.ts",
-        "generate:all": "npm run generate:providers && npm run generate:group-providers && npm run generate:providers-v1 && npm run lint:fix",
-        "prebuild": "npm run generate:all",
-        "build": "n8n-node build",
-        "build:compile": "npm run generate:all && npm run lint:fix && npm run lint && n8n-node build",
-        "build:watch": "tsc --watch",
+	"generate:all": "npm run generate:providers && npm run generate:group-providers && npm run generate:providers-v1",
+	"generate": "npm run generate:all && npm run lint:fix && npm run lint && n8n-node build",
+        "build": "npm run lint:fix && npm run lint && n8n-node build",
+	"build:full": "npm run generate",
+	"generate-build": "npm run generate && npm run build",
+	"build:watch": "tsc --watch",
         "dev": "n8n-node dev",
         "lint": "n8n-node lint",
         "lint:fix": "n8n-node lint --fix",
@@ -49,8 +50,6 @@
         "eslint": "9.32.0",
         "prettier": "^3.8.1",
         "release-it": "^20.0.0",
-        "sentence-case": "^3.0.4",
-        "title-case": "^3.0.3",
         "tsx": "^4.21.0",
         "typescript": "^6.0.2"
     },

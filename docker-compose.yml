@@ -39,7 +39,7 @@ services:
     command: >
       sh -c "
         npm install &&
-        npm run build:compile &&
+        npm run build &&
         rm -rf /output/dist &&
         cp package.json /output/ &&
         cp -r dist /output/ &&
@@ -53,12 +53,13 @@ services:
 
   # Alias de 'build': mantido por compatibilidade com scripts existentes.
   # Desde que 'build:compile' já inclui 'generate:all', o comportamento é idêntico ao serviço 'build'.
-  build-full:
+  generate:
     build:
       context: .
       dockerfile: Dockerfile
       target: build-env
     image: n8n-nodes-rocket-build-env:latest
+    container_name: n8n-nodes-rocket-generate
     working_dir: /app
     environment:
       - CMSW_API_KEY
@@ -68,12 +69,12 @@ services:
     command: >
       sh -c "
         npm install &&
-        npm run build:compile &&
+        npm run generate &&
         rm -rf /output/dist &&
         cp package.json /output/ &&
         cp -r dist /output/ &&
         cp verify-n8n-mount.sh /output/ 2>/dev/null || true &&
-        echo 'Build COMPLETO concluído. Providers atualizados. Volume n8n-nodes-rocket-dist atualizado.'
+        echo 'Geração e build concluídos. Providers atualizados. Volume rocket-nodes-dist atualizado.'
       "
 
 volumes:

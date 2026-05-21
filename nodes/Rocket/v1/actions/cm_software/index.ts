@@ -27,9 +27,9 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Base de Dados Contexto',
+				name: 'Base De Dados - Contexto',
 				value: 'base_dados_contexto',
-				action: 'Base de dados contexto',
+				action: 'Base de dados - contexto',
 			},
 			{
 				name: 'Clear Sale',
@@ -37,17 +37,17 @@ const operations: INodeProperties[] = [
 				action: 'Clear sale',
 			},
 			{
-				name: 'Console de Validacao Cadastral PF',
+				name: 'Console De Validacao Cadastral PF',
 				value: 'cvc_pf',
 				action: 'Console de validacao cadastral pf',
 			},
 			{
-				name: 'Console de Validacao Cadastral PJ',
+				name: 'Console De Validacao Cadastral PJ',
 				value: 'cvc_pj',
 				action: 'Console de validacao cadastral pj',
 			},
 			{
-				name: 'Extracao de Dados Passaporte e CNH',
+				name: 'Extracao De Dados Passaporte E CNH',
 				value: 'cnh_extracao_dados',
 				action: 'Extracao de dados passaporte e cnh',
 			},
@@ -62,9 +62,9 @@ const operations: INodeProperties[] = [
 				action: 'Rocket assessment',
 			},
 			{
-				name: 'SMS Envio de Sms Via API Gateway',
+				name: 'SMS - Envio De Sms Via API Gateway',
 				value: 'apigateway_sms',
-				action: 'Sms envio de sms via api gateway',
+				action: 'Sms - envio de sms via api gateway',
 			},
 			{
 				name: 'Validar Cnh',

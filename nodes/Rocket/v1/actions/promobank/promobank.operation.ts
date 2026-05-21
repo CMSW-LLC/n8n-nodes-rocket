@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['promobank'], operation: ['promobank'] } },
 	},
 	{
-			displayName: 'Usuário de Acesso Ao Provedor',
+			displayName: 'Usuário De Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha de Acesso Ao Provedor',
+			displayName: 'Senha De Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -28,14 +28,14 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'NUMERO Beneficio',
+			displayName: 'NUMERO BENEFICIO',
 			name: 'numeroBeneficio',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['promobank'], operation: ['promobank'] } },
 		},
 	{
-			displayName: 'Codigo Empresa',
+			displayName: 'CODIGO EMPRESA',
 			name: 'codigoEmpresa',
 			type: 'string',
 			default: '',

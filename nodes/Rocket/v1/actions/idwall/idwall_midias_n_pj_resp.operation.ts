@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['idwall'], operation: ['idwall_midias_n_pj_resp'] } },
 	},
 	{
-			displayName: 'ID Relatorio',
+			displayName: 'ID RELATORIO',
 			name: 'idRelatorio',
 			type: 'string',
 			default: '',

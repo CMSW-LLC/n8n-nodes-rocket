@@ -44,7 +44,7 @@ const operations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Acordos de Leniencia',
+				name: 'Acordos De Leniencia',
 				value: 'acordos_leniencia',
 				action: 'Acordos de leniencia',
 			},
@@ -54,9 +54,9 @@ const operations: INodeProperties[] = [
 				action: 'Ancord',
 			},
 			{
-				name: 'Cadastro de Expulsoes da Administracao Federal (ceaf)',
+				name: 'Cadastro De Expulsoes Da Administracao Federal (Ceaf)',
 				value: 'ceaf',
-				action: 'Cadastro de expulsoes da administracao federal (ceaf)',
+				action: 'Cadastro de expulsoes da administracao federal ceaf',
 			},
 			{
 				name: 'CEPIM',
@@ -79,7 +79,7 @@ const operations: INodeProperties[] = [
 				action: 'Consulta obito rj',
 			},
 			{
-				name: 'Exploracao do Trabalho Escravo',
+				name: 'Exploracao Do Trabalho Escravo',
 				value: 'trabalho_escravo',
 				action: 'Exploracao do trabalho escravo',
 			},
@@ -89,9 +89,9 @@ const operations: INodeProperties[] = [
 				action: 'Ibama',
 			},
 			{
-				name: 'IBAMA Certidao Negativa de Debito',
+				name: 'IBAMA - Certidao Negativa De Debito',
 				value: 'ibama_cert_negativa_debt',
-				action: 'Ibama certidao negativa de debito',
+				action: 'Ibama - certidao negativa de debito',
 			},
 			{
 				name: 'IBAMA Embargos',
@@ -104,14 +104,14 @@ const operations: INodeProperties[] = [
 				action: 'Ibge codigo municipio',
 			},
 			{
-				name: 'IEPTB BR Instituto de Estudos de Protesto de Titulos do Brasil',
-				value: 'ieptb',
-				action: 'Ieptb br instituto de estudos de protesto de titulos do brasil',
-			},
-			{
 				name: 'IEPTB Nacional',
 				value: 'ieptb_nacional',
 				action: 'Ieptb nacional',
+			},
+			{
+				name: 'Ieptb-Br - Instituto De Estudos De Protesto De Titulos Do Brasil',
+				value: 'ieptb',
+				action: 'Ieptb br instituto de estudos de protesto de titulos do brasil',
 			},
 			{
 				name: 'Portal Transparencia',
@@ -119,9 +119,14 @@ const operations: INodeProperties[] = [
 				action: 'Portal transparencia',
 			},
 			{
-				name: 'Portal Transparencia Beneficio Auxilo Social',
+				name: 'Portal Transparencia - Beneficio Auxilo Social',
 				value: 'portal_transparencia_bas',
-				action: 'Portal transparencia beneficio auxilo social',
+				action: 'Portal transparencia - beneficio auxilo social',
+			},
+			{
+				name: 'Portal Transparencia - Servidor Publicos Com Remuneracao Publicada E Funcao Comissionada',
+				value: 'portal_transparencia_pf_rpfc',
+				action: 'Portal transparencia - servidor publicos com remuneracao publicada e funcao comissionada',
 			},
 			{
 				name: 'Portal Transparencia Bolsa Familia',
@@ -129,9 +134,9 @@ const operations: INodeProperties[] = [
 				action: 'Portal transparencia bolsa familia',
 			},
 			{
-				name: 'Portal Transparencia CEIS Consultar Empresas Inidoneas e Suspensas',
+				name: 'Portal Transparencia CEIS - Consultar Empresas Inidoneas E Suspensas',
 				value: 'portal_transparencia_ceis',
-				action: 'Portal transparencia ceis consultar empresas inidoneas e suspensas',
+				action: 'Portal transparencia ceis - consultar empresas inidoneas e suspensas',
 			},
 			{
 				name: 'Portal Transparencia Pessoa Juridica',
@@ -139,17 +144,12 @@ const operations: INodeProperties[] = [
 				action: 'Portal transparencia pessoa juridica',
 			},
 			{
-				name: 'Portal Transparencia Servidor Publicos com Remuneracao Publicada e Funcao Comissionada',
-				value: 'portal_transparencia_pf_rpfc',
-				action: 'Portal transparencia servidor publicos com remuneracao publicada e funcao comissionada',
-			},
-			{
-				name: 'Registro de Dominios Internet',
+				name: 'Registro De Dominios Internet',
 				value: 'registro_br',
 				action: 'Registro de dominios internet',
 			},
 			{
-				name: 'Regularidade do Empregador no FGTS',
+				name: 'Regularidade Do Empregador No FGTS',
 				value: 'fgts_empregador',
 				action: 'Regularidade do empregador no fgts',
 			},
@@ -159,9 +159,9 @@ const operations: INodeProperties[] = [
 				action: 'Seguro defeso',
 			},
 			{
-				name: 'Sinesp Cidadao Consulta Veiculos ( Placa )',
+				name: 'SINESP Cidadao - Consulta Veiculos ( Placa )',
 				value: 'sinesp_cidadao',
-				action: 'Sinesp cidadao consulta veiculos ( placa )',
+				action: 'Sinesp cidadao - consulta veiculos ( placa )',
 			},
 			{
 				name: 'Suframa',

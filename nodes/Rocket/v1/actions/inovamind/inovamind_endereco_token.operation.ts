@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 	},
 	{
-			displayName: 'Usuário de Acesso Ao Provedor',
+			displayName: 'Usuário De Acesso Ao Provedor',
 			name: 'usuario',
 			type: 'string',
 			default: '',
@@ -19,7 +19,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Senha de Acesso Ao Provedor',
+			displayName: 'Senha De Acesso Ao Provedor',
 			name: 'senha',
 			type: 'string',
 			default: '',
@@ -36,21 +36,21 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Bairro',
+			displayName: 'BAIRRO',
 			name: 'bairro',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 		},
 	{
-			displayName: 'Telefone',
+			displayName: 'TELEFONE',
 			name: 'telefone',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 		},
 	{
-			displayName: 'Cidade',
+			displayName: 'CIDADE',
 			name: 'cidade',
 			type: 'string',
 			default: '',
@@ -65,7 +65,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['inovamind'], operation: ['inovamind_endereco_token'] } },
 		},
 	{
-			displayName: 'Logradouro',
+			displayName: 'LOGRADOURO',
 			name: 'logradouro',
 			type: 'string',
 			default: '',
@@ -81,7 +81,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Complemento',
+			displayName: 'COMPLEMENTO',
 			name: 'complemento',
 			type: 'string',
 			default: '',

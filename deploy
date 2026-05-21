@@ -1,6 +1,13 @@
 #!/bin/bash
-# Deploy para produção - compila no container e popula o volume para o n8n
+# Deploy para produção - copia artefatos já compilados para o volume do n8n
 # NÃO precisa de Node instalado no servidor
+#
+# PREMISSA: Os scripts ./generate ou ./build já foram executados anteriormente
+#           O diretório dist/ deve conter os arquivos compilados
+#
+# Fluxo completo de deploy:
+#   1. ./generate  (ou ./build, se arquivos já estão gerados)
+#   2. ./deploy    (este script - apenas copia artefatos)
 
 set -e
 source .env
@@ -9,9 +16,27 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 N8N_CONTAINER="n8n"
+VOLUME_NAME="rocket-nodes-dist"
 
-echo "==> n8n-nodes-rocket: Deploy (build no container)"
+echo "==> n8n-nodes-rocket: Deploy"
 echo "    Diretório: $SCRIPT_DIR"
+echo
+
+# Validar que dist/ existe
+if [ ! -d "dist" ]; then
+    echo "ERRO: Diretório 'dist/' não encontrado!"
+    echo "Execute primeiro: ./generate (ou ./build se arquivos já estão gerados)"
+    exit 1
+fi
+
+# Validar que dist/ não está vazio
+if [ -z "$(ls -A dist)" ]; then
+    echo "ERRO: Diretório 'dist/' está vazio!"
+    echo "Execute primeiro: ./generate (ou ./build se arquivos já estão gerados)"
+    exit 1
+fi
+
+echo "==> Artefatos encontrados em dist/ ✓"
 echo
 
 # 1. Parar o n8n se estiver em execução
@@ -22,15 +47,39 @@ if docker ps -q --filter "name=^${N8N_CONTAINER}$" | grep -q .; then
     echo
 fi
 
-# 2. Compilar e popular o volume
-./build
-
+# 2. Verificar/criar volume
+if ! docker volume inspect "${VOLUME_NAME}" >/dev/null 2>&1; then
+    echo "==> Volume '${VOLUME_NAME}' não existe. Criando..."
+    docker volume create "${VOLUME_NAME}"
+    echo "    Criado."
+else
+    echo "==> Volume '${VOLUME_NAME}' existe ✓"
+fi
 echo
-echo "==> Deploy concluído. Volume populado."
+
+# 3. Copiar artefatos para o volume usando container temporário
+echo "==> Copiando artefatos para o volume ${VOLUME_NAME}..."
+docker run --rm \
+    -v "${SCRIPT_DIR}:/source:ro" \
+    -v "${VOLUME_NAME}:/output" \
+    alpine:latest \
+    sh -c "
+        rm -rf /output/dist && 
+	cp /source/package.json /output/ && 
+	cp -r /source/dist /output/ && 
+	cp /source/verify-n8n-mount.sh /output/ 2>/dev/null || true &&
+	echo 'Copiados: package.json, dist/' &&
+	ls -lh /output/
+    "
+echo "    Artefatos copiados ✓"
 echo
 
-# 3. Reiniciar o n8n
+echo "==> Deploy concluído. Volume '${VOLUME_NAME}' atualizado."
+echo
+
+# 4. Reiniciar o n8n
 echo "==> Reiniciando n8n..."
 echo "    cd $N8N_RCK_PATH && ./restart"
 cd "$N8N_RCK_PATH"
 ./restart
+

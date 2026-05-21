@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 	},
 	{
-			displayName: 'STATE Province',
+			displayName: 'STATE PROVINCE',
 			name: 'stateProvince',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 		},
 	{
-			displayName: 'Country',
+			displayName: 'COUNTRY',
 			name: 'country',
 			type: 'string',
 			default: '',
@@ -47,7 +47,7 @@ export const properties: INodeProperties[] = [
 			displayOptions: { show: { resource: ['pep'], operation: ['ofac_sanctions_list'] } },
 		},
 	{
-			displayName: 'Program',
+			displayName: 'PROGRAM',
 			name: 'program',
 			type: 'string',
 			default: '',

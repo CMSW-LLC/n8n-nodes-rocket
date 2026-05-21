@@ -1,0 +1,204 @@
+#!/bin/bash
+# Limpa arquivos gerados automaticamente e compilados
+#
+# Uso:
+#   ./clear              # Limpa tudo (com confirmação)
+#   ./clear --yes        # Limpa tudo (sem confirmação)
+#   ./clear --dist       # Limpa apenas dist/
+#   ./clear --generated  # Limpa apenas arquivos gerados
+#   ./clear --api-cache  # Limpa apenas cache da API (JSONs)
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# Cores para output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+# Flags
+CLEAN_DIST=true
+CLEAN_GENERATED=true
+CLEAN_API_CACHE=true
+SKIP_CONFIRMATION=false
+
+# Processar argumentos
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --yes|-y)
+            SKIP_CONFIRMATION=true
+            shift
+            ;;
+        --dist|-d)
+            CLEAN_GENERATED=false
+            CLEAN_API_CACHE=false
+            shift
+            ;;
+        --generated|-g)
+            CLEAN_DIST=false
+            CLEAN_API_CACHE=false
+            shift
+            ;;
+        --api-cache|-a)
+            CLEAN_DIST=false
+            CLEAN_GENERATED=false
+            shift
+            ;;
+        --help|-h)
+            echo "Uso: ./clear [OPÇÕES]"
+            echo ""
+            echo "Opções:"
+            echo "  --yes, -y          Não pedir confirmação"
+            echo "  --dist, -d         Limpar apenas dist/"
+            echo "  --generated, -g    Limpar apenas arquivos gerados (.ts)"
+            echo "  --api-cache, -a    Limpar apenas cache da API (.json)"
+            echo "  --help, -h         Mostrar esta ajuda"
+            echo ""
+            echo "Sem argumentos: limpa tudo (dist/ + gerados + cache API)"
+            exit 0
+            ;;
+        *)
+            echo -e "${RED}Erro: Argumento inválido: $1${NC}"
+            echo "Use --help para ver as opções disponíveis"
+            exit 1
+            ;;
+    esac
+done
+
+echo -e "${YELLOW}==> Limpeza de arquivos${NC}"
+echo ""
+
+# Mostrar o que será removido
+echo "Serão removidos:"
+if [ "$CLEAN_DIST" = true ]; then
+    if [ -d "dist" ]; then
+        echo -e "  ${RED}✗${NC} dist/ (compilados)"
+    else
+        echo "  ○ dist/ (não existe)"
+    fi
+fi
+
+if [ "$CLEAN_GENERATED" = true ]; then
+    TOTAL_GENERATED=0
+    VERSIONS_FOUND=""
+    
+    # Verificar v1/actions
+    if [ -d "nodes/Rocket/v1/actions" ]; then
+        V1_COUNT=$(find nodes/Rocket/v1/actions -type f -name "*.ts" 2>/dev/null | wc -l)
+        TOTAL_GENERATED=$((TOTAL_GENERATED + V1_COUNT))
+        VERSIONS_FOUND="$VERSIONS_FOUND v1($V1_COUNT)"
+    fi
+    
+    # Verificar v2/actions
+    if [ -d "nodes/Rocket/v2/actions" ]; then
+        V2_COUNT=$(find nodes/Rocket/v2/actions -type f -name "*.ts" 2>/dev/null | wc -l)
+        TOTAL_GENERATED=$((TOTAL_GENERATED + V2_COUNT))
+        VERSIONS_FOUND="$VERSIONS_FOUND v2($V2_COUNT)"
+    fi
+    
+    # Verificar v3/actions
+    if [ -d "nodes/Rocket/v3/actions" ]; then
+        V3_COUNT=$(find nodes/Rocket/v3/actions -type f -name "*.ts" 2>/dev/null | wc -l)
+        TOTAL_GENERATED=$((TOTAL_GENERATED + V3_COUNT))
+        VERSIONS_FOUND="$VERSIONS_FOUND v3($V3_COUNT)"
+    fi
+    
+    if [ $TOTAL_GENERATED -gt 0 ]; then
+        echo -e "  ${RED}✗${NC} nodes/Rocket/v*/actions/ ($TOTAL_GENERATED arquivos .ts gerados:$VERSIONS_FOUND)"
+    else
+        echo "  ○ nodes/Rocket/v*/actions/ (não existe)"
+    fi
+fi
+
+if [ "$CLEAN_API_CACHE" = true ]; then
+    JSON_FILES=""
+    [ -f "scripts/list-providers.json" ] && JSON_FILES="$JSON_FILES list-providers.json"
+    [ -f "scripts/list-groups-providers.json" ] && JSON_FILES="$JSON_FILES list-groups-providers.json"
+    
+    if [ -n "$JSON_FILES" ]; then
+        echo -e "  ${RED}✗${NC} scripts/ cache da API:$JSON_FILES"
+    else
+        echo "  ○ scripts/ cache da API (não existe)"
+    fi
+fi
+
+echo ""
+
+# Confirmação
+if [ "$SKIP_CONFIRMATION" = false ]; then
+    read -p "Confirma a limpeza? (s/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[SsYy]$ ]]; then
+        echo -e "${YELLOW}Limpeza cancelada.${NC}"
+        exit 0
+    fi
+fi
+
+echo ""
+echo -e "${GREEN}==> Limpando arquivos...${NC}"
+
+# Limpar dist/
+if [ "$CLEAN_DIST" = true ]; then
+    if [ -d "dist" ]; then
+        rm -rf dist
+        echo -e "  ${GREEN}✓${NC} dist/ removido"
+    fi
+fi
+
+# Limpar arquivos gerados
+if [ "$CLEAN_GENERATED" = true ]; then
+    REMOVED_COUNT=0
+    REMOVED_VERSIONS=""
+    
+    # Remover v1/actions
+    if [ -d "nodes/Rocket/v1/actions" ]; then
+        rm -rf nodes/Rocket/v1/actions
+        REMOVED_VERSIONS="$REMOVED_VERSIONS v1"
+        ((REMOVED_COUNT++))
+    fi
+    
+    # Remover v2/actions
+    if [ -d "nodes/Rocket/v2/actions" ]; then
+        rm -rf nodes/Rocket/v2/actions
+        REMOVED_VERSIONS="$REMOVED_VERSIONS v2"
+        ((REMOVED_COUNT++))
+    fi
+    
+    # Remover v3/actions
+    if [ -d "nodes/Rocket/v3/actions" ]; then
+        rm -rf nodes/Rocket/v3/actions
+        REMOVED_VERSIONS="$REMOVED_VERSIONS v3"
+        ((REMOVED_COUNT++))
+    fi
+    
+    if [ $REMOVED_COUNT -gt 0 ]; then
+        echo -e "  ${GREEN}✓${NC} nodes/Rocket/v*/actions/ removido ($REMOVED_COUNT versões:$REMOVED_VERSIONS)"
+    fi
+fi
+
+# Limpar cache da API
+if [ "$CLEAN_API_CACHE" = true ]; then
+    FILES_REMOVED=0
+    if [ -f "scripts/list-providers.json" ]; then
+        rm -f scripts/list-providers.json
+        ((FILES_REMOVED++))
+    fi
+    if [ -f "scripts/list-groups-providers.json" ]; then
+        rm -f scripts/list-groups-providers.json
+        ((FILES_REMOVED++))
+    fi
+    if [ $FILES_REMOVED -gt 0 ]; then
+        echo -e "  ${GREEN}✓${NC} Cache da API removido ($FILES_REMOVED arquivos .json)"
+    fi
+fi
+
+echo ""
+echo -e "${GREEN}==> Limpeza concluída!${NC}"
+echo ""
+echo "Para gerar novamente:"
+echo "  npm run generate    # Gera arquivos + build"
+echo "  npm run build       # Apenas build (requer arquivos já gerados)"
+

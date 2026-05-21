@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['sintegra'], operation: ['sintegra_rn'] } },
 	},
 	{
-			displayName: 'Identificador',
+			displayName: 'IDENTIFICADOR',
 			name: 'identificador',
 			type: 'string',
 			default: '',

@@ -11,14 +11,14 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
 	},
 	{
-			displayName: 'Ambiente',
+			displayName: 'AMBIENTE',
 			name: 'ambiente',
 			type: 'string',
 			default: '',
 			displayOptions: { show: { resource: ['cm_software'], operation: ['apigateway_sms'] } },
 		},
 	{
-			displayName: 'Mensagem',
+			displayName: 'MENSAGEM',
 			name: 'mensagem',
 			type: 'string',
 			default: '',
@@ -26,7 +26,7 @@ export const properties: INodeProperties[] = [
 			required: true,
 		},
 	{
-			displayName: 'Telefone',
+			displayName: 'TELEFONE',
 			name: 'telefone',
 			type: 'string',
 			default: '',

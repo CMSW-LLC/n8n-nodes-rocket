@@ -87,12 +87,12 @@ const operations: INodeProperties[] = [
 				action: 'Idwall processos',
 			},
 			{
-				name: 'Idwall Processos PJ',
+				name: 'IDWALL Processos PJ',
 				value: 'idwall_processos_pj',
 				action: 'Idwall processos pj',
 			},
 			{
-				name: 'Idwall Processos PJ Resposta',
+				name: 'IDWALL Processos PJ Resposta',
 				value: 'idwall_processos_pj_resp',
 				action: 'Idwall processos pj resposta',
 			},

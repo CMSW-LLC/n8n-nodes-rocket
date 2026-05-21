@@ -11,7 +11,7 @@ export const properties: INodeProperties[] = [
 		displayOptions: { show: { resource: ['receita_federal'], operation: ['simples_nacional_da'] } },
 	},
 	{
-			displayName: 'CNPJ',
+			displayName: 'Cnpj',
 			name: 'cnpj',
 			type: 'string',
 			default: '',
