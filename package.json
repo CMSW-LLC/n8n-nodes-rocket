@@ -1,6 +1,6 @@
 {
     "name": "n8n-nodes-rocket",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "N8N community node para consulta a provedores de dados via Rocket API (CMSW) — bureau de crédito, Receita Federal, dados veiculares, telefonia, PEP e muito mais.",
     "license": "MIT",
     "homepage": "https://rocket-providers.cmsw.com/docs/n8n-nodes-rocket",
