@@ -1,7 +1,7 @@
 /* Arquivo gerado automaticamente por scripts/factory-providers-v1.ts - não editar manualmente */
 
-import type { IDataObject, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, JsonObject } from 'n8n-workflow';
+import { NodeApiError, NodeOperationError } from 'n8n-workflow';
 
 import * as acertid from './acertid';
 import * as allcheck from './allcheck';
@@ -489,7 +489,7 @@ export async function router(this: IExecuteFunctions): Promise<INodeExecutionDat
 				returnData.push(...executionErrorData);
 				continue;
 			}
-			throw error;
+			throw new NodeApiError(this.getNode(), error as JsonObject);
 		}
 	}
 

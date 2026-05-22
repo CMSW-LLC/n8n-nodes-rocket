@@ -324,8 +324,8 @@ function generateRouter(bundles: GroupBundle[]): string {
 
 	return `/* ${GEN_MARKER} - não editar manualmente */
 
-import type { IDataObject, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData, JsonObject } from 'n8n-workflow';
+import { NodeApiError, NodeOperationError } from 'n8n-workflow';
 
 ${importLines.join('\n')}
 import type { RocketType } from './node.type';
@@ -370,7 +370,7 @@ export async function router(this: IExecuteFunctions): Promise<INodeExecutionDat
 				returnData.push(...executionErrorData);
 				continue;
 			}
-			throw error;
+			throw new NodeApiError(this.getNode(), error as JsonObject);
 		}
 	}
 

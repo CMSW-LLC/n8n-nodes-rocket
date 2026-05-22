@@ -4,7 +4,9 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
+	JsonObject,
 } from 'n8n-workflow';
+import { NodeApiError } from 'n8n-workflow';
 
 import { router } from './actions/router';
 import { versionDescription } from './actions/versionDescription';
@@ -30,7 +32,7 @@ export class RocketV1 implements INodeType {
 				);
 				return [executionErrorData];
 			}
-			throw error;
+			throw new NodeApiError(this.getNode(), error as JsonObject);
 		}
 	}
 }
