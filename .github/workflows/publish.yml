@@ -1,21 +1,9 @@
 # Publishes this n8n community node package to npm on every version tag push.
 # See: https://docs.n8n.io/integrations/community-nodes/build-community-nodes/
 #
-# ─── ONE-TIME SETUP (escolha UMA opção) ───────────────────────────────────────
-#
-# Option A — OIDC Trusted Publishing (recomendado, sem token no GitHub):
-#   npmjs.com → pacote n8n-nodes-rocket → Settings → Trusted publishing → Add
-#     Publisher: GitHub Actions
-#     Organization or user: CMSW-LLC
-#     Repository: n8n-nodes-rocket
-#     Workflow filename: publish.yml
-#   Requer npm ≥ 11.5.1 (este workflow usa Node 24).
-#   Não crie o secret NPM_TOKEN no repositório.
-#
-# Option B — Token npm (fallback):
-#   npmjs.com → Access Tokens → Granular → Read and write no pacote
-#   GitHub → CMSW-LLC/n8n-nodes-rocket → Settings → Secrets → Actions
-#     Nome: NPM_TOKEN  Valor: o token gerado
+# PRIMEIRA PUBLICAÇÃO (pacote ainda não existe no npm):
+#   Trusted Publisher NÃO funciona — configure obrigatoriamente o secret NPM_TOKEN.
+#   Depois que o pacote existir no npm, você pode adicionar Trusted Publisher e remover o token.
 
 name: Publish
 
@@ -36,35 +24,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Require NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "::error title=NPM_TOKEN ausente::O secret NPM_TOKEN não está configurado neste repositório. Com 0 pacotes no npm, Trusted Publisher não existe — crie um token em npmjs.com (Access Tokens → Granular, publish em n8n-nodes-rocket) e adicione em GitHub → Settings → Secrets and variables → Actions → NPM_TOKEN."
+            exit 1
+          fi
+          echo "NPM_TOKEN presente (comprimento: ${#NPM_TOKEN} caracteres)"
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Ensure npm supports OIDC trusted publishing
-        run: |
-          NODE_NPM="$(npm --version)"
-          echo "npm version: $NODE_NPM"
-          MAJOR="${NODE_NPM%%.*}"
-          if [ "$MAJOR" -lt 11 ]; then
-            echo "Upgrading npm to v11+ (required for Trusted Publishing without NPM_TOKEN)"
-            npm install -g npm@11
-            echo "npm version after upgrade: $(npm --version)"
-          fi
+      - name: Verify npm authentication
+        run: npm whoami
 
       - name: Install dependencies
         run: npm ci
 
       - name: Release
-        run: |
-          if [ -n "$NPM_TOKEN" ]; then
-            echo "Using NPM_TOKEN for registry authentication"
-            npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
-          else
-            echo "NPM_TOKEN not set — using OIDC Trusted Publishing (configure on npmjs.com if publish fails)"
-          fi
-          npm run release
+        run: npm run release
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           CMSW_API_KEY: ${{ secrets.CMSW_API_KEY }}

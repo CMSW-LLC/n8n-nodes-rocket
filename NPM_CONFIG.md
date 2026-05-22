@@ -38,40 +38,35 @@ npm run release
 1. Local/servidor: `npm run release` → tag (não publica no npm)
 2. GitHub Actions **Publish** → `npm ci` + `npm publish` com provenance
 
-## npm — autenticação (uma vez)
+## npm — autenticação
 
-Erro `ENEEDAUTH` / `need auth` no GitHub Actions = **nenhum método de auth está ativo**. Configure **uma** das opções abaixo.
+Erro `ENEEDAUTH` = o GitHub Actions **não tem** `NPM_TOKEN` configurado (ou o token está inválido).
 
-### Opção A — Trusted Publisher (recomendado)
+### Primeira publicação (pacote removido / 0 packages)
 
-1. Conta com permissão de **publish** no pacote [n8n-nodes-rocket](https://www.npmjs.com/package/n8n-nodes-rocket).
-2. [npmjs.com](https://www.npmjs.com/) → pacote → **Settings** → **Trusted publishing** → **Add publisher**.
-3. Preencha **exatamente** (case-sensitive):
+**Trusted Publisher não serve aqui** — ele só existe nas configurações de um pacote **já criado** no npm. Para recriar `n8n-nodes-rocket` do zero, use **obrigatoriamente** o secret `NPM_TOKEN`:
 
-| Campo | Valor |
-|--------|--------|
-| Publisher | GitHub Actions |
+1. Entrar em [npmjs.com](https://www.npmjs.com/) com a conta/org que vai **criar** o pacote (ex.: usuário CMSW ou org `@cmsw`).
+2. **Access Tokens** → **Generate New Token** → **Granular Access Token**.
+3. Permissions:
+   - **Packages and scopes** → **Read and write**
+   - Se o pacote ainda não existe: marque **All packages** ou crie permissão para o nome `n8n-nodes-rocket` (o primeiro `npm publish` registra o pacote).
+4. Copiar o token (`npm_...`) — só aparece uma vez.
+5. GitHub → [CMSW-LLC/n8n-nodes-rocket](https://github.com/CMSW-LLC/n8n-nodes-rocket) → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+6. Nome exato: **`NPM_TOKEN`** | Valor: colar o token (sem espaços).
+7. **Actions** → workflow **Publish** da tag → **Re-run all jobs**.
+
+O workflow agora falha no início com mensagem clara se `NPM_TOKEN` estiver ausente, e roda `npm whoami` antes do build para validar o token.
+
+### Depois que o pacote existir no npm (opcional)
+
+Aí sim pode configurar **Trusted publishing** no pacote e, se quiser, remover `NPM_TOKEN` do GitHub (OIDC). Até lá, mantenha o token.
+
+| Campo Trusted Publisher | Valor |
+|-------------------------|--------|
 | Organization or user | `CMSW-LLC` |
 | Repository | `n8n-nodes-rocket` |
 | Workflow filename | `publish.yml` |
-
-4. **Não** crie o secret `NPM_TOKEN` no GitHub (senão o OIDC fica desnecessário).
-5. Reexecute o workflow (re-run) ou empurre a tag de novo.
-
-Requisito: npm **≥ 11.5.1** no CI (o workflow usa Node 24 e faz upgrade se precisar).
-
-### Opção B — Secret `NPM_TOKEN`
-
-1. [npmjs.com](https://www.npmjs.com/) → **Access Tokens** → **Generate New Token** → **Granular Access Token**.
-2. Pacote `n8n-nodes-rocket` → permissão **Read and write**.
-3. GitHub → `CMSW-LLC/n8n-nodes-rocket` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
-4. Nome: `NPM_TOKEN` | Valor: o token (começa com `npm_...`).
-5. Reexecute o workflow **Publish**.
-
-### Conferir no log do job
-
-- `Using NPM_TOKEN for registry authentication` → Opção B ativa.
-- `NPM_TOKEN not set — using OIDC Trusted Publishing` → Opção A; se ainda falhar, o Trusted Publisher no npm não está configurado ou os campos estão errados.
 
 ## Tags
 
