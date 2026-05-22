@@ -56,7 +56,19 @@ Erro `ENEEDAUTH` = o GitHub Actions **não tem** `NPM_TOKEN` configurado (ou o t
 6. Nome exato: **`NPM_TOKEN`** | Valor: colar o token (sem espaços).
 7. **Actions** → workflow **Publish** da tag → **Re-run all jobs**.
 
-O workflow agora falha no início com mensagem clara se `NPM_TOKEN` estiver ausente, e roda `npm whoami` antes do build para validar o token.
+### Secret “configurado” mas o log mostra `NPM_TOKEN:` vazio
+
+Isso significa que o **GitHub não repassou** o secret para o job (não é problema do npm).
+
+| Causa | O que fazer |
+|--------|-------------|
+| Secret na **organização** CMSW-LLC | Org → **Settings** → **Secrets** → `NPM_TOKEN` → **Repository access** → incluir **`n8n-nodes-rocket`** |
+| Secret em **Environment** | No `publish.yml`, descomente `environment: production` (ou o nome do seu environment) |
+| Criado em **Variables** em vez de Secrets | Mover para **Repository secrets** (Variables não entram em `secrets.NPM_TOKEN`) |
+| Tag no **fork** | Secrets do repo oficial não vão para fork — publicar tag em `CMSW-LLC/n8n-nodes-rocket` ou criar `NPM_TOKEN` no fork |
+| Repo errado | Confirmar em **Settings → Secrets** que você está em `CMSW-LLC/n8n-nodes-rocket` |
+
+No log do job **Diagnose GitHub context**, confira `repository=CMSW-LLC/n8n-nodes-rocket`.
 
 ### Depois que o pacote existir no npm (opcional)
 
