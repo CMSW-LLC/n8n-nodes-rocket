@@ -40,7 +40,13 @@ npm run release
 
 ## npm — autenticação (uma vez)
 
-**Trusted Publisher** em [npmjs.com](https://www.npmjs.com/) → pacote `n8n-nodes-rocket`:
+Erro `ENEEDAUTH` / `need auth` no GitHub Actions = **nenhum método de auth está ativo**. Configure **uma** das opções abaixo.
+
+### Opção A — Trusted Publisher (recomendado)
+
+1. Conta com permissão de **publish** no pacote [n8n-nodes-rocket](https://www.npmjs.com/package/n8n-nodes-rocket).
+2. [npmjs.com](https://www.npmjs.com/) → pacote → **Settings** → **Trusted publishing** → **Add publisher**.
+3. Preencha **exatamente** (case-sensitive):
 
 | Campo | Valor |
 |--------|--------|
@@ -49,7 +55,23 @@ npm run release
 | Repository | `n8n-nodes-rocket` |
 | Workflow filename | `publish.yml` |
 
-**Ou** secret `NPM_TOKEN` no repo GitHub `CMSW-LLC/n8n-nodes-rocket`.
+4. **Não** crie o secret `NPM_TOKEN` no GitHub (senão o OIDC fica desnecessário).
+5. Reexecute o workflow (re-run) ou empurre a tag de novo.
+
+Requisito: npm **≥ 11.5.1** no CI (o workflow usa Node 24 e faz upgrade se precisar).
+
+### Opção B — Secret `NPM_TOKEN`
+
+1. [npmjs.com](https://www.npmjs.com/) → **Access Tokens** → **Generate New Token** → **Granular Access Token**.
+2. Pacote `n8n-nodes-rocket` → permissão **Read and write**.
+3. GitHub → `CMSW-LLC/n8n-nodes-rocket` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+4. Nome: `NPM_TOKEN` | Valor: o token (começa com `npm_...`).
+5. Reexecute o workflow **Publish**.
+
+### Conferir no log do job
+
+- `Using NPM_TOKEN for registry authentication` → Opção B ativa.
+- `NPM_TOKEN not set — using OIDC Trusted Publishing` → Opção A; se ainda falhar, o Trusted Publisher no npm não está configurado ou os campos estão errados.
 
 ## Tags
 
