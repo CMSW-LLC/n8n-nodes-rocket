@@ -18,7 +18,6 @@ export const webhookUrlDescription: INodeProperties = {
 	type: 'string',
 	default: '',
 	description:
-		'URL onde a Rocket API (rocket-api-cache) recebe o resultado assíncrono, ex.: …/n8n/callback. Não use a URL do próprio webhook N8N de entrada — isso re-dispara o fluxo e gera várias chamadas a execute-provider.',
+		'Opcional. Se preenchida, execução assíncrona: a API retorna ticket (202) e envia o resultado para esta URL (ex.: …/n8n/callback). Se vazia, execução síncrona: o node aguarda e retorna os dados do provedor na mesma chamada (timeout até 120s). Não use a URL do próprio webhook N8N de entrada.',
 	placeholder: 'https://rocket-api-cache.cmsw.com/n8n/callback',
-	required: true,
 };

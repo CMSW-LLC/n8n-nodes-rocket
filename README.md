@@ -147,40 +147,64 @@ A autenticação é feita via header HTTP `x-api-key` em todas as requisições.
 
 ### Parâmetros Comuns
 
-Todas as versões do node compartilham os seguintes campos obrigatórios:
-
 | Campo | Tipo | Descrição |
 |-------|------|-----------|
-| **URL Webhook** | String | URL HTTPS onde a **Rocket API** (`rocket-api-cache`) recebe o callback assíncrono — em geral `POST …/n8n/callback`. **Não** use a URL do webhook de **entrada** do mesmo fluxo (ex.: `/webhook/api/cm-rf-cpf`): o motor OLTP postaria o resultado de volta no n8n, **re-disparando** o workflow e gerando várias chamadas a `/provedores/execute-provider`. Se o corpo do item já trouxer `webhookUrl` (ex.: disparo via `/n8n/execute`), o node usa esse valor em preferência ao campo do formulário. |
+| **URL Webhook** | String (opcional) | Se preenchida: execução **assíncrona** — a API retorna ticket (HTTP 202) e envia o resultado para esta URL (ex.: `…/n8n/callback`). Se **vazia**: execução **síncrona** — o node aguarda até 120s e retorna os dados do provedor no output. **Não** use a URL do webhook de **entrada** do mesmo fluxo N8N. |
 | **Resource** | Seleção | Grupo do provedor (ex: `SERASA`, `RECEITA_FEDERAL`) |
 | **Operation** | Seleção | Operação específica dentro do grupo (ex: `score`, `consulta_cpf`) |
 
 ### Fluxo de Execução
 
-O node Rocket opera de forma **assíncrona** por padrão:
+O node Rocket suporta dois modos:
+
+**Assíncrono** (com `webhookUrl`):
 
 ```
-n8n → Rocket Node → POST /execute-provider → Rocket API
+n8n → Rocket Node → POST /execute-provider → Rocket API (202 + ticket)
                                                   ↓
 n8n ← Webhook Node ← resultado ← Rocket API (callback)
 ```
 
-1. O node envia a requisição à Rocket API com os parâmetros e a URL do webhook
-2. A Rocket API processa a consulta no provedor
-3. O resultado é enviado via `POST` para a URL do webhook informada
-4. O nó Webhook no n8n recebe e processa a resposta
+**Síncrono** (sem `webhookUrl`):
 
-**Exemplo de resposta imediata (síncrona):**
+```
+n8n → Rocket Node → POST /execute-provider → Rocket API aguarda cache → 200 com dados
+```
+
+1. O node envia a requisição à Rocket API com os parâmetros do provedor
+2. Com webhook: a API enfileira e retorna ticket; o resultado chega via callback
+3. Sem webhook: a API aguarda o provedor e retorna `dados` + `resultado` na mesma resposta
+
+**Exemplo de resposta assíncrona (202):**
 
 ```json
 {
-  "status": "queued",
-  "id_consulta": "abc123",
-  "mensagem": "Consulta enviada ao provedor. Resultado chegará no webhook."
+  "accepted": true,
+  "sync": false,
+  "message": "Solicitação de execução enfileirada com sucesso.",
+  "ticket": "6a402e03-c48d-4f01-a516-83f00ff08f6e"
 }
 ```
 
-**Exemplo de payload recebido no webhook:**
+**Exemplo de resposta síncrona (200):**
+
+```json
+{
+  "accepted": true,
+  "sync": true,
+  "ticket": "6a402e03-c48d-4f01-a516-83f00ff08f6e",
+  "dados": {
+    "COD_RETORNO_PROV": "0",
+    "MSG_RETORNO_PROV": "",
+    "num_reg_list": "1",
+    "list_campos": { "CAMPO": "VALOR" },
+    "ticket": "6a402e03-c48d-4f01-a516-83f00ff08f6e"
+  },
+  "resultado": { "codigo": "0", "msg": "OK" }
+}
+```
+
+**Exemplo de payload recebido no webhook (modo assíncrono):**
 
 ```json
 {

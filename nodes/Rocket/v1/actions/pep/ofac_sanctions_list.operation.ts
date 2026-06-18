@@ -3,7 +3,7 @@
 import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
 
 import { webhookUrlDescription } from '../../descriptions/common.description';
-import { rocketApiRequest } from '../../transport';
+import { rocketApiExecuteProvider } from '../../transport';
 
 export const properties: INodeProperties[] = [
 	{
@@ -58,7 +58,6 @@ export const properties: INodeProperties[] = [
 export const description = properties;
 
 export async function execute(this: IExecuteFunctions, i: number) {
-	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'STATE_PROVINCE': this.getNodeParameter('stateProvince', i) as string,
 		'COUNTRY': this.getNodeParameter('country', i) as string,
@@ -68,10 +67,5 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'PROGRAM': this.getNodeParameter('program', i) as string,
 	};
 
-	return await rocketApiRequest.call(this, 'POST', '', {
-		origem_solic: 'N8N',
-		provider: 'ofac_sanctions_list',
-		parametros,
-		webhookUrl,
-	});
+	return await rocketApiExecuteProvider.call(this, i, 'ofac_sanctions_list', parametros);
 }

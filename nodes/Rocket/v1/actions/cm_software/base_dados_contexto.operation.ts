@@ -3,7 +3,7 @@
 import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
 
 import { webhookUrlDescription } from '../../descriptions/common.description';
-import { rocketApiRequest } from '../../transport';
+import { rocketApiExecuteProvider } from '../../transport';
 
 export const properties: INodeProperties[] = [
 	{
@@ -62,7 +62,6 @@ export const properties: INodeProperties[] = [
 export const description = properties;
 
 export async function execute(this: IExecuteFunctions, i: number) {
-	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'ID_FLUXO_DASH': this.getNodeParameter('idFluxoDash', i) as string,
 		'CONTEXTO': this.getNodeParameter('contexto', i) as string,
@@ -72,10 +71,5 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'TICKET_DASH': this.getNodeParameter('ticketDash', i) as string,
 	};
 
-	return await rocketApiRequest.call(this, 'POST', '', {
-		origem_solic: 'N8N',
-		provider: 'base_dados_contexto',
-		parametros,
-		webhookUrl,
-	});
+	return await rocketApiExecuteProvider.call(this, i, 'base_dados_contexto', parametros);
 }

@@ -3,7 +3,7 @@
 import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
 
 import { webhookUrlDescription } from '../../descriptions/common.description';
-import { rocketApiRequest } from '../../transport';
+import { rocketApiExecuteProvider } from '../../transport';
 
 export const properties: INodeProperties[] = [
 	{
@@ -284,7 +284,6 @@ export const properties: INodeProperties[] = [
 export const description = properties;
 
 export async function execute(this: IExecuteFunctions, i: number) {
-	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'usuario': this.getNodeParameter('usuario', i) as string,
 		'senha': this.getNodeParameter('senha', i) as string,
@@ -326,10 +325,5 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'MODULODEDECISAO': this.getNodeParameter('modulodedecisao', i) as string,
 	};
 
-	return await rocketApiRequest.call(this, 'POST', '', {
-		origem_solic: 'N8N',
-		provider: 'scpc_acerta_pf',
-		parametros,
-		webhookUrl,
-	});
+	return await rocketApiExecuteProvider.call(this, i, 'scpc_acerta_pf', parametros);
 }

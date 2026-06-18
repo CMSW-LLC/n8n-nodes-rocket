@@ -134,7 +134,7 @@ function generateOperationFile(
 import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
 
 import { webhookUrlDescription } from '../../descriptions/common.description';
-import { rocketApiRequest } from '../../transport';
+import { rocketApiExecuteProvider } from '../../transport';
 
 export const properties: INodeProperties[] = [
 ${commonPropertyBlocks}
@@ -144,17 +144,11 @@ ${fields.join('\n')}
 export const description = properties;
 
 export async function execute(this: IExecuteFunctions, i: number) {
-	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 ${paramLines.join('\n')}
 	};
 
-	return await rocketApiRequest.call(this, 'POST', '', {
-		origem_solic: 'N8N',
-		provider: '${escapeString(nomeChave)}',
-		parametros,
-		webhookUrl,
-	});
+	return await rocketApiExecuteProvider.call(this, i, '${escapeString(nomeChave)}', parametros);
 }
 `;
 

@@ -3,7 +3,7 @@
 import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
 
 import { webhookUrlDescription } from '../../descriptions/common.description';
-import { rocketApiRequest } from '../../transport';
+import { rocketApiExecuteProvider } from '../../transport';
 
 export const properties: INodeProperties[] = [
 	{
@@ -61,7 +61,6 @@ export const properties: INodeProperties[] = [
 export const description = properties;
 
 export async function execute(this: IExecuteFunctions, i: number) {
-	const webhookUrl = (this.getNodeParameter('webhookUrl', i) as string);
 	const parametros: IDataObject = {
 		'URL_DOC_VERSO': this.getNodeParameter('urlDocVerso', i) as string,
 		'URL_DOC_FRENTE': this.getNodeParameter('urlDocFrente', i) as string,
@@ -71,10 +70,5 @@ export async function execute(this: IExecuteFunctions, i: number) {
 		'URL_DOC': this.getNodeParameter('urlDoc', i) as string,
 	};
 
-	return await rocketApiRequest.call(this, 'POST', '', {
-		origem_solic: 'N8N',
-		provider: 'idwall_doc_copia',
-		parametros,
-		webhookUrl,
-	});
+	return await rocketApiExecuteProvider.call(this, i, 'idwall_doc_copia', parametros);
 }
